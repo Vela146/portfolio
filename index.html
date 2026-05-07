@@ -53,9 +53,10 @@
 				transition: transform 0.3s ease, border-color 0.3s ease;
 			}
 			.project-item:hover img { transform: scale(1.02); border-color: #fff; }
-			.project-item h3 { margin-top: 0.8rem; font-size: 0.75rem; letter-spacing: 2px; color: #fff; }
+			.project-item h3 { margin-top: 0.8rem; font-size: 0.75rem; letter-spacing: 2px; color: #fff; margin-bottom: 0.2rem; }
+			.project-year { font-size: 0.6rem; opacity: 0.6; letter-spacing: 1px; }
 
-			/* --- 5. IMAGE CALIBRATION (ZINE CLARITY) --- */
+			/* --- 5. IMAGE CALIBRATION --- */
 			article .image img {
 				opacity: 1 !important; filter: brightness(1.15) contrast(0.95) !important;
 				-webkit-filter: brightness(1.15) contrast(0.95) !important;
@@ -116,31 +117,28 @@
 							<div class="project-item" onclick="location.href='#omikuji'">
 								<img src="images/omikuji-zine-1.jpg" alt="Omikuji Zine" />
 								<h3>"OMIKUJI" ZINE</h3>
+								<div class="project-year">2025—2026</div>
 							</div>
 						</div>
 						<div class="col-6 col-12-small">
-							<div class="project-item" onclick="location.href='#project2'">
-								<img src="images/placeholder.jpg" alt="Project 2" />
-								<h3>PROJECT 2</h3>
+							<div class="project-item" onclick="location.href='#kyotojournal'">
+								<img src="images/kj-cover.jpg" alt="Kyoto Journal" />
+								<h3>PHOTOGRAPHY: KYOTO JOURNAL</h3>
+								<div class="project-year">2024</div>
 							</div>
 						</div>
 					</div>
 				</article>
 
 				<article id="omikuji">
-					<h2 class="major"><span class="lang-text en active">"Omikuji" ZINE Project</span><span class="lang-text jp">おみくじ ZINE プロジェクト</span><span class="lang-text id">Proyek ZINE "Omikuji"</span></h2>
+					<h2 class="major">"Omikuji" ZINE (2025—2026)</h2>
 					<span class="image main"><img src="images/omikuji-zine-1.jpg" alt="Cover" /></span>
-					
 					<div class="lang-text en active">
 						<p>An interactive accordion-fold ZINE inspired by Japanese <i>omikuji</i>. This piece features hand-drawn illustrations and hidden messages revealed by coloring in the designated spaces. A hand-drawn debossing technique was used to write the text.</p>
 					</div>
 					<div class="lang-text jp">
-						<p>日本のおみくじにインスパイアされた、蛇腹折りのインタラクティブなZINEです。手描きのイラストと、指定された場所を塗りつぶすことで現れる隠しメッセージが特徴です。文字の部分には、手書きのデボス（空押し）技法を用いています。</p>
+						<p>日本のおみくじにインスパイアされた、蛇腹折りのインタラクティブなZINEです。手描きのイラストと隠しメッセージが特徴です。</p>
 					</div>
-					<div class="lang-text id">
-						<p>ZINE interaktif dengan lipatan akordion yang terinspirasi oleh <i>omikuji</i> Jepang. Karya ini menampilkan ilustrasi tangan dan pesan tersembunyi yang muncul dengan mewarnai ruang yang tersedia. Teknik <i>debossing</i> tangan digunakan untuk menuliskan teksnya.</p>
-					</div>
-
 					<div class="box alt gallery-row">
 						<div class="row gtr-uniform">
 							<div class="col-6"><span class="image fit"><img src="images/omikuji-zine-2.jpg" alt="" /></span></div>
@@ -158,18 +156,32 @@
 							<div class="col-6"><span class="image fit"><img src="images/omikuji-zine-13.jpg" alt="" /></span></div>
 						</div>
 					</div>
-
-					<ul class="actions">
-						<li><a href="#work" class="button">← Back to Project List</a></li>
-					</ul>
+					<ul class="actions"><li><a href="#work" class="button">← Back to List</a></li></ul>
 				</article>
 
-				<article id="project2">
-					<h2 class="major">Project 2</h2>
-					<p>Coming soon.</p>
-					<ul class="actions">
-						<li><a href="#work" class="button">← Back to Project List</a></li>
-					</ul>
+				<article id="kyotojournal">
+					<h2 class="major">Kyoto Journal #108 (2024)</h2>
+					<span class="image main"><img src="images/kj-cover.jpg" alt="Kyoto Journal Cover" /></span>
+					<div class="lang-text en active">
+						<h3>Editorial Photography</h3>
+						<p>Featured documentary photography in <strong>Kyoto Journal Issue 108: Fluidity 2</strong>. Capturing the Traditional Theater Training (T.T.T.) program at the Kyoto Art Center.</p>
+					</div>
+					<div class="lang-text jp">
+						<h3>エディトリアル写真</h3>
+						<p><strong>Kyoto Journal 108号</strong>に掲載されたドキュメンタリー写真です。京都芸術センターでの伝統芸能トレーニングの様子を撮影しました。</p>
+					</div>
+					<h3 class="major">Published Layouts</h3>
+					<span class="image main"><img src="images/kj-layout-1.jpg" alt="Layout 1" /></span>
+					<span class="image main"><img src="images/kj-layout-2.jpg" alt="Layout 2" /></span>
+					<h3 class="major">Selected Photos</h3>
+					<div class="box alt">
+						<div class="row gtr-uniform">
+							<div class="col-12"><span class="image fit"><img src="images/kj-2.jpg" alt="" /></span></div>
+							<div class="col-6"><span class="image fit"><img src="images/kj-3.jpg" alt="" /></span></div>
+							<div class="col-6"><span class="image fit"><img src="images/kj-4.jpg" alt="" /></span></div>
+						</div>
+					</div>
+					<ul class="actions"><li><a href="#work" class="button">← Back to List</a></li></ul>
 				</article>
 
 				<article id="contact">
@@ -180,10 +192,7 @@
 							<div class="field half"><label>Email</label><input type="email" name="_replyto" required /></div>
 							<div class="field"><label>Message</label><textarea name="message" rows="4" required></textarea></div>
 						</div>
-						<input type="text" name="_gotcha" style="display:none" />
-						<ul class="actions">
-							<li><button type="submit" class="primary">Send</button></li>
-						</ul>
+						<ul class="actions"><li><button type="submit" class="primary">Send</button></li></ul>
 					</form>
 					<hr />
 					<p style="text-align: center;"><strong>yovela.delvin@gmail.com</strong></p>
