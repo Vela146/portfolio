@@ -31,6 +31,7 @@
 			.lang-text.active { display: inline-block !important; }
 
 			/* --- 2. THE SLOW ANIMATION OVERRIDE --- */
+			/* We set a very long duration here to ensure the "fade" feels cinematic */
 			#header, #main, article, .content, .inner, #bg {
 				transition: all 1.8s cubic-bezier(0.4, 0, 0.2, 1) !important;
 				transition-delay: 0s !important;
@@ -38,9 +39,10 @@
 
 			/* --- 3. THE "BRUTE FORCE" CENTER FIX --- */
 			header#header .content {
-				border: none !important;
+				border: none !important; /* This removes the skewing line */
 				padding: 0 !important;
 				margin: 0 !important;
+				width: 100% !important;
 			}
 
 			header#header .inner {
@@ -72,6 +74,7 @@
 				font-size: 4rem; 
 				width: 100% !important;
 				text-align: center !important;
+				left: 0 !important;
 			}
 
 			body.lang-jp header#header .inner h1:after {
@@ -124,9 +127,7 @@
 				padding: 0 !important;
 			}
 
-			/* --- 5. WORKS & TITLES --- */
-			article#work h3 { text-align: center !important; width: 100% !important; border: none !important; margin: 2rem 0 1rem 0 !important; }
-			article#work p { text-align: center !important; width: 100% !important; }
+			/* --- 5. IMAGE CALIBRATION --- */
 			article#work .image img { opacity: 1 !important; filter: brightness(1.15) contrast(0.95) !important; }
 			.image.main:before, .image.fit:before { display: none !important; }
 		</style>
@@ -225,9 +226,26 @@
 		<script src="assets/js/util.js"></script>
 		<script src="assets/js/main.js"></script>
 		<script>
-			// FORCING THE JS DELAY TO BE SLOWER
-			if (typeof skel !== 'undefined') { skel.vars.mobile = false; }
-			
+			// THE "HIDDEN" ANIMATION FIX:
+			// This overrides the main.js "delay" variable which forces the fast speed.
+			$(function() {
+				var $main = $('#main');
+				var $header = $('#header');
+				// We wait for the template to load, then tell it to relax the speed.
+				setTimeout(function() {
+					// This forces the "open" and "close" events to wait for our CSS.
+					$main._hide = function(addIsVisible) {
+						var $article = $main.children('article.active');
+						$article.removeClass('active');
+						setTimeout(function() {
+							$article.hide();
+							$header.show();
+							setTimeout(function() { $header.removeClass('alt'); }, 50);
+						}, 1500); // Wait for the slow CSS transition
+					};
+				}, 100);
+			});
+
 			function changeLanguage(lang) {
 				document.querySelectorAll('.lang-btn').forEach(btn => {
 					btn.classList.remove('active');
