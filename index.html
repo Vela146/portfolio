@@ -32,35 +32,59 @@
 			.lang-text.active { display: inline-block !important; }
 			div.lang-text.active { display: block !important; }
 
-			/* --- 2. THE NAME OVERRIDE (FIXED FOR ALL SCREENS) --- */
+			/* --- 2. HEADER & NAME CENTER FIX --- */
+			header#header .inner {
+				display: flex !important;
+				flex-direction: column !important;
+				align-items: center !important;
+				justify-content: center !important;
+				padding: 3rem 0 !important; /* Fixed padding so JS can't break it */
+			}
+
 			header#header .inner h1 {
 				visibility: hidden;
 				position: relative;
-				margin-bottom: 1.5rem !important; /* Shrank this to reduce gap */
+				margin: 0 0 1rem 0 !important; /* Gap below Name */
 				white-space: nowrap !important;
+				line-height: 1 !important;
+				height: auto !important;
 			}
+
 			header#header .inner h1:after {
 				visibility: visible;
-				position: absolute;
-				top: 0;
-				left: 50%;
-				transform: translateX(-50%);
-				width: 100%;
+				position: relative;
+				display: block;
 				content: 'YOVELA DELVIN';
 				text-transform: uppercase;
 				letter-spacing: 0.5rem;
-				display: block;
+				font-size: 4rem; /* Desktop Size */
+				text-align: center;
 			}
 
-			/* Force Japanese name globally (Desktop & Mobile) */
+			/* Japanese Name Fix */
 			body.lang-jp header#header .inner h1:after {
 				content: 'ヨベラ デルビン' !important;
-				font-size: 2.8rem !important; 
-				letter-spacing: 0.4rem !important; 
+				font-size: 3.5rem !important; 
+				letter-spacing: 0.3rem !important;
 			}
 
-			/* Target mobile specifically to keep it from cutting off */
+			/* Portfolio text gap */
+			header#header .inner p {
+				margin: 0 !important;
+				padding: 0 !important;
+				text-transform: uppercase;
+				letter-spacing: 0.2rem;
+				line-height: 1 !important;
+			}
+
+			/* --- 3. MOBILE RESPONSIVENESS --- */
 			@media screen and (max-width: 480px) {
+				header#header .inner {
+					padding: 2rem 0 !important;
+				}
+				header#header .inner h1 {
+					margin-bottom: 1.5rem !important; /* Bigger gap on mobile */
+				}
 				header#header .inner h1:after {
 					font-size: 1.8rem !important;
 					letter-spacing: 0.2rem !important;
@@ -69,26 +93,9 @@
 					font-size: 1.6rem !important;
 					letter-spacing: 0.15rem !important;
 				}
-				header#header .inner p {
-					margin-top: -0.8rem !important;
-				}
 			}
 
-			/* Pull "Portfolio" text UP closer to the name */
-			header#header .inner p {
-				margin-top: -2.2rem !important; /* Stronger negative margin for tighter look */
-				text-transform: uppercase;
-				letter-spacing: 0.2rem;
-			}
-
-			/* --- 3. THE IMAGE CALIBRATION --- */
-			article#work .image img {
-				opacity: 1 !important;
-				filter: brightness(1.15) contrast(0.95) !important;
-			}
-			.image.main:before, .image.fit:before { display: none !important; }
-
-			/* --- 4. NAVIGATION GRID OVERRIDE --- */
+			/* --- 4. NAVIGATION GRID --- */
 			nav:before, nav:after, nav ul:before, nav ul:after { display: none !important; }
 			header#header nav {
 				width: 100% !important;
@@ -117,6 +124,12 @@
 				text-align: center !important;
 				letter-spacing: 0.1rem !important;
 			}
+
+			/* --- 5. IMAGE & PROJECTS --- */
+			article#work .image img { opacity: 1 !important; filter: brightness(1.15) contrast(0.95) !important; }
+			.image.main:before, .image.fit:before { display: none !important; }
+			.project-item { margin-bottom: 4rem; text-align: left; }
+			.project-tags { font-size: 0.7rem; text-transform: uppercase; color: rgba(255, 255, 255, 0.5); margin-bottom: 1.5rem !important; }
 		</style>
 	</head>
 	<body class="is-preload">
@@ -128,6 +141,7 @@
 		</div>
 
 		<div id="wrapper">
+
 			<header id="header">
 				<div class="logo">
 					<span class="icon fa-gem"></span>
@@ -160,9 +174,6 @@
 					<div class="lang-text jp">
 						<p>現在京都で学んでいる大学生です。アナログな手法とデジタル表現の交点を探求し、伝統的な職人技と現代のメディア実験を融合させた制作を行っています。</p>
 					</div>
-					<div class="lang-text id">
-						<p>Saya adalah seorang mahasiswa yang saat ini sedang menempuh pendidikan di Kyoto. Karya saya mengeksplorasi titik temu antara dunia fisik dan digital, memadukan kerajinan tradisional dengan eksperimen media modern.</p>
-					</div>
 				</article>
 
 				<article id="work">
@@ -170,25 +181,12 @@
 					<span class="image main"><img src="images/omikuji-zine-1.jpg" alt="Omikuji Zine Cover" /></span>
 					<div class="lang-text en active">
 						<h3>"Omikuji" ZINE Project</h3>
-						<p>An interactive accordion-fold ZINE inspired by Japanese <i>omikuji</i>. This piece features hand-drawn illustrations and hidden messages revealed by coloring in the designated spaces.</p>
+						<p>An interactive accordion-fold ZINE inspired by Japanese omikuji.</p>
 					</div>
-					<div class="lang-text jp">
-						<h3>おみくじ ZINE プロジェクト</h3>
-						<p>日本のおみくじにインスパイアされた、蛇腹折りのインタラクティブなZINEです。手描きのイラストと、指定された場所を塗りつぶすことで現れる隠しメッセージが特徴です。</p>
-					</div>
-					<div class="lang-text id">
-						<h3>Proyek ZINE "Omikuji"</h3>
-						<p>ZINE interaktif dengan lipatan akordion yang terinspirasi oleh <i>omikuji</i> Jepang. Karya ini menampilkan ilustrasi tangan dan pesan tersembunyi yang muncul dengan mewarnai ruang yang tersedia.</p>
-					</div>
-
 					<div class="box alt">
 						<div class="row gtr-uniform">
 							<div class="col-6"><span class="image fit"><img src="images/omikuji-zine-2.jpg" alt="" /></span></div>
 							<div class="col-6"><span class="image fit"><img src="images/omikuji-zine-3.jpg" alt="" /></span></div>
-							<div class="col-12"><span class="image fit"><img src="images/omikuji-zine-5.jpg" alt="" /></span></div>
-							<div class="col-12"><span class="image fit"><img src="images/omikuji-zine-6.jpg" alt="" /></span></div>
-							<div class="col-4"><span class="image fit"><img src="images/omikuji-zine-4.jpg" alt="" /></span></div>
-							<div class="col-8"><span class="image fit"><img src="images/omikuji-zine-10.jpg" alt="" /></span></div>
 						</div>
 					</div>
 				</article>
@@ -214,9 +212,7 @@
 				</article>
 			</div>
 
-			<footer id="footer">
-				<p class="copyright">Template: <a href="https://html5up.net">HTML5 UP</a>.</p>
-			</footer>
+			<footer id="footer"><p class="copyright">Template: <a href="https://html5up.net">HTML5 UP</a>.</p></footer>
 		</div>
 
 		<div id="bg"></div>
