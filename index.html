@@ -32,11 +32,11 @@
 			.lang-text.active { display: inline-block !important; }
 			div.lang-text.active { display: block !important; }
 
-			/* --- 2. THE NAME OVERRIDE (DESKTOP & MOBILE FIX) --- */
+			/* --- 2. THE NAME OVERRIDE (FIXED FOR ALL SCREENS) --- */
 			header#header .inner h1 {
 				visibility: hidden;
 				position: relative;
-				margin-bottom: 2rem !important; 
+				margin-bottom: 1.5rem !important; /* Shrank this to reduce gap */
 				white-space: nowrap !important;
 			}
 			header#header .inner h1:after {
@@ -52,33 +52,31 @@
 				display: block;
 			}
 
-			/* --- MOBILE SPECIFIC RULES --- */
+			/* Force Japanese name globally (Desktop & Mobile) */
+			body.lang-jp header#header .inner h1:after {
+				content: 'ヨベラ デルビン' !important;
+				font-size: 2.8rem !important; 
+				letter-spacing: 0.4rem !important; 
+			}
+
+			/* Target mobile specifically to keep it from cutting off */
 			@media screen and (max-width: 480px) {
 				header#header .inner h1:after {
-					font-size: 2rem !important; /* Shrinks English on small phones */
-					letter-spacing: 0.3rem !important;
-				}
-				body.lang-jp header#header .inner h1:after {
-					font-size: 1.8rem !important; /* Shrinks Japanese on small phones */
+					font-size: 1.8rem !important;
 					letter-spacing: 0.2rem !important;
 				}
-				header#header .inner p {
-					margin-top: -0.5rem !important; /* Adjust gap for mobile */
-				}
-			}
-
-			/* Specific Desktop Japanese tuning */
-			@media screen and (min-width: 481px) {
 				body.lang-jp header#header .inner h1:after {
-					content: 'ヨベラ デルビン' !important;
-					font-size: 2.8rem !important; 
-					letter-spacing: 0.4rem !important; 
-					line-height: 1 !important;
+					font-size: 1.6rem !important;
+					letter-spacing: 0.15rem !important;
+				}
+				header#header .inner p {
+					margin-top: -0.8rem !important;
 				}
 			}
 
+			/* Pull "Portfolio" text UP closer to the name */
 			header#header .inner p {
-				margin-top: -1.5rem !important;
+				margin-top: -2.2rem !important; /* Stronger negative margin for tighter look */
 				text-transform: uppercase;
 				letter-spacing: 0.2rem;
 			}
@@ -87,15 +85,11 @@
 			article#work .image img {
 				opacity: 1 !important;
 				filter: brightness(1.15) contrast(0.95) !important;
-				-webkit-filter: brightness(1.15) contrast(0.95) !important;
 			}
 			.image.main:before, .image.fit:before { display: none !important; }
-			.image.main, .image.fit { background: transparent !important; }
 
 			/* --- 4. NAVIGATION GRID OVERRIDE --- */
-			nav:before, nav:after, nav ul:before, nav ul:after {
-				display: none !important;
-			}
+			nav:before, nav:after, nav ul:before, nav ul:after { display: none !important; }
 			header#header nav {
 				width: 100% !important;
 				max-width: 450px !important;
@@ -112,14 +106,8 @@
 				overflow: hidden !important;
 				padding-left: 0 !important;
 			}
-			header#header nav ul li {
-				border: none !important;
-				padding: 0 !important;
-				margin: 0 !important;
-			}
-			header#header nav ul li + li {
-				border-left: 1px solid #ffffff !important;
-			}
+			header#header nav ul li { border: none !important; padding: 0 !important; margin: 0 !important; }
+			header#header nav ul li + li { border-left: 1px solid #ffffff !important; }
 			header#header nav ul li a {
 				display: block !important;
 				width: 100% !important;
@@ -129,8 +117,6 @@
 				text-align: center !important;
 				letter-spacing: 0.1rem !important;
 			}
-
-			.gallery-row { margin-top: 2rem; }
 		</style>
 	</head>
 	<body class="is-preload">
@@ -142,7 +128,6 @@
 		</div>
 
 		<div id="wrapper">
-
 			<header id="header">
 				<div class="logo">
 					<span class="icon fa-gem"></span>
@@ -167,7 +152,6 @@
 			</header>
 
 			<div id="main">
-
 				<article id="about">
 					<h2 class="major"><span class="lang-text en active">About</span><span class="lang-text jp">私について</span><span class="lang-text id">Tentang</span></h2>
 					<div class="lang-text en active">
@@ -197,7 +181,7 @@
 						<p>ZINE interaktif dengan lipatan akordion yang terinspirasi oleh <i>omikuji</i> Jepang. Karya ini menampilkan ilustrasi tangan dan pesan tersembunyi yang muncul dengan mewarnai ruang yang tersedia.</p>
 					</div>
 
-					<div class="box alt gallery-row">
+					<div class="box alt">
 						<div class="row gtr-uniform">
 							<div class="col-6"><span class="image fit"><img src="images/omikuji-zine-2.jpg" alt="" /></span></div>
 							<div class="col-6"><span class="image fit"><img src="images/omikuji-zine-3.jpg" alt="" /></span></div>
@@ -205,13 +189,6 @@
 							<div class="col-12"><span class="image fit"><img src="images/omikuji-zine-6.jpg" alt="" /></span></div>
 							<div class="col-4"><span class="image fit"><img src="images/omikuji-zine-4.jpg" alt="" /></span></div>
 							<div class="col-8"><span class="image fit"><img src="images/omikuji-zine-10.jpg" alt="" /></span></div>
-							<div class="col-4"><span class="image fit"><img src="images/omikuji-zine-7.jpg" alt="" /></span></div>
-							<div class="col-4"><span class="image fit"><img src="images/omikuji-zine-8.jpg" alt="" /></span></div>
-							<div class="col-4"><span class="image fit"><img src="images/omikuji-zine-9.jpg" alt="" /></span></div>
-							<div class="col-6"><span class="image fit"><img src="images/omikuji-zine-11.jpg" alt="" /></span></div>
-							<div class="col-6"><span class="image fit"><img src="images/omikuji-zine-12.jpg" alt="" /></span></div>
-							<div class="col-6"><span class="image fit"><img src="images/omikuji-zine-14.jpg" alt="" /></span></div>
-							<div class="col-6"><span class="image fit"><img src="images/omikuji-zine-13.jpg" alt="" /></span></div>
 						</div>
 					</div>
 				</article>
@@ -220,43 +197,26 @@
 					<h2 class="major">Contact</h2>
 					<form action="https://formspree.io/f/xnjwzeqa" method="POST">
 						<div class="fields">
-							<div class="field half">
-								<label for="name">Name</label>
-								<input type="text" name="name" id="name" required />
-							</div>
-							<div class="field half">
-								<label for="email">Email</label>
-								<input type="email" name="_replyto" id="email" required />
-							</div>
-							<div class="field">
-								<label for="message">Message</label>
-								<textarea name="message" id="message" rows="4" required></textarea>
-							</div>
+							<div class="field half"><label>Name</label><input type="text" name="name" required /></div>
+							<div class="field half"><label>Email</label><input type="email" name="_replyto" required /></div>
+							<div class="field"><label>Message</label><textarea name="message" rows="4" required></textarea></div>
 						</div>
-						<input type="text" name="_gotcha" style="display:none" />
 						<ul class="actions">
-							<li>
-								<button type="submit" class="primary">Send Message</button>
-							</li>
-							<li><input type="reset" value="Reset" /></li>
+							<li><button type="submit" class="primary">Send Message</button></li>
 						</ul>
 					</form>
 					<hr />
-					<p style="text-align: center;">
-						<strong>yovela.delvin@gmail.com</strong>
-					</p>
+					<p style="text-align: center;"><strong>yovela.delvin@gmail.com</strong></p>
 					<ul class="icons" style="justify-content: center; display: flex;">
-						<li><a href="mailto:yovela.delvin@gmail.com" class="icon solid fa-envelope"><span class="label">Email</span></a></li>
-						<li><a href="https://github.com/yourusername" class="icon brands fa-github"><span class="label">GitHub</span></a></li>
+						<li><a href="mailto:yovela.delvin@gmail.com" class="icon solid fa-envelope"></a></li>
+						<li><a href="https://github.com/yourusername" class="icon brands fa-github"></a></li>
 					</ul>
 				</article>
-
 			</div>
 
 			<footer id="footer">
 				<p class="copyright">Template: <a href="https://html5up.net">HTML5 UP</a>.</p>
 			</footer>
-
 		</div>
 
 		<div id="bg"></div>
@@ -274,7 +234,6 @@
 				});
 				if(lang === 'jp') document.body.classList.add('lang-jp');
 				else document.body.classList.remove('lang-jp');
-
 				document.querySelectorAll('.lang-text').forEach(el => {
 					el.classList.remove('active');
 					if (el.classList.contains(lang)) el.classList.add('active');
