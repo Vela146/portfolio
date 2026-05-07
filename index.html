@@ -33,7 +33,6 @@
 			div.lang-text.active { display: block !important; }
 
 			/* --- THE NAME FORCE-FIX --- */
-			/* We target the h1 inside the header specifically and replace its content via CSS */
 			header#header .inner h1 {
 				visibility: hidden;
 				position: relative;
@@ -60,14 +59,24 @@
 			.image.main:before, .image.fit:before { display: none !important; }
 			.image.main, .image.fit { background: transparent !important; }
 
-			/* --- THE INTRO HIDER --- */
-			/* We target the nav item by its 'href' attribute to be 100% sure */
-			nav ul li a[href="#intro"] {
-				display: none !important;
-			}
-			/* Also target the first child as a backup */
+			/* --- NAVIGATION LAYOUT FIX --- */
+			/* 1. Hide the Intro button completely */
 			nav ul li:first-child {
 				display: none !important;
+			}
+
+			/* 2. Force the remaining 3 buttons to fill the space perfectly */
+			nav ul {
+				display: flex !important;
+				flex-direction: row !important;
+				width: 100% !important;
+			}
+			nav ul li {
+				flex-grow: 1 !important;
+				border-left: 0 !important; /* Cleans up internal borders */
+			}
+			nav ul li:nth-child(2) {
+				border-left: 0 !important;
 			}
 
 			.gallery-row { margin-top: 2rem; }
