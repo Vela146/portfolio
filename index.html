@@ -25,101 +25,56 @@
 				cursor: pointer;
 				font-size: 0.65rem;
 				letter-spacing: 1px;
+				transition: all 0.3s ease;
 			}
 			.lang-btn.active { background: #fff; color: #1b1f22; }
 			.lang-text { display: none !important; }
 			.lang-text.active { display: inline-block !important; }
 
-			/* --- 2. SMOOTH ANIMATION --- */
-			#header, #main, article, .content, .inner, #bg {
-				transition: all 1.2s ease-in-out !important;
-				transform-origin: center center !important;
-			}
-
-			/* --- 3. HEADER ALIGNMENT (ALPHABET NAME) --- */
-			header#header .content {
-				border: none !important;
-				padding: 0 !important;
-				margin: 0 !important;
+			/* --- 2. RESTORING THE LINES & CENTERING --- */
+			header#header .content .inner {
+				text-align: center !important;
 				display: block !important;
-				width: 100% !important;
 			}
 
-			header#header .inner {
-				display: flex !important;
-				flex-direction: column !important;
-				align-items: center !important;
-				justify-content: center !important;
+			/* Centering the H1 and P within the original lines */
+			header#header h1 {
+				width: 100% !important;
 				text-align: center !important;
-				padding: 3rem 0 !important;
-				width: 100% !important;
-				border: none !important;
+				margin-bottom: 0.5rem !important;
 			}
 
-			header#header .inner h1 {
-				margin: 0 0 1rem 0 !important;
-				font-size: 4rem !important;
-				letter-spacing: 0.5rem !important;
-				text-transform: uppercase !important;
-				line-height: 1 !important;
+			header#header p {
 				width: 100% !important;
 				text-align: center !important;
 			}
 
-			header#header .inner p {
-				margin: 0 !important;
-				padding: 0 !important;
-				width: 100% !important;
-				text-align: center !important;
-				text-transform: uppercase;
-				letter-spacing: 0.2rem;
-				line-height: 1.5 !important;
+			/* --- 3. ANIMATION SPEED --- */
+			#header, #main article, #main, .content {
+				transition: all 1.0s ease-in-out !important;
 			}
 
-			/* --- 4. MOBILE SCALING --- */
-			@media screen and (max-width: 480px) {
-				header#header .inner h1 { font-size: 2.2rem !important; letter-spacing: 0.3rem !important; }
-				header#header .inner p { font-size: 0.7rem !important; letter-spacing: 0.15rem !important; }
-			}
-
-			/* --- 5. NAVIGATION GRID --- */
-			nav:before, nav:after, nav ul:before, nav ul:after { display: none !important; }
-			header#header nav {
-				width: 100% !important;
-				max-width: 500px !important;
-				margin: 2.5rem auto 0 auto !important;
-			}
+			/* --- 4. NAVIGATION GRID (Restoring vertical lines) --- */
 			header#header nav ul {
 				display: grid !important;
 				grid-template-columns: 1fr 1fr 1fr !important;
-				border: 1px solid #ffffff !important;
-				border-radius: 4px !important;
-				padding: 0 !important;
-				margin: 0 !important;
 				list-style: none !important;
-			}
-			header#header nav ul li { 
-				border: none !important; 
-				display: flex !important;
-				justify-content: center !important;
-				align-items: center !important;
-			}
-			header#header nav ul li + li { border-left: 1px solid #ffffff !important; }
-			header#header nav ul li a {
-				display: flex !important;
-				justify-content: center !important;
-				align-items: center !important;
-				width: 100% !important;
-				height: 3.5rem !important;
-				border: 0 !important;
+				margin: 0 !important;
 				padding: 0 !important;
+			}
+			header#header nav ul li {
+				padding: 0 !important;
+				border-left: solid 1px #ffffff !important;
+			}
+			header#header nav ul li:first-child {
+				border-left: 0 !important;
 			}
 
-			/* --- 6. WORKS GALLERY (FINALIZED) --- */
-			article#work h3 { text-align: center !important; width: 100% !important; border: none !important; margin: 2rem 0 1rem 0 !important; }
-			article#work p { text-align: center !important; width: 100% !important; }
-			article#work .image img { opacity: 1 !important; filter: brightness(1.15) contrast(0.95) !important; }
-			.image.main:before, .image.fit:before { display: none !important; }
+			/* --- 5. IMAGE CALIBRATION --- */
+			article#work .image img { 
+				opacity: 1 !important; 
+				filter: brightness(1.15) contrast(0.95) !important; 
+			}
 		</style>
 	</head>
 	<body class="is-preload">
@@ -131,8 +86,11 @@
 		</div>
 
 		<div id="wrapper">
+
 			<header id="header">
-				<div class="logo"><span class="icon fa-gem"></span></div>
+				<div class="logo">
+					<span class="icon fa-gem"></span>
+				</div>
 				<div class="content">
 					<div class="inner">
 						<h1>YOVELA DELVIN</h1>
@@ -153,10 +111,18 @@
 			</header>
 
 			<div id="main">
+
 				<article id="about">
 					<h2 class="major"><span class="lang-text en active">About</span><span class="lang-text jp">私について</span><span class="lang-text id">Tentang</span></h2>
-					<div class="lang-text en active"><p>I am a university student currently studying in Kyoto. My work explores the intersection of the physical and digital, blending traditional craftsmanship with modern media experiments.</p></div>
-					<div class="lang-text jp"><p>現在京都で学んでいる大学生です。アナログな手法とデジタル表現の交点を探求し、伝統的な職人技と現代のメディア実験を融合させた制作を行っています。</p></div>
+					<div class="lang-text en active">
+						<p>I am a university student currently studying in Kyoto. My work explores the intersection of the physical and digital, blending traditional craftsmanship with modern media experiments.</p>
+					</div>
+					<div class="lang-text jp">
+						<p>現在京都で学んでいる大学生です。アナログな手法とデジタル表現の交点を探求し、伝統的な職人技と現代のメディア実験を融合させた制作を行っています。</p>
+					</div>
+					<div class="lang-text id">
+						<p>Saya adalah seorang mahasiswa yang saat ini sedang menempuh pendidikan di Kyoto. Karya saya mengeksplorasi titik temu antara dunia fisik dan digital, memadukan kerajinan tradisional dengan eksperimen media modern.</p>
+					</div>
 				</article>
 
 				<article id="work">
@@ -170,6 +136,11 @@
 						<h3>おみくじ ZINE プロジェクト</h3>
 						<p>日本のおみくじにインスパイアされた、蛇腹折りのインタラクティブなZINEです。手描きのイラストと、指定された場所を塗りつぶすことで現れる隠しメッセージが特徴です。</p>
 					</div>
+					<div class="lang-text id">
+						<h3>Proyek ZINE "Omikuji"</h3>
+						<p>ZINE interaktif dengan lipatan akordion yang terinspirasi oleh <i>omikuji</i> Jepang. Karya ini menampilkan ilustrasi tangan dan pesan tersembunyi yang muncul dengan mewarnai ruang yang tersedia.</p>
+					</div>
+
 					<div class="box alt">
 						<div class="row gtr-uniform">
 							<div class="col-6"><span class="image fit"><img src="images/omikuji-zine-2.jpg" alt="" /></span></div>
@@ -193,9 +164,18 @@
 					<h2 class="major">Contact</h2>
 					<form action="https://formspree.io/f/xnjwzeqa" method="POST">
 						<div class="fields">
-							<div class="field half"><label>Name</label><input type="text" name="name" required /></div>
-							<div class="field half"><label>Email</label><input type="email" name="_replyto" required /></div>
-							<div class="field"><label>Message</label><textarea name="message" rows="4" required></textarea></div>
+							<div class="field half">
+								<label for="name">Name</label>
+								<input type="text" name="name" id="name" required />
+							</div>
+							<div class="field half">
+								<label for="email">Email</label>
+								<input type="email" name="_replyto" id="email" required />
+							</div>
+							<div class="field">
+								<label for="message">Message</label>
+								<textarea name="message" id="message" rows="4" required></textarea>
+							</div>
 						</div>
 						<ul class="actions">
 							<li><button type="submit" class="primary">Send Message</button></li>
@@ -204,12 +184,17 @@
 					<hr />
 					<p style="text-align: center;"><strong>yovela.delvin@gmail.com</strong></p>
 					<ul class="icons" style="justify-content: center; display: flex;">
-						<li><a href="mailto:yovela.delvin@gmail.com" class="icon solid fa-envelope"></a></li>
-						<li><a href="https://github.com/yourusername" class="icon brands fa-github"></a></li>
+						<li><a href="mailto:yovela.delvin@gmail.com" class="icon solid fa-envelope"><span class="label">Email</span></a></li>
+						<li><a href="https://github.com/yourusername" class="icon brands fa-github"><span class="label">GitHub</span></a></li>
 					</ul>
 				</article>
+
 			</div>
-			<footer id="footer"><p class="copyright">Template: <a href="https://html5up.net">HTML5 UP</a>.</p></footer>
+
+			<footer id="footer">
+				<p class="copyright">Template: <a href="https://html5up.net">HTML5 UP</a>.</p>
+			</footer>
+
 		</div>
 
 		<div id="bg"></div>
