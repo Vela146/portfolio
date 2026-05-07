@@ -1,17 +1,13 @@
 <!DOCTYPE HTML>
-<!--
-	Dimension by HTML5 UP
-	html5up.net | @ajlkn
--->
 <html>
 	<head>
-		<title>Portfolio</title>
+		<title>Yovela Portfolio</title>
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
 		<link rel="stylesheet" href="assets/css/main.css" />
 		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
 		<style>
-			/* Small Language Switcher in Top Right */
+			/* Floating Language Switcher */
 			#language-switcher {
 				position: fixed;
 				top: 20px;
@@ -30,178 +26,160 @@
 				font-size: 0.65rem;
 				letter-spacing: 1px;
 				transition: all 0.3s ease;
+				line-height: 1;
 			}
-			.lang-btn.active {
-				background: #fff;
-				color: #1b1f22;
-			}
-			/* Hide non-active language spans */
+			.lang-btn.active { background: #fff; color: #1b1f22; }
+			
+			/* Multi-language Visibility Toggle */
 			.lang-text { display: none; }
 			.lang-text.active { display: inline-block; }
+			div.lang-text.active { display: block; }
+			
+			.gallery-row { margin-top: 2rem; }
 		</style>
 	</head>
 	<body class="is-preload">
 
-		<!-- Top Right Language Switcher -->
 		<div id="language-switcher">
-			<div class="lang-btn active" onclick="changeLanguage('en')">EN</div>
-			<div class="lang-btn" onclick="changeLanguage('jp')">JP</div>
-			<div class="lang-btn" onclick="changeLanguage('id')">ID</div>
+			<button class="lang-btn active" onclick="changeLanguage('en')">EN</button>
+			<button class="lang-btn" onclick="changeLanguage('jp')">JP</button>
+			<button class="lang-btn" onclick="changeLanguage('id')">ID</button>
 		</div>
 
-		<!-- Wrapper -->
-			<div id="wrapper">
+		<div id="wrapper">
 
-				<!-- Header -->
-					<header id="header">
-						<div class="logo">
-							<span class="icon fa-gem"></span>
-						</div>
-						<div class="content">
-							<div class="inner">
-								<h1>Portfolio</h1>
-								<p>
-									<span class="lang-text en active">International Student & Creative Explorer based in Kyoto.</span>
-									<span class="lang-text jp">京都を拠点に活動する留学生・クリエイターです。</span>
-									<span class="lang-text id">Mahasiswa Internasional & Kreator berbasis di Kyoto.</span>
-								</p>
-							</div>
-						</div>
-						<nav>
-							<ul>
-								<li><a href="#intro">
-									<span class="lang-text en active">Intro</span>
-									<span class="lang-text jp">自己紹介</span>
-									<span class="lang-text id">Intro</span>
-								</a></li>
-								<li><a href="#work">
-									<span class="lang-text en active">Works</span>
-									<span class="lang-text jp">作品集</span>
-									<span class="lang-text id">Karya</span>
-								</a></li>
-								<li><a href="#about">
-									<span class="lang-text en active">About</span>
-									<span class="lang-text jp">私について</span>
-									<span class="lang-text id">Tentang</span>
-								</a></li>
-								<li><a href="#contact">
-									<span class="lang-text en active">Contact</span>
-									<span class="lang-text jp">連絡先</span>
-									<span class="lang-text id">Kontak</span>
-								</a></li>
-							</ul>
-						</nav>
-					</header>
+			<header id="header">
+				<div class="logo">
+					<span class="icon fa-gem"></span>
+				</div>
+				<div class="content">
+					<div class="inner">
+						<h1>Yovela</h1>
+						<p>
+							<span class="lang-text en active">Creative Explorer & Student based in Kyoto.</span>
+							<span class="lang-text jp">京都を拠点に活動する留学生・クリエイターです。</span>
+							<span class="lang-text id">Mahasiswa Internasional & Kreator berbasis di Kyoto.</span>
+						</p>
+					</div>
+				</div>
+				<nav>
+					<ul>
+						<li><a href="#intro"><span class="lang-text en active">Intro</span><span class="lang-text jp">自己紹介</span><span class="lang-text id">Intro</span></a></li>
+						<li><a href="#work"><span class="lang-text en active">Works</span><span class="lang-text jp">作品集</span><span class="lang-text id">Karya</span></a></li>
+						<li><a href="#about"><span class="lang-text en active">About</span><span class="lang-text jp">私について</span><span class="lang-text id">Tentang</span></a></li>
+						<li><a href="#contact"><span class="lang-text en active">Contact</span><span class="lang-text jp">連絡先</span><span class="lang-text id">Kontak</span></a></li>
+					</ul>
+				</nav>
+			</header>
 
-				<!-- Main -->
-					<div id="main">
+			<div id="main">
 
-						<!-- Intro -->
-							<article id="intro">
-								<h2 class="major">
-									<span class="lang-text en active">Intro</span>
-									<span class="lang-text jp">自己紹介</span>
-									<span class="lang-text id">Intro</span>
-								</h2>
-								<span class="image main"><img src="images/pic01.jpg" alt="" /></span>
-								
-								<div class="lang-text en active">
-									<p>Hi, I'm a university student currently studying in Kyoto. My work sits at the intersection of the physical and digital.</p>
-								</div>
-								<div class="lang-text jp">
-									<p>こんにちは、現在京都で学んでいる大学生です。私の活動は、アナログとデジタルの交差点に位置しています。</p>
-								</div>
-								<div class="lang-text id">
-									<p>Halo, saya seorang mahasiswa yang saat ini sedang menempuh pendidikan di Kyoto. Karya saya berada di titik temu antara dunia fisik dan digital.</p>
-								</div>
-							</article>
+				<article id="intro">
+					<h2 class="major"><span class="lang-text en active">Intro</span><span class="lang-text jp">自己紹介</span><span class="lang-text id">Intro</span></h2>
+					<span class="image main"><img src="images/pic01.jpg" alt="" /></span>
+					<div class="lang-text en active">
+						<p>Hi, I'm a university student currently studying in Kyoto. My work sits at the intersection of the physical and digital, ranging from tactile independent publishing to real-time creative coding projects.</p>
+					</div>
+					<div class="lang-text jp">
+						<p>こんにちは、現在京都で学んでいる大学生です。私の活動は、アナログな独立出版（ZINE）からデジタルのクリエイティブ・コーディングまで、多岐にわたります。</p>
+					</div>
+					<div class="lang-text id">
+						<p>Halo, saya seorang mahasiswa yang saat ini sedang menempuh pendidikan di Kyoto. Karya saya memadukan elemen fisik dan digital melalui desain taktil dan creative coding.</p>
+					</div>
+				</article>
 
-						<!-- Work -->
-							<article id="work">
-								<h2 class="major">
-									<span class="lang-text en active">Works</span>
-									<span class="lang-text jp">作品集</span>
-									<span class="lang-text id">Karya</span>
-								</h2>
-								<span class="image main"><img src="images/pic02.jpg" alt="" /></span>
-								
-								<div class="lang-text en active">
-									<h3>ZINE Project</h3>
-									<p>Exploring the structural design of ZINEs, specifically focusing on the <b>accordion (jyabara) fold</b>.</p>
-								</div>
-								<div class="lang-text jp">
-									<h3>ZINE プロジェクト</h3>
-									<p><b>蛇腹折り（accordion fold）</b>に注目し、ZINEの構造デザインを追求しています。</p>
-								</div>
-								<div class="lang-text id">
-									<h3>Proyek ZINE</h3>
-									<p>Mengeksplorasi desain struktural ZINE, khususnya berfokus pada <b>lipatan akordion (jyabara fold)</b>.</p>
-								</div>
-							</article>
+				<article id="work">
+					<h2 class="major"><span class="lang-text en active">Works</span><span class="lang-text jp">作品集</span><span class="lang-text id">Karya</span></h2>
+					
+					<span class="image main"><img src="images/omikuji-zine-1.jpg" alt="Omikuji Zine Cover" /></span>
 
-						<!-- About -->
-							<article id="about">
-								<h2 class="major">
-									<span class="lang-text en active">About</span>
-									<span class="lang-text jp">私について</span>
-									<span class="lang-text id">Tentang</span>
-								</h2>
-								<div class="lang-text en active">
-									<p>Living in Kyoto has deeply influenced my creative process and how I view traditional craftsmanship.</p>
-								</div>
-								<div class="lang-text jp">
-									<p>京都での生活は、私のクリエイティブなプロセスに大きな影響を与えており、伝統的な技術に魅力を感じています。</p>
-								</div>
-								<div class="lang-text id">
-									<p>Tinggal di Kyoto telah sangat mempengaruhi proses kreatif saya.</p>
-								</div>
-							</article>
-
-						<!-- Contact -->
-							<article id="contact">
-								<h2 class="major">Contact</h2>
-								<ul class="icons">
-									<li><a href="#" class="icon brands fa-instagram"><span class="label">Instagram</span></a></li>
-									<li><a href="#" class="icon brands fa-github"><span class="label">GitHub</span></a></li>
-								</ul>
-							</article>
-
+					<div class="lang-text en active">
+						<h3>Omikuji Zine Project</h3>
+						<p>An interactive accordion-fold (jyabara) ZINE inspired by Japanese "Omikuji." This piece features hand-drawn illustrations and hidden messages revealed through tactile rubbing techniques.</p>
+					</div>
+					<div class="lang-text jp">
+						<h3>おみくじ ZINE プロジェクト</h3>
+						<p>日本のおみくじにインスパイアされた、蛇腹折りのインタラクティブな作品です。手描きのイラストと、こすり出し技法によって現れるメッセージが特徴です。</p>
+					</div>
+					<div class="lang-text id">
+						<h3>Proyek ZINE Omikuji</h3>
+						<p>ZINE interaktif dengan lipatan akordion (jyabara) yang terinspirasi oleh "Omikuji" Jepang. Karya ini menampilkan ilustrasi tangan dan pesan tersembunyi yang muncul melalui teknik gosok.</p>
 					</div>
 
-				<!-- Footer -->
-					<footer id="footer">
-						<p class="copyright">&copy; 2026. Design: <a href="https://html5up.net">HTML5 UP</a>.</p>
-					</footer>
+					<div class="box alt gallery-row">
+						<div class="row gtr-uniform">
+							<div class="col-6"><span class="image fit"><img src="images/omikuji-zine-2.jpg" alt="" /></span></div>
+							<div class="col-6"><span class="image fit"><img src="images/omikuji-zine-3.jpg" alt="" /></span></div>
+							
+							<div class="col-12"><span class="image fit"><img src="images/omikuji-zine-5.jpg" alt="Zine spread" /></span></div>
+							<div class="col-12"><span class="image fit"><img src="images/omikuji-zine-6.jpg" alt="Zine spread back" /></span></div>
+							
+							<div class="col-4"><span class="image fit"><img src="images/omikuji-zine-4.jpg" alt="" /></span></div>
+							<div class="col-8"><span class="image fit"><img src="images/omikuji-zine-10.jpg" alt="" /></span></div>
+							
+							<div class="col-4"><span class="image fit"><img src="images/omikuji-zine-7.jpg" alt="" /></span></div>
+							<div class="col-4"><span class="image fit"><img src="images/omikuji-zine-8.jpg" alt="" /></span></div>
+							<div class="col-4"><span class="image fit"><img src="images/omikuji-zine-9.jpg" alt="" /></span></div>
+
+							<div class="col-6"><span class="image fit"><img src="images/omikuji-zine-11.jpg" alt="" /></span></div>
+							<div class="col-6"><span class="image fit"><img src="images/omikuji-zine-12.jpg" alt="" /></span></div>
+							<div class="col-6"><span class="image fit"><img src="images/omikuji-zine-14.jpg" alt="" /></span></div>
+							
+							<div class="col-6"><span class="image fit"><img src="images/omikuji-zine-13.jpg" alt="Back cover" /></span></div>
+						</div>
+					</div>
+				</article>
+
+				<article id="about">
+					<h2 class="major"><span class="lang-text en active">About</span><span class="lang-text jp">私について</span><span class="lang-text id">Tentang</span></h2>
+					<div class="lang-text en active">
+						<p>Studying in Kyoto has deeply influenced my creative process, blending traditional craftsmanship with modern media experiments.</p>
+					</div>
+					<div class="lang-text jp">
+						<p>京都での留学生活は、伝統的な職人技と現代のメディアを融合させる私の制作プロセスに大きな影響を与えています。</p>
+					</div>
+					<div class="lang-text id">
+						<p>Belajar di Kyoto telah mempengaruhi cara saya menggabungkan kerajinan tradisional dengan eksperimen media modern.</p>
+					</div>
+				</article>
+
+				<article id="contact">
+					<h2 class="major">Contact</h2>
+					<ul class="icons">
+						<li><a href="#" class="icon brands fa-instagram"><span class="label">Instagram</span></a></li>
+						<li><a href="#" class="icon brands fa-github"><span class="label">GitHub</span></a></li>
+					</ul>
+				</article>
 
 			</div>
 
-		<!-- BG -->
-			<div id="bg"></div>
+			<footer id="footer">
+				<p class="copyright">&copy; Yovela. Design: <a href="https://html5up.net">HTML5 UP</a>.</p>
+			</footer>
 
-		<!-- Scripts -->
-			<script src="assets/js/jquery.min.js"></script>
-			<script src="assets/js/browser.min.js"></script>
-			<script src="assets/js/breakpoints.min.js"></script>
-			<script src="assets/js/util.js"></script>
-			<script src="assets/js/main.js"></script>
+		</div>
 
-			<script>
-				function changeLanguage(lang) {
-					// 1. Update button styling
-					document.querySelectorAll('.lang-btn').forEach(btn => {
-						btn.classList.remove('active');
-						if(btn.innerText.toLowerCase() === lang) btn.classList.add('active');
-					});
+		<div id="bg"></div>
 
-					// 2. Switch all text elements
-					document.querySelectorAll('.lang-text').forEach(el => {
-						el.classList.remove('active');
-						if (el.classList.contains(lang)) {
-							el.classList.add('active');
-						}
-					});
-				}
-			</script>
+		<script src="assets/js/jquery.min.js"></script>
+		<script src="assets/js/browser.min.js"></script>
+		<script src="assets/js/breakpoints.min.js"></script>
+		<script src="assets/js/util.js"></script>
+		<script src="assets/js/main.js"></script>
+		<script>
+			function changeLanguage(lang) {
+				// Update buttons
+				document.querySelectorAll('.lang-btn').forEach(btn => {
+					btn.classList.remove('active');
+					if(btn.innerText.toLowerCase() === lang) btn.classList.add('active');
+				});
+				// Update text spans
+				document.querySelectorAll('.lang-text').forEach(el => {
+					el.classList.remove('active');
+					if (el.classList.contains(lang)) el.classList.add('active');
+				});
+			}
+		</script>
 
 	</body>
 </html>
