@@ -28,30 +28,23 @@
 				transition: all 0.3s ease;
 			}
 			.lang-btn.active { background: #fff; color: #1b1f22; }
-			
-			/* This ensures the name and text toggle correctly */
 			.lang-text { display: none !important; }
 			.lang-text.active { display: inline-block !important; }
 			div.lang-text.active { display: block !important; }
-			h1.lang-text.active { display: block !important; }
 
-			/* --- THE ULTIMATE BRIGHTNESS FIX --- */
-			/* Added higher saturation and brightness to make the ZINE pop */
-			.image.main img, .image.fit img {
+			/* --- THE NAME FIX --- */
+			#dynamic-name:after { content: 'YOVELA DELVIN'; }
+			body.lang-jp #dynamic-name:after { content: 'ヨベラ　デルビン'; }
+
+			/* --- THE IMAGE CALIBRATION --- */
+			/* Lowered contrast to 0.95 for a softer, more natural look */
+			article#work .image img {
 				opacity: 1 !important;
-				filter: brightness(1.4) contrast(1.05) saturate(1.1) !important;
-				-webkit-filter: brightness(1.4) contrast(1.05) !important;
+				filter: brightness(1.4) contrast(0.95) !important;
+				-webkit-filter: brightness(1.4) contrast(0.95) !important;
 			}
-
-			/* Kills the dark overlay once and for all */
-			.image.main:before, .image.fit:before {
-				display: none !important;
-			}
-
-			.image.main, .image.fit {
-				background: transparent !important;
-			}
-
+			.image.main:before, .image.fit:before { display: none !important; }
+			.image.main, .image.fit { background: transparent !important; }
 			.gallery-row { margin-top: 2rem; }
 		</style>
 	</head>
@@ -71,10 +64,7 @@
 				</div>
 				<div class="content">
 					<div class="inner">
-						<h1 class="lang-text en active">YOVELA DELVIN</h1>
-						<h1 class="lang-text jp">ヨベラ　デルビン</h1>
-						<h1 class="lang-text id">YOVELA DELVIN</h1>
-						
+						<h1 id="dynamic-name"></h1>
 						<p>
 							<span class="lang-text en active">Creative Explorer & Student based in Kyoto.</span>
 							<span class="lang-text jp">京都を拠点に活動する留学生・クリエイターです。</span>
@@ -97,15 +87,9 @@
 				<article id="intro">
 					<h2 class="major"><span class="lang-text en active">Intro</span><span class="lang-text jp">自己紹介</span><span class="lang-text id">Intro</span></h2>
 					<span class="image main"><img src="images/pic01.jpg" alt="" /></span>
-					<div class="lang-text en active">
-						<p>Hi, I'm a university student currently studying in Kyoto. My work sits at the intersection of the physical and digital.</p>
-					</div>
-					<div class="lang-text jp">
-						<p>こんにちは、現在京都で学んでいる大学生です。アナログとデジタルの交差点で制作活動を行っています。</p>
-					</div>
-					<div class="lang-text id">
-						<p>Halo, saya seorang mahasiswa yang saat ini sedang menempuh pendidikan di Kyoto. Karya saya berada di titik temu antara dunia fisik dan digital.</p>
-					</div>
+					<div class="lang-text en active"><p>Hi, I'm a university student currently studying in Kyoto. My work sits at the intersection of the physical and digital.</p></div>
+					<div class="lang-text jp"><p>こんにちは、現在京都で学んでいる大学生です。アナログとデジタルの交差点で制作活動を行っています。</p></div>
+					<div class="lang-text id"><p>Halo, saya seorang mahasiswa yang saat ini sedang menempuh pendidikan di Kyoto. Karya saya berada di titik temu antara dunia fisik dan digital.</p></div>
 				</article>
 
 				<article id="work">
@@ -128,8 +112,8 @@
 						<div class="row gtr-uniform">
 							<div class="col-6"><span class="image fit"><img src="images/omikuji-zine-2.jpg" alt="" /></span></div>
 							<div class="col-6"><span class="image fit"><img src="images/omikuji-zine-3.jpg" alt="" /></span></div>
-							<div class="col-12"><span class="image fit"><img src="images/omikuji-zine-5.jpg" alt="Zine spread" /></span></div>
-							<div class="col-12"><span class="image fit"><img src="images/omikuji-zine-6.jpg" alt="Zine spread back" /></span></div>
+							<div class="col-12"><span class="image fit"><img src="images/omikuji-zine-5.jpg" alt="" /></span></div>
+							<div class="col-12"><span class="image fit"><img src="images/omikuji-zine-6.jpg" alt="" /></span></div>
 							<div class="col-4"><span class="image fit"><img src="images/omikuji-zine-4.jpg" alt="" /></span></div>
 							<div class="col-8"><span class="image fit"><img src="images/omikuji-zine-10.jpg" alt="" /></span></div>
 							<div class="col-4"><span class="image fit"><img src="images/omikuji-zine-7.jpg" alt="" /></span></div>
@@ -138,21 +122,8 @@
 							<div class="col-6"><span class="image fit"><img src="images/omikuji-zine-11.jpg" alt="" /></span></div>
 							<div class="col-6"><span class="image fit"><img src="images/omikuji-zine-12.jpg" alt="" /></span></div>
 							<div class="col-6"><span class="image fit"><img src="images/omikuji-zine-14.jpg" alt="" /></span></div>
-							<div class="col-6"><span class="image fit"><img src="images/omikuji-zine-13.jpg" alt="Back cover" /></span></div>
+							<div class="col-6"><span class="image fit"><img src="images/omikuji-zine-13.jpg" alt="" /></span></div>
 						</div>
-					</div>
-				</article>
-
-				<article id="about">
-					<h2 class="major"><span class="lang-text en active">About</span><span class="lang-text jp">私について</span><span class="lang-text id">Tentang</span></h2>
-					<div class="lang-text en active">
-						<p>Studying in Kyoto has deeply influenced my creative process, blending traditional craftsmanship with modern media experiments.</p>
-					</div>
-					<div class="lang-text jp">
-						<p>京都での生活は、私の制作プロセスに大きな影響を与えており、伝統工芸と現代メディアの融合を追求しています。</p>
-					</div>
-					<div class="lang-text id">
-						<p>Tinggal di Kyoto telah sangat mempengaruhi proses kreatif saya, terutama perpaduan antara kerajinan tradisional dan teknologi modern.</p>
 					</div>
 				</article>
 
@@ -181,13 +152,17 @@
 		<script src="assets/js/main.js"></script>
 		<script>
 			function changeLanguage(lang) {
-				// Update button classes
+				// Update buttons
 				document.querySelectorAll('.lang-btn').forEach(btn => {
 					btn.classList.remove('active');
 					if(btn.innerText.toLowerCase() === lang) btn.classList.add('active');
 				});
 				
-				// Update all language tags (including the three <h1> tags)
+				// Body class for the Name Fix
+				if(lang === 'jp') document.body.classList.add('lang-jp');
+				else document.body.classList.remove('lang-jp');
+
+				// Toggle visibility
 				document.querySelectorAll('.lang-text').forEach(el => {
 					el.classList.remove('active');
 					if (el.classList.contains(lang)) el.classList.add('active');
