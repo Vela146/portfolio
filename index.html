@@ -32,23 +32,23 @@
 			.lang-text.active { display: inline-block !important; }
 			div.lang-text.active { display: block !important; }
 
-			/* --- THE NAME FIX --- */
+			/* --- THE NAME FIX (CSS Injection to bypass JS) --- */
 			#dynamic-name:after { content: 'YOVELA DELVIN'; }
 			body.lang-jp #dynamic-name:after { content: 'ヨベラ　デルビン'; }
 
 			/* --- THE IMAGE CALIBRATION --- */
-			/* Brightness at 1.2, Contrast at 0.95 */
+			/* Brightness adjusted to 1.15 and contrast softened to 0.95 */
 			article#work .image img {
 				opacity: 1 !important;
-				filter: brightness(1.2) contrast(0.95) !important;
-				-webkit-filter: brightness(1.2) contrast(0.95) !important;
+				filter: brightness(1.15) contrast(0.95) !important;
+				-webkit-filter: brightness(1.15) contrast(0.95) !important;
 			}
 			.image.main:before, .image.fit:before { display: none !important; }
 			.image.main, .image.fit { background: transparent !important; }
 
 			/* --- FORCE HIDE INTRO --- */
-			/* This ensures the Intro button never shows up in the menu */
-			nav ul li a[href="#intro"] {
+			/* This targets the first <li> in the navigation menu specifically */
+			nav ul li:first-child {
 				display: none !important;
 			}
 
@@ -81,6 +81,7 @@
 				</div>
 				<nav>
 					<ul>
+						<li><a href="#intro">Intro</a></li>
 						<li><a href="#work"><span class="lang-text en active">Works</span><span class="lang-text jp">作品集</span><span class="lang-text id">Karya</span></a></li>
 						<li><a href="#about"><span class="lang-text en active">About</span><span class="lang-text jp">私について</span><span class="lang-text id">Tentang</span></a></li>
 						<li><a href="#contact"><span class="lang-text en active">Contact</span><span class="lang-text jp">連絡先</span><span class="lang-text id">Kontak</span></a></li>
@@ -110,8 +111,8 @@
 						<div class="row gtr-uniform">
 							<div class="col-6"><span class="image fit"><img src="images/omikuji-zine-2.jpg" alt="" /></span></div>
 							<div class="col-6"><span class="image fit"><img src="images/omikuji-zine-3.jpg" alt="" /></span></div>
-							<div class="col-12"><span class="image fit"><img src="images/omikuji-zine-5.jpg" alt="" /></span></div>
-							<div class="col-12"><span class="image fit"><img src="images/omikuji-zine-6.jpg" alt="" /></span></div>
+							<div class="col-12"><span class="image fit"><img src="images/omikuji-zine-5.jpg" alt="Zine spread" /></span></div>
+							<div class="col-12"><span class="image fit"><img src="images/omikuji-zine-6.jpg" alt="Zine spread back" /></span></div>
 							<div class="col-4"><span class="image fit"><img src="images/omikuji-zine-4.jpg" alt="" /></span></div>
 							<div class="col-8"><span class="image fit"><img src="images/omikuji-zine-10.jpg" alt="" /></span></div>
 							<div class="col-4"><span class="image fit"><img src="images/omikuji-zine-7.jpg" alt="" /></span></div>
@@ -120,7 +121,7 @@
 							<div class="col-6"><span class="image fit"><img src="images/omikuji-zine-11.jpg" alt="" /></span></div>
 							<div class="col-6"><span class="image fit"><img src="images/omikuji-zine-12.jpg" alt="" /></span></div>
 							<div class="col-6"><span class="image fit"><img src="images/omikuji-zine-14.jpg" alt="" /></span></div>
-							<div class="col-6"><span class="image fit"><img src="images/omikuji-zine-13.jpg" alt="" /></span></div>
+							<div class="col-6"><span class="image fit"><img src="images/omikuji-zine-13.jpg" alt="Back cover" /></span></div>
 						</div>
 					</div>
 				</article>
@@ -163,14 +164,17 @@
 		<script src="assets/js/main.js"></script>
 		<script>
 			function changeLanguage(lang) {
+				// Update buttons
 				document.querySelectorAll('.lang-btn').forEach(btn => {
 					btn.classList.remove('active');
 					if(btn.innerText.toLowerCase() === lang) btn.classList.add('active');
 				});
 				
+				// Apply body class for Name Fix
 				if(lang === 'jp') document.body.classList.add('lang-jp');
 				else document.body.classList.remove('lang-jp');
 
+				// Toggle text visibility
 				document.querySelectorAll('.lang-text').forEach(el => {
 					el.classList.remove('active');
 					if (el.classList.contains(lang)) el.classList.add('active');
