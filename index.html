@@ -1,7 +1,7 @@
 <!DOCTYPE HTML>
 <html>
 	<head>
-		<title>YOVELA DELVIN Portfolio</title>
+		<title>YOVELA DELVIN</title>
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
 		<link rel="stylesheet" href="assets/css/main.css" />
@@ -26,26 +26,29 @@
 				font-size: 0.65rem;
 				letter-spacing: 1px;
 				transition: all 0.3s ease;
-				line-height: 1;
 			}
 			.lang-btn.active { background: #fff; color: #1b1f22; }
 			.lang-text { display: none; }
 			.lang-text.active { display: inline-block; }
 			div.lang-text.active { display: block; }
 			
-			/* --- IMAGE CALIBRATION --- */
+			/* --- THE NUCLEAR CONTRAST/BRIGHTNESS FIX --- */
+			/* This forces the images to be bright regardless of template settings */
 			.image.main img, .image.fit img {
 				opacity: 1 !important;
-				filter: brightness(1.25) contrast(1.02) !important;
-				transition: none !important;
+				filter: brightness(1.3) contrast(1.0) saturate(1.1) !important;
+				-webkit-filter: brightness(1.3) contrast(1.0) !important;
 			}
+
+			/* This removes the "Shadow Box" effect that dims images in Dimension */
 			.image.main:before, .image.fit:before {
 				display: none !important;
 			}
+
 			.image.main, .image.fit {
 				background-color: transparent !important;
-				border: none !important;
 			}
+
 			.gallery-row { margin-top: 2rem; }
 		</style>
 	</head>
@@ -65,11 +68,7 @@
 				</div>
 				<div class="content">
 					<div class="inner">
-						<h1>
-							<span class="lang-text en active">YOVELA DELVIN</span>
-							<span class="lang-text jp">ヨベラ　デルビン</span>
-							<span class="lang-text id">YOVELA DELVIN</span>
-						</h1>
+						<h1 id="main-name">YOVELA DELVIN</h1>
 						<p>
 							<span class="lang-text en active">Creative Explorer & Student based in Kyoto.</span>
 							<span class="lang-text jp">京都を拠点に活動する留学生・クリエイターです。</span>
@@ -93,13 +92,13 @@
 					<h2 class="major"><span class="lang-text en active">Intro</span><span class="lang-text jp">自己紹介</span><span class="lang-text id">Intro</span></h2>
 					<span class="image main"><img src="images/pic01.jpg" alt="" /></span>
 					<div class="lang-text en active">
-						<p>Hi, I'm a university student currently studying in Kyoto. My work sits at the intersection of the physical and digital, ranging from tactile independent publishing to real-time creative coding projects.</p>
+						<p>Hi, I'm a university student currently studying in Kyoto. My work sits at the intersection of the physical and digital.</p>
 					</div>
 					<div class="lang-text jp">
-						<p>こんにちは、現在京都で学んでいる大学生です。私の活動は、アナログな独立出版（ZINE）からデジタルのクリエイティブ・コーディングまで、フィジカルとデジタルの交差点に位置しています。</p>
+						<p>こんにちは、現在京都で学んでいる大学生です。アナログとデジタルの交差点で制作活動を行っています。</p>
 					</div>
 					<div class="lang-text id">
-						<p>Halo, saya seorang mahasiswa yang saat ini sedang menempuh pendidikan di Kyoto. Karya saya berada di titik temu antara dunia fisik dan digital, mulai dari penerbitan independen yang taktil hingga proyek creative coding real-time.</p>
+						<p>Halo, saya seorang mahasiswa yang saat ini sedang menempuh pendidikan di Kyoto. Karya saya berada di titik temu antara dunia fisik dan digital.</p>
 					</div>
 				</article>
 
@@ -144,10 +143,10 @@
 						<p>Studying in Kyoto has deeply influenced my creative process, blending traditional craftsmanship with modern media experiments.</p>
 					</div>
 					<div class="lang-text jp">
-						<p>京都での生活は、私のクリエイティブなプロセスに大きな影響を与えており、伝統的な職人技と現代のテクノロジーの融合に魅力を感じています。</p>
+						<p>京都での生活は、私の制作プロセスに大きな影響を与えており、伝統工芸と現代メディアの融合を追求しています。</p>
 					</div>
 					<div class="lang-text id">
-						<p>Tinggal di Kyoto telah sangat mempengaruhi proses kreatif saya, terutama dalam cara saya memandang perpaduan antara kerajinan tradisional dan teknologi modern.</p>
+						<p>Tinggal di Kyoto telah sangat mempengaruhi proses kreatif saya, terutama perpaduan antara kerajinan tradisional dan teknologi modern.</p>
 					</div>
 				</article>
 
@@ -162,7 +161,7 @@
 			</div>
 
 			<footer id="footer">
-				<p class="copyright">&copy; YOVELA DELVIN. Design: <a href="https://html5up.net">HTML5 UP</a>.</p>
+				<p class="copyright">Design: <a href="https://html5up.net">HTML5 UP</a>.</p>
 			</footer>
 
 		</div>
@@ -176,10 +175,21 @@
 		<script src="assets/js/main.js"></script>
 		<script>
 			function changeLanguage(lang) {
+				// Update buttons
 				document.querySelectorAll('.lang-btn').forEach(btn => {
 					btn.classList.remove('active');
 					if(btn.innerText.toLowerCase() === lang) btn.classList.add('active');
 				});
+				
+				// Change Name based on language
+				const nameHeader = document.getElementById('main-name');
+				if (lang === 'jp') {
+					nameHeader.innerText = 'ヨベラ　デルビン';
+				} else {
+					nameHeader.innerText = 'YOVELA DELVIN';
+				}
+
+				// Toggle description texts
 				document.querySelectorAll('.lang-text').forEach(el => {
 					el.classList.remove('active');
 					if (el.classList.contains(lang)) el.classList.add('active');
