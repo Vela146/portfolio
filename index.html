@@ -59,48 +59,48 @@
 			.image.main:before, .image.fit:before { display: none !important; }
 			.image.main, .image.fit { background: transparent !important; }
 
-			/* --- THE ULTIMATE NAVIGATION FIX --- */
-			nav ul {
-				display: flex !important;
-				justify-content: center !important;
-				padding: 0 !important;
-				margin: 0 auto !important;
-				border: 1px solid #ffffff !important;
-				border-radius: 4px !important;
-				width: fit-content !important; /* Shrinks the box to only fit visible items */
-				max-width: 100%;
-			}
+			/* --- NAVIGATION ALIGNMENT FIX --- */
+			/* 1. Remove the vertical line that points to the menu (it's often off-center) */
+			nav:before { display: none !important; }
 
-			/* Hide Intro and remove its space entirely */
+			/* 2. Hide the first button (Intro) */
 			nav ul li:first-child {
 				display: none !important;
 			}
 
-			nav ul li {
-				border: none !important;
+			/* 3. Rebuild the nav container as a flex-row */
+			nav ul {
+				display: flex !important;
+				justify-content: center !important;
+				width: 100% !important;
+				max-width: 400px !important; /* Limits width to keep buttons sized correctly */
+				margin: 0 auto !important;
 				padding: 0 !important;
-				margin: 0 !important;
-				flex: 1 1 auto;
-				min-width: 8rem; /* Keeps buttons a decent size */
+				border: 1px solid #ffffff !important;
+				border-radius: 4px !important;
 			}
 
-			/* Add dividers back between the 3 visible buttons */
+			/* 4. Reset each list item */
+			nav ul li {
+				flex: 1 1 0 !important; /* Forces all buttons to be exactly the same size */
+				padding: 0 !important;
+				margin: 0 !important;
+				border: none !important;
+			}
+
+			/* 5. Add internal dividers ONLY between the remaining 3 items */
 			nav ul li + li {
 				border-left: 1px solid #ffffff !important;
 			}
 
+			/* 6. Clean up the link borders */
 			nav ul li a {
-				border-bottom: 0 !important;
+				border: 0 !important;
 				display: block !important;
 				width: 100% !important;
-				padding: 0 1.5rem !important;
 				text-align: center !important;
-			}
-
-			/* Keep the vertical guide line centered over the new 3-button menu */
-			nav {
-				display: flex;
-				justify-content: center;
+				line-height: 2.5rem !important;
+				height: 2.5rem !important;
 			}
 
 			.gallery-row { margin-top: 2rem; }
