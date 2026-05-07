@@ -25,55 +25,15 @@
 				cursor: pointer;
 				font-size: 0.65rem;
 				letter-spacing: 1px;
-				transition: all 0.3s ease;
 			}
 			.lang-btn.active { background: #fff; color: #1b1f22; }
 			.lang-text { display: none !important; }
 			.lang-text.active { display: inline-block !important; }
 
-			/* --- 2. RESTORING THE LINES & CENTERING --- */
-			header#header .content .inner {
-				text-align: center !important;
-				display: block !important;
-			}
-
-			/* Centering the H1 and P within the original lines */
-			header#header h1 {
-				width: 100% !important;
-				text-align: center !important;
-				margin-bottom: 0.5rem !important;
-			}
-
-			header#header p {
-				width: 100% !important;
-				text-align: center !important;
-			}
-
-			/* --- 3. ANIMATION SPEED --- */
-			#header, #main article, #main, .content {
-				transition: all 1.0s ease-in-out !important;
-			}
-
-			/* --- 4. NAVIGATION GRID (Restoring vertical lines) --- */
-			header#header nav ul {
-				display: grid !important;
-				grid-template-columns: 1fr 1fr 1fr !important;
-				list-style: none !important;
-				margin: 0 !important;
-				padding: 0 !important;
-			}
-			header#header nav ul li {
-				padding: 0 !important;
-				border-left: solid 1px #ffffff !important;
-			}
-			header#header nav ul li:first-child {
-				border-left: 0 !important;
-			}
-
-			/* --- 5. IMAGE CALIBRATION --- */
-			article#work .image img { 
-				opacity: 1 !important; 
-				filter: brightness(1.15) contrast(0.95) !important; 
+			/* --- 2. IMAGE BRIGHTNESS CALIBRATION --- */
+			article#work .image img {
+				opacity: 1 !important;
+				filter: brightness(1.1) contrast(0.9) !important;
 			}
 		</style>
 	</head>
