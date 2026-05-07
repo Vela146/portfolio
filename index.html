@@ -7,7 +7,7 @@
 		<link rel="stylesheet" href="assets/css/main.css" />
 		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
 		<style>
-			/* --- LANGUAGE SWITCHER UI --- */
+			/* --- LANGUAGE SWITCHER --- */
 			#language-switcher {
 				position: fixed;
 				top: 20px;
@@ -29,29 +29,27 @@
 				line-height: 1;
 			}
 			.lang-btn.active { background: #fff; color: #1b1f22; }
-			
 			.lang-text { display: none; }
 			.lang-text.active { display: inline-block; }
 			div.lang-text.active { display: block; }
 			
-			/* --- THE IMAGE COLOR/BRIGHTNESS FIX --- */
-			/* This overrides the template's dark filters to show your true ZINE colors */
+			/* --- THE BRIGHTNESS & COLOR BOOST --- */
 			.image.main img, .image.fit img {
-				filter: none !important;
 				opacity: 1 !important;
+				/* Boosts brightness by 10% and adds a tiny bit of contrast */
+				filter: brightness(1.1) contrast(1.05) !important;
 				transition: none !important;
 			}
 
-			/* Removes the pseudo-element overlay that dims the "Hero" images */
+			/* Completely removes the dark "curtain" overlay */
 			.image.main:before, .image.fit:before {
 				display: none !important;
 			}
 
-			/* Ensures the background of the image container doesn't bleed through */
+			/* Ensures the container doesn't darken the image edges */
 			.image.main, .image.fit {
 				background-color: transparent !important;
-				border-radius: 4px;
-				overflow: hidden;
+				border: none !important;
 			}
 
 			.gallery-row { margin-top: 2rem; }
