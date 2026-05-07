@@ -32,12 +32,26 @@
 			.lang-text.active { display: inline-block !important; }
 			div.lang-text.active { display: block !important; }
 
-			/* --- THE NAME FIX (CSS Injection to bypass JS) --- */
-			#dynamic-name:after { content: 'YOVELA DELVIN'; }
-			body.lang-jp #dynamic-name:after { content: 'ヨベラ　デルビン'; }
+			/* --- THE NAME FORCE-FIX --- */
+			/* We target the h1 inside the header specifically and replace its content via CSS */
+			header#header .inner h1 {
+				visibility: hidden;
+				position: relative;
+			}
+			header#header .inner h1:after {
+				visibility: visible;
+				position: absolute;
+				left: 0;
+				top: 0;
+				width: 100%;
+				content: 'YOVELA DELVIN';
+				text-transform: uppercase;
+			}
+			body.lang-jp header#header .inner h1:after {
+				content: 'ヨベラ　デルビン';
+			}
 
 			/* --- THE IMAGE CALIBRATION --- */
-			/* Brightness adjusted to 1.15 and contrast softened to 0.95 */
 			article#work .image img {
 				opacity: 1 !important;
 				filter: brightness(1.15) contrast(0.95) !important;
@@ -46,8 +60,12 @@
 			.image.main:before, .image.fit:before { display: none !important; }
 			.image.main, .image.fit { background: transparent !important; }
 
-			/* --- FORCE HIDE INTRO --- */
-			/* This targets the first <li> in the navigation menu specifically */
+			/* --- THE INTRO HIDER --- */
+			/* We target the nav item by its 'href' attribute to be 100% sure */
+			nav ul li a[href="#intro"] {
+				display: none !important;
+			}
+			/* Also target the first child as a backup */
 			nav ul li:first-child {
 				display: none !important;
 			}
@@ -71,7 +89,7 @@
 				</div>
 				<div class="content">
 					<div class="inner">
-						<h1 id="dynamic-name"></h1>
+						<h1>YOVELA DELVIN</h1>
 						<p>
 							<span class="lang-text en active">Creative Explorer & Student based in Kyoto.</span>
 							<span class="lang-text jp">京都を拠点に活動する留学生・クリエイターです。</span>
@@ -111,8 +129,8 @@
 						<div class="row gtr-uniform">
 							<div class="col-6"><span class="image fit"><img src="images/omikuji-zine-2.jpg" alt="" /></span></div>
 							<div class="col-6"><span class="image fit"><img src="images/omikuji-zine-3.jpg" alt="" /></span></div>
-							<div class="col-12"><span class="image fit"><img src="images/omikuji-zine-5.jpg" alt="Zine spread" /></span></div>
-							<div class="col-12"><span class="image fit"><img src="images/omikuji-zine-6.jpg" alt="Zine spread back" /></span></div>
+							<div class="col-12"><span class="image fit"><img src="images/omikuji-zine-5.jpg" alt="" /></span></div>
+							<div class="col-12"><span class="image fit"><img src="images/omikuji-zine-6.jpg" alt="" /></span></div>
 							<div class="col-4"><span class="image fit"><img src="images/omikuji-zine-4.jpg" alt="" /></span></div>
 							<div class="col-8"><span class="image fit"><img src="images/omikuji-zine-10.jpg" alt="" /></span></div>
 							<div class="col-4"><span class="image fit"><img src="images/omikuji-zine-7.jpg" alt="" /></span></div>
@@ -121,7 +139,7 @@
 							<div class="col-6"><span class="image fit"><img src="images/omikuji-zine-11.jpg" alt="" /></span></div>
 							<div class="col-6"><span class="image fit"><img src="images/omikuji-zine-12.jpg" alt="" /></span></div>
 							<div class="col-6"><span class="image fit"><img src="images/omikuji-zine-14.jpg" alt="" /></span></div>
-							<div class="col-6"><span class="image fit"><img src="images/omikuji-zine-13.jpg" alt="Back cover" /></span></div>
+							<div class="col-6"><span class="image fit"><img src="images/omikuji-zine-13.jpg" alt="" /></span></div>
 						</div>
 					</div>
 				</article>
@@ -164,17 +182,14 @@
 		<script src="assets/js/main.js"></script>
 		<script>
 			function changeLanguage(lang) {
-				// Update buttons
 				document.querySelectorAll('.lang-btn').forEach(btn => {
 					btn.classList.remove('active');
 					if(btn.innerText.toLowerCase() === lang) btn.classList.add('active');
 				});
 				
-				// Apply body class for Name Fix
 				if(lang === 'jp') document.body.classList.add('lang-jp');
 				else document.body.classList.remove('lang-jp');
 
-				// Toggle text visibility
 				document.querySelectorAll('.lang-text').forEach(el => {
 					el.classList.remove('active');
 					if (el.classList.contains(lang)) el.classList.add('active');
