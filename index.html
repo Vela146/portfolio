@@ -59,7 +59,7 @@
 			.image.main:before, .image.fit:before { display: none !important; }
 			.image.main, .image.fit { background: transparent !important; }
 
-			/* --- NAVIGATION LAYOUT --- */
+			/* --- THE NAVIGATION GRID FIX --- */
 			nav:before, nav:after, nav ul:before, nav ul:after {
 				display: none !important;
 			}
@@ -67,22 +67,25 @@
 			nav {
 				margin: 2rem auto 0 auto !important;
 				max-width: 450px !important;
+				width: 100% !important;
 			}
 
 			nav ul {
-				display: flex !important;
+				display: grid !important;
+				grid-template-columns: repeat(3, 1fr) !important;
 				border: 1px solid #ffffff !important;
 				border-radius: 4px !important;
 				padding: 0 !important;
 				margin: 0 !important;
 				overflow: hidden !important;
+				list-style: none !important;
 			}
 
 			nav ul li {
-				flex: 1 !important;
 				border: none !important;
 				padding: 0 !important;
 				margin: 0 !important;
+				width: 100% !important;
 			}
 
 			nav ul li + li {
@@ -97,6 +100,7 @@
 				border: 0 !important;
 				text-align: center !important;
 				letter-spacing: 0.1rem !important;
+				padding: 0 !important;
 			}
 
 			.gallery-row { margin-top: 2rem; }
@@ -196,7 +200,7 @@
 			</div>
 
 			<footer id="footer">
-				<p class="copyright">Design: <a href="https://html5up.net">HTML5 UP</a>.</p>
+				<p class="copyright">Template: <a href="https://html5up.net">HTML5 UP</a>.</p>
 			</footer>
 
 		</div>
@@ -208,7 +212,7 @@
 		<script src="assets/js/breakpoints.min.js"></script>
 		<script src="assets/js/util.js"></script>
 		<script src="assets/js/main.js"></script>
-		<script>
+		<script script>
 			function changeLanguage(lang) {
 				document.querySelectorAll('.lang-btn').forEach(btn => {
 					btn.classList.remove('active');
