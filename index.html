@@ -30,18 +30,18 @@
 			.lang-text { display: none !important; }
 			.lang-text.active { display: inline-block !important; }
 
-			/* --- 2. THE SLOW ANIMATION OVERRIDE --- */
-			/* We set a very long duration here to ensure the "fade" feels cinematic */
+			/* --- 2. SMOOTH ANIMATION --- */
 			#header, #main, article, .content, .inner, #bg {
-				transition: all 1.8s cubic-bezier(0.4, 0, 0.2, 1) !important;
-				transition-delay: 0s !important;
+				transition: all 1.2s ease-in-out !important;
+				transform-origin: center center !important;
 			}
 
-			/* --- 3. THE "BRUTE FORCE" CENTER FIX --- */
+			/* --- 3. HEADER ALIGNMENT (ALPHABET NAME) --- */
 			header#header .content {
-				border: none !important; /* This removes the skewing line */
+				border: none !important;
 				padding: 0 !important;
 				margin: 0 !important;
+				display: block !important;
 				width: 100% !important;
 			}
 
@@ -57,30 +57,13 @@
 			}
 
 			header#header .inner h1 {
-				visibility: hidden;
-				position: relative;
-				margin: 0 0 1.5rem 0 !important;
-				width: 100% !important;
-				height: auto !important;
-			}
-
-			header#header .inner h1:after {
-				visibility: visible;
-				position: relative;
-				display: block;
-				content: 'YOVELA DELVIN';
-				text-transform: uppercase;
-				letter-spacing: 0.5rem;
-				font-size: 4rem; 
+				margin: 0 0 1rem 0 !important;
+				font-size: 4rem !important;
+				letter-spacing: 0.5rem !important;
+				text-transform: uppercase !important;
+				line-height: 1 !important;
 				width: 100% !important;
 				text-align: center !important;
-				left: 0 !important;
-			}
-
-			body.lang-jp header#header .inner h1:after {
-				content: 'ヨベラ デルビン' !important;
-				font-size: 3.2rem !important; 
-				letter-spacing: 0.3rem !important;
 			}
 
 			header#header .inner p {
@@ -90,10 +73,16 @@
 				text-align: center !important;
 				text-transform: uppercase;
 				letter-spacing: 0.2rem;
-				line-height: 1 !important;
+				line-height: 1.5 !important;
 			}
 
-			/* --- 4. NAVIGATION GRID (SYMMETRY FIX) --- */
+			/* --- 4. MOBILE SCALING --- */
+			@media screen and (max-width: 480px) {
+				header#header .inner h1 { font-size: 2.2rem !important; letter-spacing: 0.3rem !important; }
+				header#header .inner p { font-size: 0.7rem !important; letter-spacing: 0.15rem !important; }
+			}
+
+			/* --- 5. NAVIGATION GRID --- */
 			nav:before, nav:after, nav ul:before, nav ul:after { display: none !important; }
 			header#header nav {
 				width: 100% !important;
@@ -123,11 +112,12 @@
 				width: 100% !important;
 				height: 3.5rem !important;
 				border: 0 !important;
-				text-align: center !important;
 				padding: 0 !important;
 			}
 
-			/* --- 5. IMAGE CALIBRATION --- */
+			/* --- 6. WORKS GALLERY (FINALIZED) --- */
+			article#work h3 { text-align: center !important; width: 100% !important; border: none !important; margin: 2rem 0 1rem 0 !important; }
+			article#work p { text-align: center !important; width: 100% !important; }
 			article#work .image img { opacity: 1 !important; filter: brightness(1.15) contrast(0.95) !important; }
 			.image.main:before, .image.fit:before { display: none !important; }
 		</style>
@@ -174,7 +164,11 @@
 					<span class="image main"><img src="images/omikuji-zine-1.jpg" alt="Omikuji Zine Cover" /></span>
 					<div class="lang-text en active">
 						<h3>"Omikuji" ZINE Project</h3>
-						<p>An interactive accordion-fold ZINE inspired by Japanese omikuji.</p>
+						<p>An interactive accordion-fold ZINE inspired by Japanese <i>omikuji</i>. This piece features hand-drawn illustrations and hidden messages revealed by coloring in the designated spaces.</p>
+					</div>
+					<div class="lang-text jp">
+						<h3>おみくじ ZINE プロジェクト</h3>
+						<p>日本のおみくじにインスパイアされた、蛇腹折りのインタラクティブなZINEです。手描きのイラストと、指定された場所を塗りつぶすことで現れる隠しメッセージが特徴です。</p>
 					</div>
 					<div class="box alt">
 						<div class="row gtr-uniform">
@@ -226,33 +220,11 @@
 		<script src="assets/js/util.js"></script>
 		<script src="assets/js/main.js"></script>
 		<script>
-			// THE "HIDDEN" ANIMATION FIX:
-			// This overrides the main.js "delay" variable which forces the fast speed.
-			$(function() {
-				var $main = $('#main');
-				var $header = $('#header');
-				// We wait for the template to load, then tell it to relax the speed.
-				setTimeout(function() {
-					// This forces the "open" and "close" events to wait for our CSS.
-					$main._hide = function(addIsVisible) {
-						var $article = $main.children('article.active');
-						$article.removeClass('active');
-						setTimeout(function() {
-							$article.hide();
-							$header.show();
-							setTimeout(function() { $header.removeClass('alt'); }, 50);
-						}, 1500); // Wait for the slow CSS transition
-					};
-				}, 100);
-			});
-
 			function changeLanguage(lang) {
 				document.querySelectorAll('.lang-btn').forEach(btn => {
 					btn.classList.remove('active');
 					if(btn.innerText.toLowerCase() === lang) btn.classList.add('active');
 				});
-				if(lang === 'jp') document.body.classList.add('lang-jp');
-				else document.body.classList.remove('lang-jp');
 				document.querySelectorAll('.lang-text').forEach(el => {
 					el.classList.remove('active');
 					if (el.classList.contains(lang)) el.classList.add('active');
