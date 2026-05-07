@@ -37,7 +37,7 @@
 			body.lang-jp #dynamic-name:after { content: 'ヨベラ　デルビン'; }
 
 			/* --- THE IMAGE CALIBRATION --- */
-			/* Brightness decreased to 1.2 for a more natural look */
+			/* Brightness at 1.2, Contrast at 0.95 */
 			article#work .image img {
 				opacity: 1 !important;
 				filter: brightness(1.2) contrast(0.95) !important;
@@ -45,6 +45,13 @@
 			}
 			.image.main:before, .image.fit:before { display: none !important; }
 			.image.main, .image.fit { background: transparent !important; }
+
+			/* --- FORCE HIDE INTRO --- */
+			/* This ensures the Intro button never shows up in the menu */
+			nav ul li a[href="#intro"] {
+				display: none !important;
+			}
+
 			.gallery-row { margin-top: 2rem; }
 		</style>
 	</head>
