@@ -32,30 +32,32 @@
 			.lang-text.active { display: inline-block !important; }
 			div.lang-text.active { display: block !important; }
 
-			/* --- 2. THE SLOW ANIMATION & CENTER POSITION FIX --- */
-			#header, #main article, #main {
-				transition: all 1.25s ease-in-out !important; /* Forces slow, smooth transitions */
+			/* --- 2. THE SLOW ANIMATION FIX --- */
+			#header, #main article, #main, .content, .inner {
+				transition: all 1.5s ease-in-out !important; 
 				transform-origin: center center !important;
 			}
 
+			/* --- 3. HEADER & NAME CENTER "BRUTE FORCE" --- */
 			header#header .inner {
 				display: flex !important;
 				flex-direction: column !important;
 				align-items: center !important;
 				justify-content: center !important;
-				padding: 3.5rem 0 !important;
-				text-align: center !important;
+				padding: 4rem 0 !important;
+				border: none !important; /* Removes any hidden vertical lines */
 				width: 100% !important;
+				max-width: 100% !important;
 			}
 
 			header#header .inner h1 {
 				visibility: hidden;
 				position: relative;
-				margin: 0 0 1.2rem 0 !important;
-				white-space: nowrap !important;
-				line-height: 1 !important;
+				margin: 0 0 1.5rem 0 !important;
+				padding: 0 !important;
+				width: 100% !important;
 				height: auto !important;
-				display: block !important;
+				text-align: center !important;
 			}
 
 			header#header .inner h1:after {
@@ -66,36 +68,35 @@
 				text-transform: uppercase;
 				letter-spacing: 0.5rem;
 				font-size: 4rem; 
-				text-align: center;
-				width: 100%;
+				width: 100% !important;
+				left: 0 !important;
+				margin: 0 auto !important;
+				text-align: center !important;
 			}
 
 			body.lang-jp header#header .inner h1:after {
 				content: 'ヨベラ デルビン' !important;
-				font-size: 3.5rem !important; 
+				font-size: 3.2rem !important; 
 				letter-spacing: 0.3rem !important;
 			}
 
 			header#header .inner p {
 				margin: 0 !important;
 				padding: 0 !important;
+				width: 100% !important;
+				text-align: center !important;
 				text-transform: uppercase;
 				letter-spacing: 0.2rem;
-				line-height: 1.2 !important;
-				width: 100%;
-				text-align: center;
-				display: block !important;
+				line-height: 1 !important;
 			}
 
-			/* --- 3. MOBILE CENTER & SCALE --- */
+			/* --- 4. MOBILE CENTER & SCALE --- */
 			@media screen and (max-width: 480px) {
-				header#header .inner { padding: 2.5rem 0 !important; }
-				header#header .inner h1 { margin-bottom: 1.8rem !important; }
-				header#header .inner h1:after { font-size: 2rem !important; letter-spacing: 0.2rem !important; }
-				body.lang-jp header#header .inner h1:after { font-size: 1.7rem !important; letter-spacing: 0.15rem !important; }
+				header#header .inner h1:after { font-size: 1.8rem !important; letter-spacing: 0.2rem !important; }
+				body.lang-jp header#header .inner h1:after { font-size: 1.6rem !important; letter-spacing: 0.15rem !important; }
 			}
 
-			/* --- 4. NAVIGATION GRID (PERFECT CENTER) --- */
+			/* --- 5. NAVIGATION GRID (SYMMETRY FIX) --- */
 			nav:before, nav:after, nav ul:before, nav ul:after { display: none !important; }
 			header#header nav {
 				width: 100% !important;
@@ -129,17 +130,12 @@
 				border: 0 !important;
 				text-align: center !important;
 				letter-spacing: 0.1rem !important;
+				padding: 0 !important;
 			}
 
-			/* --- 5. WORKS & TITLES --- */
-			article#work h3 {
-				text-align: center !important;
-				width: 100% !important;
-				border: none !important;
-				margin: 2.5rem 0 1rem 0 !important;
-				text-transform: uppercase;
-			}
-			article#work p { text-align: center !important; }
+			/* --- 6. WORKS GALLERY --- */
+			article#work h3 { text-align: center !important; width: 100% !important; border: none !important; margin: 2rem 0 1rem 0 !important; }
+			article#work p { text-align: center !important; width: 100% !important; }
 			article#work .image img { opacity: 1 !important; filter: brightness(1.15) contrast(0.95) !important; }
 			.image.main:before, .image.fit:before { display: none !important; }
 		</style>
@@ -178,12 +174,8 @@
 			<div id="main">
 				<article id="about">
 					<h2 class="major"><span class="lang-text en active">About</span><span class="lang-text jp">私について</span><span class="lang-text id">Tentang</span></h2>
-					<div class="lang-text en active">
-						<p>I am a university student currently studying in Kyoto. My work explores the intersection of the physical and digital, blending traditional craftsmanship with modern media experiments.</p>
-					</div>
-					<div class="lang-text jp">
-						<p>現在京都で学んでいる大学生です。アナログな手法とデジタル表現の交点を探求し、伝統的な職人技と現代のメディア実験を融合させた制作を行っています。</p>
-					</div>
+					<div class="lang-text en active"><p>I am a university student currently studying in Kyoto. My work explores the intersection of the physical and digital, blending traditional craftsmanship with modern media experiments.</p></div>
+					<div class="lang-text jp"><p>現在京都で学んでいる大学生です。アナログな手法とデジタル表現の交点を探求し、伝統的な職人技と現代のメディア実験を融合させた制作を行っています。</p></div>
 				</article>
 
 				<article id="work">
