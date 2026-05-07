@@ -43,10 +43,13 @@
 				left: 0;
 				top: 0;
 				width: 100%;
-				content: 'YOVELA DELVIN'; /* Restored to English */
+				content: 'YOVELA DELVIN'; /* Default/English name */
 				text-transform: uppercase;
 			}
-			/* Removed the JP content override to keep it English in both modes */
+			/* This specific rule changes the name to Katakana only in JP mode */
+			body.lang-jp header#header .inner h1:after {
+				content: 'ヨベラ デルビン'; /* Katakana with half-width space */
+			}
 
 			/* --- 3. THE IMAGE CALIBRATION (ZINE CLARITY) --- */
 			article#work .image img {
