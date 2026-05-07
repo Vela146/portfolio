@@ -32,23 +32,30 @@
 			.lang-text.active { display: inline-block !important; }
 			div.lang-text.active { display: block !important; }
 
-			/* --- 2. HEADER & NAME CENTER FIX --- */
+			/* --- 2. THE SLOW ANIMATION & CENTER POSITION FIX --- */
+			#header, #main article, #main {
+				transition: all 1.25s ease-in-out !important; /* Forces slow, smooth transitions */
+				transform-origin: center center !important;
+			}
+
 			header#header .inner {
 				display: flex !important;
 				flex-direction: column !important;
 				align-items: center !important;
 				justify-content: center !important;
-				padding: 3rem 0 !important;
+				padding: 3.5rem 0 !important;
 				text-align: center !important;
+				width: 100% !important;
 			}
 
 			header#header .inner h1 {
 				visibility: hidden;
 				position: relative;
-				margin: 0 0 1rem 0 !important;
+				margin: 0 0 1.2rem 0 !important;
 				white-space: nowrap !important;
 				line-height: 1 !important;
 				height: auto !important;
+				display: block !important;
 			}
 
 			header#header .inner h1:after {
@@ -74,25 +81,26 @@
 				padding: 0 !important;
 				text-transform: uppercase;
 				letter-spacing: 0.2rem;
-				line-height: 1 !important;
+				line-height: 1.2 !important;
 				width: 100%;
 				text-align: center;
+				display: block !important;
 			}
 
-			/* --- 3. MOBILE RESPONSIVENESS --- */
+			/* --- 3. MOBILE CENTER & SCALE --- */
 			@media screen and (max-width: 480px) {
-				header#header .inner { padding: 2rem 0 !important; }
-				header#header .inner h1 { margin-bottom: 1.5rem !important; }
-				header#header .inner h1:after { font-size: 1.8rem !important; letter-spacing: 0.2rem !important; }
-				body.lang-jp header#header .inner h1:after { font-size: 1.6rem !important; letter-spacing: 0.15rem !important; }
+				header#header .inner { padding: 2.5rem 0 !important; }
+				header#header .inner h1 { margin-bottom: 1.8rem !important; }
+				header#header .inner h1:after { font-size: 2rem !important; letter-spacing: 0.2rem !important; }
+				body.lang-jp header#header .inner h1:after { font-size: 1.7rem !important; letter-spacing: 0.15rem !important; }
 			}
 
-			/* --- 4. NAVIGATION GRID --- */
+			/* --- 4. NAVIGATION GRID (PERFECT CENTER) --- */
 			nav:before, nav:after, nav ul:before, nav ul:after { display: none !important; }
 			header#header nav {
 				width: 100% !important;
 				max-width: 500px !important;
-				margin: 2rem auto 0 auto !important;
+				margin: 2.5rem auto 0 auto !important;
 			}
 			header#header nav ul {
 				display: grid !important;
@@ -102,7 +110,6 @@
 				padding: 0 !important;
 				margin: 0 !important;
 				list-style: none !important;
-				overflow: hidden !important;
 			}
 			header#header nav ul li { 
 				border: none !important; 
@@ -122,26 +129,17 @@
 				border: 0 !important;
 				text-align: center !important;
 				letter-spacing: 0.1rem !important;
-				padding: 0 !important;
-				margin: 0 !important;
 			}
 
-			/* --- 5. WORKS & TITLES CENTERING FIX --- */
+			/* --- 5. WORKS & TITLES --- */
 			article#work h3 {
 				text-align: center !important;
 				width: 100% !important;
-				border: none !important; /* Removes the side accent line */
-				padding: 0 !important;
-				margin: 2rem 0 1rem 0 !important;
-				letter-spacing: 0.15rem !important;
+				border: none !important;
+				margin: 2.5rem 0 1rem 0 !important;
 				text-transform: uppercase;
 			}
-			
-			article#work p {
-				text-align: center !important;
-				width: 100% !important;
-			}
-
+			article#work p { text-align: center !important; }
 			article#work .image img { opacity: 1 !important; filter: brightness(1.15) contrast(0.95) !important; }
 			.image.main:before, .image.fit:before { display: none !important; }
 		</style>
@@ -178,7 +176,6 @@
 			</header>
 
 			<div id="main">
-
 				<article id="about">
 					<h2 class="major"><span class="lang-text en active">About</span><span class="lang-text jp">私について</span><span class="lang-text id">Tentang</span></h2>
 					<div class="lang-text en active">
@@ -187,32 +184,15 @@
 					<div class="lang-text jp">
 						<p>現在京都で学んでいる大学生です。アナログな手法とデジタル表現の交点を探求し、伝統的な職人技と現代のメディア実験を融合させた制作を行っています。</p>
 					</div>
-					<div class="lang-text id">
-						<p>Saya adalah seorang mahasiswa yang saat ini sedang menempuh pendidikan di Kyoto. Karya saya mengeksplorasi titik temu antara dunia fisik dan digital, memadukan kerajinan tradisional dengan eksperimen media modern.</p>
-					</div>
 				</article>
 
 				<article id="work">
-					<h2 class="major">
-						<span class="lang-text en active">Works</span>
-						<span class="lang-text jp">作品集</span>
-						<span class="lang-text id">Karya</span>
-					</h2>
+					<h2 class="major"><span class="lang-text en active">Works</span><span class="lang-text jp">作品集</span><span class="lang-text id">Karya</span></h2>
 					<span class="image main"><img src="images/omikuji-zine-1.jpg" alt="Omikuji Zine Cover" /></span>
-					
 					<div class="lang-text en active">
 						<h3>"Omikuji" ZINE Project</h3>
-						<p>An interactive accordion-fold ZINE inspired by Japanese <i>omikuji</i>. This piece features hand-drawn illustrations and hidden messages revealed by coloring in the designated spaces.</p>
+						<p>An interactive accordion-fold ZINE inspired by Japanese omikuji.</p>
 					</div>
-					<div class="lang-text jp">
-						<h3>おみくじ ZINE プロジェクト</h3>
-						<p>日本のおみくじにインスパイアされた、蛇腹折りのインタラクティブなZINEです。手描きのイラストと、指定された場所を塗りつぶすことで現れる隠しメッセージが特徴です。</p>
-					</div>
-					<div class="lang-text id">
-						<h3>Proyek ZINE "Omikuji"</h3>
-						<p>ZINE interaktif dengan lipatan akordion yang terinspirasi oleh <i>omikuji</i> Jepang. Karya ini menampilkan ilustrasi tangan dan pesan tersembunyi yang muncul dengan mewarnai ruang yang tersedia.</p>
-					</div>
-					
 					<div class="box alt">
 						<div class="row gtr-uniform">
 							<div class="col-6"><span class="image fit"><img src="images/omikuji-zine-2.jpg" alt="" /></span></div>
@@ -251,7 +231,6 @@
 						<li><a href="https://github.com/yourusername" class="icon brands fa-github"></a></li>
 					</ul>
 				</article>
-
 			</div>
 
 			<footer id="footer"><p class="copyright">Template: <a href="https://html5up.net">HTML5 UP</a>.</p></footer>
