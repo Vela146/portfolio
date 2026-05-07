@@ -39,7 +39,7 @@
 				border: 1.5px solid #fff;
 			}
 
-			/* --- 4. NAVIGATION GRID (Mobile Fix) --- */
+			/* --- 4. NAVIGATION GRID (Bold & Mobile Fix) --- */
 			nav:before, nav:after, nav ul:before, nav ul:after { display: none !important; }
 			header#header nav { width: 100% !important; max-width: 450px !important; margin: 2rem auto 0 auto !important; }
 			header#header nav ul {
@@ -54,7 +54,8 @@
 				display: block !important; width: 100% !important; height: 3rem !important;
 				line-height: 3rem !important; border: 0 !important; text-align: center !important;
 				letter-spacing: 0.1rem !important;
-				font-size: 0.7rem !important; /* Base size */
+				font-size: 0.7rem !important; 
+				font-weight: bold !important; /* Added Bolding */
 			}
 			/* Tighten Japanese spacing to prevent cutoff */
 			body.lang-jp header#header nav ul li a {
@@ -63,7 +64,7 @@
 
 			@media screen and (max-width: 480px) {
 				header#header nav ul li a {
-					font-size: 0.6rem !important; /* Smaller text on narrow phones */
+					font-size: 0.6rem !important; 
 					padding: 0 0.25rem !important;
 				}
 			}
