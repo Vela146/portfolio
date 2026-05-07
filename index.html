@@ -87,7 +87,7 @@
 				body.lang-jp header#header .inner h1:after { font-size: 1.6rem !important; letter-spacing: 0.15rem !important; }
 			}
 
-			/* --- 4. NAVIGATION GRID (SYMMETRY FIX) --- */
+			/* --- 4. NAVIGATION GRID --- */
 			nav:before, nav:after, nav ul:before, nav ul:after { display: none !important; }
 			header#header nav {
 				width: 100% !important;
@@ -126,7 +126,22 @@
 				margin: 0 !important;
 			}
 
-			/* --- 5. IMAGE CALIBRATION --- */
+			/* --- 5. WORKS & TITLES CENTERING FIX --- */
+			article#work h3 {
+				text-align: center !important;
+				width: 100% !important;
+				border: none !important; /* Removes the side accent line */
+				padding: 0 !important;
+				margin: 2rem 0 1rem 0 !important;
+				letter-spacing: 0.15rem !important;
+				text-transform: uppercase;
+			}
+			
+			article#work p {
+				text-align: center !important;
+				width: 100% !important;
+			}
+
 			article#work .image img { opacity: 1 !important; filter: brightness(1.15) contrast(0.95) !important; }
 			.image.main:before, .image.fit:before { display: none !important; }
 		</style>
