@@ -38,13 +38,14 @@
 				flex-direction: column !important;
 				align-items: center !important;
 				justify-content: center !important;
-				padding: 3rem 0 !important; /* Fixed padding so JS can't break it */
+				padding: 3rem 0 !important;
+				text-align: center !important;
 			}
 
 			header#header .inner h1 {
 				visibility: hidden;
 				position: relative;
-				margin: 0 0 1rem 0 !important; /* Gap below Name */
+				margin: 0 0 1rem 0 !important;
 				white-space: nowrap !important;
 				line-height: 1 !important;
 				height: auto !important;
@@ -57,49 +58,40 @@
 				content: 'YOVELA DELVIN';
 				text-transform: uppercase;
 				letter-spacing: 0.5rem;
-				font-size: 4rem; /* Desktop Size */
+				font-size: 4rem; 
 				text-align: center;
+				width: 100%;
 			}
 
-			/* Japanese Name Fix */
 			body.lang-jp header#header .inner h1:after {
 				content: 'ヨベラ デルビン' !important;
 				font-size: 3.5rem !important; 
 				letter-spacing: 0.3rem !important;
 			}
 
-			/* Portfolio text gap */
 			header#header .inner p {
 				margin: 0 !important;
 				padding: 0 !important;
 				text-transform: uppercase;
 				letter-spacing: 0.2rem;
 				line-height: 1 !important;
+				width: 100%;
+				text-align: center;
 			}
 
 			/* --- 3. MOBILE RESPONSIVENESS --- */
 			@media screen and (max-width: 480px) {
-				header#header .inner {
-					padding: 2rem 0 !important;
-				}
-				header#header .inner h1 {
-					margin-bottom: 1.5rem !important; /* Bigger gap on mobile */
-				}
-				header#header .inner h1:after {
-					font-size: 1.8rem !important;
-					letter-spacing: 0.2rem !important;
-				}
-				body.lang-jp header#header .inner h1:after {
-					font-size: 1.6rem !important;
-					letter-spacing: 0.15rem !important;
-				}
+				header#header .inner { padding: 2rem 0 !important; }
+				header#header .inner h1 { margin-bottom: 1.5rem !important; }
+				header#header .inner h1:after { font-size: 1.8rem !important; letter-spacing: 0.2rem !important; }
+				body.lang-jp header#header .inner h1:after { font-size: 1.6rem !important; letter-spacing: 0.15rem !important; }
 			}
 
-			/* --- 4. NAVIGATION GRID --- */
+			/* --- 4. NAVIGATION GRID (SYMMETRY FIX) --- */
 			nav:before, nav:after, nav ul:before, nav ul:after { display: none !important; }
 			header#header nav {
 				width: 100% !important;
-				max-width: 450px !important;
+				max-width: 500px !important;
 				margin: 2rem auto 0 auto !important;
 			}
 			header#header nav ul {
@@ -111,25 +103,32 @@
 				margin: 0 !important;
 				list-style: none !important;
 				overflow: hidden !important;
-				padding-left: 0 !important;
 			}
-			header#header nav ul li { border: none !important; padding: 0 !important; margin: 0 !important; }
+			header#header nav ul li { 
+				border: none !important; 
+				padding: 0 !important; 
+				margin: 0 !important; 
+				display: flex !important;
+				justify-content: center !important;
+				align-items: center !important;
+			}
 			header#header nav ul li + li { border-left: 1px solid #ffffff !important; }
 			header#header nav ul li a {
-				display: block !important;
+				display: flex !important;
+				justify-content: center !important;
+				align-items: center !important;
 				width: 100% !important;
-				height: 3rem !important;
-				line-height: 3rem !important;
+				height: 3.5rem !important;
 				border: 0 !important;
 				text-align: center !important;
 				letter-spacing: 0.1rem !important;
+				padding: 0 !important;
+				margin: 0 !important;
 			}
 
-			/* --- 5. IMAGE & PROJECTS --- */
+			/* --- 5. IMAGE CALIBRATION --- */
 			article#work .image img { opacity: 1 !important; filter: brightness(1.15) contrast(0.95) !important; }
 			.image.main:before, .image.fit:before { display: none !important; }
-			.project-item { margin-bottom: 4rem; text-align: left; }
-			.project-tags { font-size: 0.7rem; text-transform: uppercase; color: rgba(255, 255, 255, 0.5); margin-bottom: 1.5rem !important; }
 		</style>
 	</head>
 	<body class="is-preload">
@@ -143,9 +142,7 @@
 		<div id="wrapper">
 
 			<header id="header">
-				<div class="logo">
-					<span class="icon fa-gem"></span>
-				</div>
+				<div class="logo"><span class="icon fa-gem"></span></div>
 				<div class="content">
 					<div class="inner">
 						<h1>YOVELA DELVIN</h1>
@@ -166,6 +163,7 @@
 			</header>
 
 			<div id="main">
+
 				<article id="about">
 					<h2 class="major"><span class="lang-text en active">About</span><span class="lang-text jp">私について</span><span class="lang-text id">Tentang</span></h2>
 					<div class="lang-text en active">
@@ -174,19 +172,47 @@
 					<div class="lang-text jp">
 						<p>現在京都で学んでいる大学生です。アナログな手法とデジタル表現の交点を探求し、伝統的な職人技と現代のメディア実験を融合させた制作を行っています。</p>
 					</div>
+					<div class="lang-text id">
+						<p>Saya adalah seorang mahasiswa yang saat ini sedang menempuh pendidikan di Kyoto. Karya saya mengeksplorasi titik temu antara dunia fisik dan digital, memadukan kerajinan tradisional dengan eksperimen media modern.</p>
+					</div>
 				</article>
 
 				<article id="work">
-					<h2 class="major"><span class="lang-text en active">Works</span><span class="lang-text jp">作品集</span><span class="lang-text id">Karya</span></h2>
+					<h2 class="major">
+						<span class="lang-text en active">Works</span>
+						<span class="lang-text jp">作品集</span>
+						<span class="lang-text id">Karya</span>
+					</h2>
 					<span class="image main"><img src="images/omikuji-zine-1.jpg" alt="Omikuji Zine Cover" /></span>
+					
 					<div class="lang-text en active">
 						<h3>"Omikuji" ZINE Project</h3>
-						<p>An interactive accordion-fold ZINE inspired by Japanese omikuji.</p>
+						<p>An interactive accordion-fold ZINE inspired by Japanese <i>omikuji</i>. This piece features hand-drawn illustrations and hidden messages revealed by coloring in the designated spaces.</p>
 					</div>
+					<div class="lang-text jp">
+						<h3>おみくじ ZINE プロジェクト</h3>
+						<p>日本のおみくじにインスパイアされた、蛇腹折りのインタラクティブなZINEです。手描きのイラストと、指定された場所を塗りつぶすことで現れる隠しメッセージが特徴です。</p>
+					</div>
+					<div class="lang-text id">
+						<h3>Proyek ZINE "Omikuji"</h3>
+						<p>ZINE interaktif dengan lipatan akordion yang terinspirasi oleh <i>omikuji</i> Jepang. Karya ini menampilkan ilustrasi tangan dan pesan tersembunyi yang muncul dengan mewarnai ruang yang tersedia.</p>
+					</div>
+					
 					<div class="box alt">
 						<div class="row gtr-uniform">
 							<div class="col-6"><span class="image fit"><img src="images/omikuji-zine-2.jpg" alt="" /></span></div>
 							<div class="col-6"><span class="image fit"><img src="images/omikuji-zine-3.jpg" alt="" /></span></div>
+							<div class="col-12"><span class="image fit"><img src="images/omikuji-zine-5.jpg" alt="" /></span></div>
+							<div class="col-12"><span class="image fit"><img src="images/omikuji-zine-6.jpg" alt="" /></span></div>
+							<div class="col-4"><span class="image fit"><img src="images/omikuji-zine-4.jpg" alt="" /></span></div>
+							<div class="col-8"><span class="image fit"><img src="images/omikuji-zine-10.jpg" alt="" /></span></div>
+							<div class="col-4"><span class="image fit"><img src="images/omikuji-zine-7.jpg" alt="" /></span></div>
+							<div class="col-4"><span class="image fit"><img src="images/omikuji-zine-8.jpg" alt="" /></span></div>
+							<div class="col-4"><span class="image fit"><img src="images/omikuji-zine-9.jpg" alt="" /></span></div>
+							<div class="col-6"><span class="image fit"><img src="images/omikuji-zine-11.jpg" alt="" /></span></div>
+							<div class="col-6"><span class="image fit"><img src="images/omikuji-zine-12.jpg" alt="" /></span></div>
+							<div class="col-6"><span class="image fit"><img src="images/omikuji-zine-14.jpg" alt="" /></span></div>
+							<div class="col-6"><span class="image fit"><img src="images/omikuji-zine-13.jpg" alt="" /></span></div>
 						</div>
 					</div>
 				</article>
@@ -210,6 +236,7 @@
 						<li><a href="https://github.com/yourusername" class="icon brands fa-github"></a></li>
 					</ul>
 				</article>
+
 			</div>
 
 			<footer id="footer"><p class="copyright">Template: <a href="https://html5up.net">HTML5 UP</a>.</p></footer>
