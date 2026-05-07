@@ -59,38 +59,48 @@
 			.image.main:before, .image.fit:before { display: none !important; }
 			.image.main, .image.fit { background: transparent !important; }
 
-			/* --- NAVIGATION ALIGNMENT FIX --- */
-			/* This forces the nav to behave as a single 3-column row */
+			/* --- THE ULTIMATE NAVIGATION FIX --- */
 			nav ul {
-				display: table !important;
-				width: 100% !important;
-				max-width: 100% !important;
-				table-layout: fixed !important;
-				margin: 0 !important;
+				display: flex !important;
+				justify-content: center !important;
 				padding: 0 !important;
+				margin: 0 auto !important;
 				border: 1px solid #ffffff !important;
 				border-radius: 4px !important;
+				width: fit-content !important; /* Shrinks the box to only fit visible items */
+				max-width: 100%;
 			}
+
+			/* Hide Intro and remove its space entirely */
+			nav ul li:first-child {
+				display: none !important;
+			}
+
 			nav ul li {
-				display: table-cell !important;
 				border: none !important;
 				padding: 0 !important;
-				vertical-align: middle !important;
+				margin: 0 !important;
+				flex: 1 1 auto;
+				min-width: 8rem; /* Keeps buttons a decent size */
 			}
+
+			/* Add dividers back between the 3 visible buttons */
 			nav ul li + li {
 				border-left: 1px solid #ffffff !important;
 			}
+
 			nav ul li a {
-				height: 2.75rem !important;
-				line-height: 2.75rem !important;
-				padding: 0 !important;
-				border: 0 !important;
+				border-bottom: 0 !important;
 				display: block !important;
+				width: 100% !important;
+				padding: 0 1.5rem !important;
+				text-align: center !important;
 			}
-			/* This ensures the vertical line above the nav stays centered */
-			nav:after {
-				left: 50% !important;
-				margin-left: -1px !important;
+
+			/* Keep the vertical guide line centered over the new 3-button menu */
+			nav {
+				display: flex;
+				justify-content: center;
 			}
 
 			.gallery-row { margin-top: 2rem; }
@@ -122,6 +132,7 @@
 				</div>
 				<nav>
 					<ul>
+						<li><a href="#intro">Intro</a></li>
 						<li><a href="#work"><span class="lang-text en active">Works</span><span class="lang-text jp">作品集</span><span class="lang-text id">Karya</span></a></li>
 						<li><a href="#about"><span class="lang-text en active">About</span><span class="lang-text jp">私について</span><span class="lang-text id">Tentang</span></a></li>
 						<li><a href="#contact"><span class="lang-text en active">Contact</span><span class="lang-text jp">連絡先</span><span class="lang-text id">Kontak</span></a></li>
