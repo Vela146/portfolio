@@ -59,24 +59,40 @@
 			.image.main:before, .image.fit:before { display: none !important; }
 			.image.main, .image.fit { background: transparent !important; }
 
-			/* --- NAVIGATION LAYOUT FIX --- */
-			/* 1. Hide the Intro button completely */
+			/* --- NAVIGATION ALIGNMENT FIX --- */
+			/* Hide Intro */
 			nav ul li:first-child {
 				display: none !important;
 			}
 
-			/* 2. Force the remaining 3 buttons to fill the space perfectly */
+			/* Reset Nav Container */
 			nav ul {
-				display: flex !important;
-				flex-direction: row !important;
+				display: grid !important;
+				grid-template-columns: repeat(3, 1fr) !important;
 				width: 100% !important;
+				padding: 0 !important;
+				margin: 0 !important;
+				border: 1px solid white !important; /* Outer border */
+				border-radius: 4px !important;
 			}
+
+			/* Reset Nav Items */
 			nav ul li {
-				flex-grow: 1 !important;
-				border-left: 0 !important; /* Cleans up internal borders */
+				padding: 0 !important;
+				border: none !important;
+				margin: 0 !important;
 			}
-			nav ul li:nth-child(2) {
-				border-left: 0 !important;
+
+			/* Add internal borders between buttons */
+			nav ul li + li {
+				border-left: 1px solid white !important;
+			}
+
+			nav ul li a {
+				border-bottom: 0 !important;
+				display: block !important;
+				width: 100% !important;
+				text-align: center !important;
 			}
 
 			.gallery-row { margin-top: 2rem; }
