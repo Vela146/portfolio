@@ -7,7 +7,7 @@
 		<link rel="stylesheet" href="assets/css/main.css" />
 		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
 		<style>
-			/* --- 1. LANGUAGE SWITCHER --- */
+			/* --- LANGUAGE SWITCHER --- */
 			#language-switcher {
 				position: fixed;
 				top: 20px;
@@ -32,7 +32,7 @@
 			.lang-text.active { display: inline-block !important; }
 			div.lang-text.active { display: block !important; }
 
-			/* --- 2. THE NAME FORCE-FIX --- */
+			/* --- THE NAME FORCE-FIX --- */
 			header#header .inner h1 {
 				visibility: hidden;
 				position: relative;
@@ -50,7 +50,7 @@
 				content: 'ヨベラ　デルビン';
 			}
 
-			/* --- 3. THE IMAGE CALIBRATION --- */
+			/* --- THE IMAGE CALIBRATION --- */
 			article#work .image img {
 				opacity: 1 !important;
 				filter: brightness(1.15) contrast(0.95) !important;
@@ -59,13 +59,13 @@
 			.image.main:before, .image.fit:before { display: none !important; }
 			.image.main, .image.fit { background: transparent !important; }
 
-			/* --- 4. THE NAVIGATION OVERRIDE (THE GRID FIX) --- */
-			/* Remove all template guide lines */
+			/* --- THE NAVIGATION GRID FIX (THE "NUCLEAR" VERSION) --- */
 			nav:before, nav:after, nav ul:before, nav ul:after {
 				display: none !important;
 			}
 
 			header#header nav {
+				display: block !important;
 				width: 100% !important;
 				max-width: 450px !important;
 				margin: 2rem auto 0 auto !important;
@@ -73,13 +73,15 @@
 
 			header#header nav ul {
 				display: grid !important;
-				grid-template-columns: 1fr 1fr 1fr !important; /* Forces 3 equal columns */
+				grid-template-columns: 1fr 1fr 1fr !important;
 				border: 1px solid #ffffff !important;
 				border-radius: 4px !important;
 				padding: 0 !important;
 				margin: 0 !important;
-				list-style: none !important;
+				list-style-type: none !important;
 				overflow: hidden !important;
+				/* Neutralize template-based left padding */
+				padding-left: 0 !important; 
 			}
 
 			header#header nav ul li {
@@ -89,7 +91,7 @@
 				width: 100% !important;
 			}
 
-			/* Internal dividers */
+			/* Vertical dividers between the 3 sections */
 			header#header nav ul li + li {
 				border-left: 1px solid #ffffff !important;
 			}
@@ -103,6 +105,7 @@
 				text-align: center !important;
 				letter-spacing: 0.1rem !important;
 				padding: 0 !important;
+				text-decoration: none !important;
 			}
 
 			.gallery-row { margin-top: 2rem; }
@@ -161,15 +164,15 @@
 					<span class="image main"><img src="images/omikuji-zine-1.jpg" alt="Omikuji Zine Cover" /></span>
 					<div class="lang-text en active">
 						<h3>"Omikuji" ZINE Project</h3>
-						<p>An interactive accordion-fold ZINE inspired by Japanese <i>omikuji</i>. This piece features hand-drawn illustrations and hidden messages revealed by coloring in the designated spaces. A hand-drawn debossing technique was used to write the text.</p>
+						<p>An interactive accordion-fold ZINE inspired by Japanese <i>omikuji</i>. This piece features hand-drawn illustrations and hidden messages revealed by coloring in the designated spaces.</p>
 					</div>
 					<div class="lang-text jp">
 						<h3>おみくじ ZINE プロジェクト</h3>
-						<p>日本のおみくじにインスパイアされた、蛇腹折りのインタラクティブなZINEです。手描きのイラストと、指定された場所を塗りつぶすことで現れる隠しメッセージが特徴です。文字の部分には、手書きのデボス（空押し）技法を用いています。</p>
+						<p>日本のおみくじにインスパイアされた、蛇腹折りのインタラクティブなZINEです。手描きのイラストと、指定された場所を塗りつぶすことで現れる隠しメッセージが特徴です。</p>
 					</div>
 					<div class="lang-text id">
 						<h3>Proyek ZINE "Omikuji"</h3>
-						<p>ZINE interaktif dengan lipatan akordion yang terinspirasi oleh <i>omikuji</i> Jepang. Karya ini menampilkan ilustrasi tangan dan pesan tersembunyi yang muncul dengan mewarnai ruang yang tersedia. Teknik <i>debossing</i> tangan digunakan untuk menuliskan teksnya.</p>
+						<p>ZINE interaktif dengan lipatan akordion yang terinspirasi oleh <i>omikuji</i> Jepang. Karya ini menampilkan ilustrasi tangan dan pesan tersembunyi yang muncul dengan mewarnai ruang yang tersedia.</p>
 					</div>
 
 					<div class="box alt gallery-row">
