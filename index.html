@@ -37,11 +37,11 @@
 			body.lang-jp #dynamic-name:after { content: 'ヨベラ　デルビン'; }
 
 			/* --- THE IMAGE CALIBRATION --- */
-			/* Lowered contrast to 0.95 for a softer, more natural look */
+			/* Brightness decreased to 1.2 for a more natural look */
 			article#work .image img {
 				opacity: 1 !important;
-				filter: brightness(1.4) contrast(0.95) !important;
-				-webkit-filter: brightness(1.4) contrast(0.95) !important;
+				filter: brightness(1.2) contrast(0.95) !important;
+				-webkit-filter: brightness(1.2) contrast(0.95) !important;
 			}
 			.image.main:before, .image.fit:before { display: none !important; }
 			.image.main, .image.fit { background: transparent !important; }
@@ -74,7 +74,6 @@
 				</div>
 				<nav>
 					<ul>
-						<li><a href="#intro"><span class="lang-text en active">Intro</span><span class="lang-text jp">自己紹介</span><span class="lang-text id">Intro</span></a></li>
 						<li><a href="#work"><span class="lang-text en active">Works</span><span class="lang-text jp">作品集</span><span class="lang-text id">Karya</span></a></li>
 						<li><a href="#about"><span class="lang-text en active">About</span><span class="lang-text jp">私について</span><span class="lang-text id">Tentang</span></a></li>
 						<li><a href="#contact"><span class="lang-text en active">Contact</span><span class="lang-text jp">連絡先</span><span class="lang-text id">Kontak</span></a></li>
@@ -83,14 +82,6 @@
 			</header>
 
 			<div id="main">
-
-				<article id="intro">
-					<h2 class="major"><span class="lang-text en active">Intro</span><span class="lang-text jp">自己紹介</span><span class="lang-text id">Intro</span></h2>
-					<span class="image main"><img src="images/pic01.jpg" alt="" /></span>
-					<div class="lang-text en active"><p>Hi, I'm a university student currently studying in Kyoto. My work sits at the intersection of the physical and digital.</p></div>
-					<div class="lang-text jp"><p>こんにちは、現在京都で学んでいる大学生です。アナログとデジタルの交差点で制作活動を行っています。</p></div>
-					<div class="lang-text id"><p>Halo, saya seorang mahasiswa yang saat ini sedang menempuh pendidikan di Kyoto. Karya saya berada di titik temu antara dunia fisik dan digital.</p></div>
-				</article>
 
 				<article id="work">
 					<h2 class="major"><span class="lang-text en active">Works</span><span class="lang-text jp">作品集</span><span class="lang-text id">Karya</span></h2>
@@ -127,6 +118,19 @@
 					</div>
 				</article>
 
+				<article id="about">
+					<h2 class="major"><span class="lang-text en active">About</span><span class="lang-text jp">私について</span><span class="lang-text id">Tentang</span></h2>
+					<div class="lang-text en active">
+						<p>I am a university student currently studying in Kyoto. My work explores the intersection of the physical and digital, blending traditional craftsmanship with modern media experiments.</p>
+					</div>
+					<div class="lang-text jp">
+						<p>現在京都で学んでいる大学生です。アナログな手法とデジタル表現の交点を探求し、伝統的な職人技と現代のメディア実験を融合させた制作を行っています。</p>
+					</div>
+					<div class="lang-text id">
+						<p>Saya adalah seorang mahasiswa yang saat ini sedang menempuh pendidikan di Kyoto. Karya saya mengeksplorasi titik temu antara dunia fisik dan digital, memadukan kerajinan tradisional dengan eksperimen media modern.</p>
+					</div>
+				</article>
+
 				<article id="contact">
 					<h2 class="major">Contact</h2>
 					<ul class="icons">
@@ -152,17 +156,14 @@
 		<script src="assets/js/main.js"></script>
 		<script>
 			function changeLanguage(lang) {
-				// Update buttons
 				document.querySelectorAll('.lang-btn').forEach(btn => {
 					btn.classList.remove('active');
 					if(btn.innerText.toLowerCase() === lang) btn.classList.add('active');
 				});
 				
-				// Body class for the Name Fix
 				if(lang === 'jp') document.body.classList.add('lang-jp');
 				else document.body.classList.remove('lang-jp');
 
-				// Toggle visibility
 				document.querySelectorAll('.lang-text').forEach(el => {
 					el.classList.remove('active');
 					if (el.classList.contains(lang)) el.classList.add('active');
