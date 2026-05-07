@@ -7,7 +7,7 @@
 		<link rel="stylesheet" href="assets/css/main.css" />
 		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
 		<style>
-			/* --- LANGUAGE SWITCHER --- */
+			/* --- 1. LANGUAGE SWITCHER --- */
 			#language-switcher {
 				position: fixed;
 				top: 20px;
@@ -32,7 +32,7 @@
 			.lang-text.active { display: inline-block !important; }
 			div.lang-text.active { display: block !important; }
 
-			/* --- THE NAME FORCE-FIX --- */
+			/* --- 2. THE NAME FORCE-FIX --- */
 			header#header .inner h1 {
 				visibility: hidden;
 				position: relative;
@@ -50,7 +50,7 @@
 				content: 'ヨベラ　デルビン';
 			}
 
-			/* --- THE IMAGE CALIBRATION --- */
+			/* --- 3. THE IMAGE CALIBRATION --- */
 			article#work .image img {
 				opacity: 1 !important;
 				filter: brightness(1.15) contrast(0.95) !important;
@@ -59,40 +59,42 @@
 			.image.main:before, .image.fit:before { display: none !important; }
 			.image.main, .image.fit { background: transparent !important; }
 
-			/* --- THE NAVIGATION GRID FIX --- */
+			/* --- 4. THE NAVIGATION OVERRIDE (THE GRID FIX) --- */
+			/* Remove all template guide lines */
 			nav:before, nav:after, nav ul:before, nav ul:after {
 				display: none !important;
 			}
 
-			nav {
-				margin: 2rem auto 0 auto !important;
-				max-width: 450px !important;
+			header#header nav {
 				width: 100% !important;
+				max-width: 450px !important;
+				margin: 2rem auto 0 auto !important;
 			}
 
-			nav ul {
+			header#header nav ul {
 				display: grid !important;
-				grid-template-columns: repeat(3, 1fr) !important;
+				grid-template-columns: 1fr 1fr 1fr !important; /* Forces 3 equal columns */
 				border: 1px solid #ffffff !important;
 				border-radius: 4px !important;
 				padding: 0 !important;
 				margin: 0 !important;
-				overflow: hidden !important;
 				list-style: none !important;
+				overflow: hidden !important;
 			}
 
-			nav ul li {
+			header#header nav ul li {
 				border: none !important;
 				padding: 0 !important;
 				margin: 0 !important;
 				width: 100% !important;
 			}
 
-			nav ul li + li {
+			/* Internal dividers */
+			header#header nav ul li + li {
 				border-left: 1px solid #ffffff !important;
 			}
 
-			nav ul li a {
+			header#header nav ul li a {
 				display: block !important;
 				width: 100% !important;
 				height: 3rem !important;
@@ -212,7 +214,7 @@
 		<script src="assets/js/breakpoints.min.js"></script>
 		<script src="assets/js/util.js"></script>
 		<script src="assets/js/main.js"></script>
-		<script script>
+		<script>
 			function changeLanguage(lang) {
 				document.querySelectorAll('.lang-btn').forEach(btn => {
 					btn.classList.remove('active');
