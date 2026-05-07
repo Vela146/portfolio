@@ -36,21 +36,27 @@
 			header#header .inner h1 {
 				visibility: hidden;
 				position: relative;
+				white-space: nowrap !important;
 			}
 			header#header .inner h1:after {
 				visibility: visible;
 				position: absolute;
-				left: 0;
 				top: 0;
+				left: 50%;
+				transform: translateX(-50%);
 				width: 100%;
 				content: 'YOVELA DELVIN';
 				text-transform: uppercase;
+				letter-spacing: 0.5rem;
 			}
+			/* Shrinking and tightening specifically for Japanese to prevent the "wrap" bug */
 			body.lang-jp header#header .inner h1:after {
-				content: 'ヨベラ　デルビン';
+				content: 'ヨベラ デルビン' !important;
+				font-size: 3.5rem !important;
+				letter-spacing: 0.2rem !important;
 			}
 
-			/* --- 3. THE IMAGE CALIBRATION (ZINE CLARITY) --- */
+			/* --- 3. THE IMAGE CALIBRATION --- */
 			article#work .image img {
 				opacity: 1 !important;
 				filter: brightness(1.15) contrast(0.95) !important;
@@ -134,7 +140,6 @@
 			</header>
 
 			<div id="main">
-
 				<article id="about">
 					<h2 class="major"><span class="lang-text en active">About</span><span class="lang-text jp">私について</span><span class="lang-text id">Tentang</span></h2>
 					<div class="lang-text en active">
@@ -237,7 +242,6 @@
 						<li><a href="https://github.com/yourusername" class="icon brands fa-github"><span class="label">GitHub</span></a></li>
 					</ul>
 				</article>
-
 			</div>
 
 			<footer id="footer">
