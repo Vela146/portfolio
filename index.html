@@ -89,7 +89,7 @@
 				letter-spacing: 0.1rem !important;
 			}
 
-			/* --- 5. WORKS HUB STYLING (The Project Selection Cards) --- */
+			/* --- 5. PROJECT LIST STYLING --- */
 			.project-card {
 				cursor: pointer;
 				border: 1px solid rgba(255, 255, 255, 0.2);
@@ -114,9 +114,11 @@
 				margin: 0;
 				letter-spacing: 2px;
 				font-size: 0.8rem;
+				color: #ffffff;
 			}
 
 			.gallery-row { margin-top: 2rem; }
+			.back-link { margin-top: 2rem; display: inline-block; }
 		</style>
 	</head>
 	<body class="is-preload">
@@ -166,35 +168,38 @@
 				</article>
 
 				<article id="work">
-					<h2 class="major"><span class="lang-text en active">Select Project</span><span class="lang-text jp">プロジェクトを選択</span><span class="lang-text id">Pilih Proyek</span></h2>
-					
+					<h2 class="major"><span class="lang-text en active">Project List</span><span class="lang-text jp">プロジェクト一覧</span><span class="lang-text id">Daftar Proyek</span></h2>
 					<div class="row">
 						<div class="col-6 col-12-small">
 							<a href="#omikuji" class="project-card">
-								<img src="images/omikuji-zine-1.jpg" alt="Omikuji" />
-								<h3>"Omikuji" ZINE</h3>
+								<img src="images/omikuji-zine-1.jpg" alt="Omikuji Zine" />
+								<h3>"OMIKUJI" ZINE</h3>
 							</a>
 						</div>
 						<div class="col-6 col-12-small">
 							<a href="#project2" class="project-card">
 								<img src="images/placeholder.jpg" alt="Project 2" />
-								<h3>Project Title 2</h3>
+								<h3>PROJECT 2</h3>
 							</a>
 						</div>
 					</div>
 				</article>
 
 				<article id="omikuji">
-					<h2 class="major">"Omikuji" ZINE</h2>
-					<span class="image main"><img src="images/omikuji-zine-1.jpg" alt="" /></span>
+					<h2 class="major"><span class="lang-text en active">"Omikuji" ZINE</span><span class="lang-text jp">おみくじ ZINE</span><span class="lang-text id">ZINE "Omikuji"</span></h2>
+					<span class="image main"><img src="images/omikuji-zine-1.jpg" alt="Cover" /></span>
+					
 					<div class="lang-text en active">
-						<p>An interactive accordion-fold ZINE inspired by Japanese <i>omikuji</i>.</p>
+						<h3>Project Overview</h3>
+						<p>An interactive accordion-fold ZINE inspired by Japanese <i>omikuji</i>. This piece features hand-drawn illustrations and hidden messages revealed by coloring in the designated spaces.</p>
 					</div>
 					<div class="lang-text jp">
-						<p>日本のおみくじにインスパイアされた、蛇腹折りのインタラクティブなZINEです。</p>
+						<h3>プロジェクト概要</h3>
+						<p>日本のおみくじにインスパイアされた、蛇腹折りのインタラクティブなZINEです。手描きのイラストと、指定された場所を塗りつぶすことで現れる隠しメッセージが特徴です。</p>
 					</div>
 					<div class="lang-text id">
-						<p>ZINE interaktif dengan lipatan akordion yang terinspirasi oleh <i>omikuji</i> Jepang.</p>
+						<h3>Ringkasan Proyek</h3>
+						<p>ZINE interaktif dengan lipatan akordion yang terinspirasi oleh <i>omikuji</i> Jepang. Karya ini menampilkan ilustrasi tangan dan pesan tersembunyi yang muncul dengan mewarnai ruang yang tersedia.</p>
 					</div>
 
 					<div class="box alt gallery-row">
@@ -202,19 +207,29 @@
 							<div class="col-6"><span class="image fit"><img src="images/omikuji-zine-2.jpg" alt="" /></span></div>
 							<div class="col-6"><span class="image fit"><img src="images/omikuji-zine-3.jpg" alt="" /></span></div>
 							<div class="col-12"><span class="image fit"><img src="images/omikuji-zine-5.jpg" alt="" /></span></div>
-							</div>
+							<div class="col-12"><span class="image fit"><img src="images/omikuji-zine-6.jpg" alt="" /></span></div>
+							<div class="col-4"><span class="image fit"><img src="images/omikuji-zine-4.jpg" alt="" /></span></div>
+							<div class="col-8"><span class="image fit"><img src="images/omikuji-zine-10.jpg" alt="" /></span></div>
+							<div class="col-4"><span class="image fit"><img src="images/omikuji-zine-7.jpg" alt="" /></span></div>
+							<div class="col-4"><span class="image fit"><img src="images/omikuji-zine-8.jpg" alt="" /></span></div>
+							<div class="col-4"><span class="image fit"><img src="images/omikuji-zine-9.jpg" alt="" /></span></div>
+							<div class="col-6"><span class="image fit"><img src="images/omikuji-zine-11.jpg" alt="" /></span></div>
+							<div class="col-6"><span class="image fit"><img src="images/omikuji-zine-12.jpg" alt="" /></span></div>
+							<div class="col-6"><span class="image fit"><img src="images/omikuji-zine-14.jpg" alt="" /></span></div>
+							<div class="col-6"><span class="image fit"><img src="images/omikuji-zine-13.jpg" alt="" /></span></div>
+						</div>
 					</div>
-					<ul class="actions">
-						<li><a href="#work" class="button">Back to Projects</a></li>
+
+					<ul class="actions back-link">
+						<li><a href="#work" class="button">← Back to List</a></li>
 					</ul>
 				</article>
 
 				<article id="project2">
-					<h2 class="major">Project Title 2</h2>
-					<span class="image main"><img src="images/placeholder.jpg" alt="" /></span>
-					<p>Description for your second project goes here.</p>
-					<ul class="actions">
-						<li><a href="#work" class="button">Back to Projects</a></li>
+					<h2 class="major">Project 2</h2>
+					<p>Content for your second project will go here.</p>
+					<ul class="actions back-link">
+						<li><a href="#work" class="button">← Back to List</a></li>
 					</ul>
 				</article>
 
@@ -231,6 +246,12 @@
 							<li><button type="submit" class="primary">Send Message</button></li>
 						</ul>
 					</form>
+					<hr />
+					<p style="text-align: center;"><strong>yovela.delvin@gmail.com</strong></p>
+					<ul class="icons" style="justify-content: center; display: flex;">
+						<li><a href="mailto:yovela.delvin@gmail.com" class="icon solid fa-envelope"></a></li>
+						<li><a href="https://github.com/yourusername" class="icon brands fa-github"></a></li>
+					</ul>
 				</article>
 
 			</div>
