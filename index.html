@@ -43,16 +43,15 @@
 				left: 0;
 				top: 0;
 				width: 100%;
-				content: 'YOVELA DELVIN'; /* Default/English name */
+				content: 'YOVELA DELVIN';
 				text-transform: uppercase;
 			}
-			/* This specific rule changes the name to Katakana only in JP mode */
 			body.lang-jp header#header .inner h1:after {
-				content: 'ヨベラ デルビン'; /* Katakana with half-width space */
+				content: 'ヨベラ デルビン';
 			}
 
-			/* --- 3. THE IMAGE CALIBRATION (ZINE CLARITY) --- */
-			article#work .image img {
+			/* --- 3. IMAGE & GALLERY CALIBRATION --- */
+			article .image img {
 				opacity: 1 !important;
 				filter: brightness(1.15) contrast(0.95) !important;
 				-webkit-filter: brightness(1.15) contrast(0.95) !important;
@@ -60,10 +59,8 @@
 			.image.main:before, .image.fit:before { display: none !important; }
 			.image.main, .image.fit { background: transparent !important; }
 
-			/* --- 4. NAVIGATION GRID OVERRIDE --- */
-			nav:before, nav:after, nav ul:before, nav ul:after {
-				display: none !important;
-			}
+			/* --- 4. NAVIGATION GRID --- */
+			nav:before, nav:after, nav ul:before, nav ul:after { display: none !important; }
 			header#header nav {
 				width: 100% !important;
 				max-width: 450px !important;
@@ -80,14 +77,8 @@
 				overflow: hidden !important;
 				padding-left: 0 !important;
 			}
-			header#header nav ul li {
-				border: none !important;
-				padding: 0 !important;
-				margin: 0 !important;
-			}
-			header#header nav ul li + li {
-				border-left: 1px solid #ffffff !important;
-			}
+			header#header nav ul li { border: none !important; padding: 0 !important; margin: 0 !important; }
+			header#header nav ul li + li { border-left: 1px solid #ffffff !important; }
 			header#header nav ul li a {
 				display: block !important;
 				width: 100% !important;
@@ -96,6 +87,33 @@
 				border: 0 !important;
 				text-align: center !important;
 				letter-spacing: 0.1rem !important;
+			}
+
+			/* --- 5. WORKS HUB STYLING (The Project Selection Cards) --- */
+			.project-card {
+				cursor: pointer;
+				border: 1px solid rgba(255, 255, 255, 0.2);
+				border-radius: 4px;
+				padding: 1rem;
+				transition: all 0.3s ease;
+				margin-bottom: 2rem;
+				text-align: center;
+				display: block;
+				text-decoration: none !important;
+			}
+			.project-card:hover {
+				background: rgba(255, 255, 255, 0.05);
+				border-color: #ffffff;
+			}
+			.project-card img {
+				width: 100%;
+				border-radius: 2px;
+				margin-bottom: 1rem;
+			}
+			.project-card h3 {
+				margin: 0;
+				letter-spacing: 2px;
+				font-size: 0.8rem;
 			}
 
 			.gallery-row { margin-top: 2rem; }
@@ -112,9 +130,7 @@
 		<div id="wrapper">
 
 			<header id="header">
-				<div class="logo">
-					<span class="icon fa-gem"></span>
-				</div>
+				<div class="logo"><span class="icon fa-gem"></span></div>
 				<div class="content">
 					<div class="inner">
 						<h1>YOVELA DELVIN</h1>
@@ -150,19 +166,35 @@
 				</article>
 
 				<article id="work">
-					<h2 class="major"><span class="lang-text en active">Works</span><span class="lang-text jp">作品集</span><span class="lang-text id">Karya</span></h2>
-					<span class="image main"><img src="images/omikuji-zine-1.jpg" alt="Omikuji Zine Cover" /></span>
+					<h2 class="major"><span class="lang-text en active">Select Project</span><span class="lang-text jp">プロジェクトを選択</span><span class="lang-text id">Pilih Proyek</span></h2>
+					
+					<div class="row">
+						<div class="col-6 col-12-small">
+							<a href="#omikuji" class="project-card">
+								<img src="images/omikuji-zine-1.jpg" alt="Omikuji" />
+								<h3>"Omikuji" ZINE</h3>
+							</a>
+						</div>
+						<div class="col-6 col-12-small">
+							<a href="#project2" class="project-card">
+								<img src="images/placeholder.jpg" alt="Project 2" />
+								<h3>Project Title 2</h3>
+							</a>
+						</div>
+					</div>
+				</article>
+
+				<article id="omikuji">
+					<h2 class="major">"Omikuji" ZINE</h2>
+					<span class="image main"><img src="images/omikuji-zine-1.jpg" alt="" /></span>
 					<div class="lang-text en active">
-						<h3>"Omikuji" ZINE Project</h3>
-						<p>An interactive accordion-fold ZINE inspired by Japanese <i>omikuji</i>. This piece features hand-drawn illustrations and hidden messages revealed by coloring in the designated spaces.</p>
+						<p>An interactive accordion-fold ZINE inspired by Japanese <i>omikuji</i>.</p>
 					</div>
 					<div class="lang-text jp">
-						<h3>おみくじ ZINE プロジェクト</h3>
-						<p>日本のおみくじにインスパイアされた、蛇腹折りのインタラクティブなZINEです。手描きのイラストと、指定された場所を塗りつぶすことで現れる隠しメッセージが特徴です。</p>
+						<p>日本のおみくじにインスパイアされた、蛇腹折りのインタラクティブなZINEです。</p>
 					</div>
 					<div class="lang-text id">
-						<h3>Proyek ZINE "Omikuji"</h3>
-						<p>ZINE interaktif dengan lipatan akordion yang terinspirasi oleh <i>omikuji</i> Jepang. Karya ini menampilkan ilustrasi tangan dan pesan tersembunyi yang muncul dengan mewarnai ruang yang tersedia.</p>
+						<p>ZINE interaktif dengan lipatan akordion yang terinspirasi oleh <i>omikuji</i> Jepang.</p>
 					</div>
 
 					<div class="box alt gallery-row">
@@ -170,73 +202,35 @@
 							<div class="col-6"><span class="image fit"><img src="images/omikuji-zine-2.jpg" alt="" /></span></div>
 							<div class="col-6"><span class="image fit"><img src="images/omikuji-zine-3.jpg" alt="" /></span></div>
 							<div class="col-12"><span class="image fit"><img src="images/omikuji-zine-5.jpg" alt="" /></span></div>
-							<div class="col-12"><span class="image fit"><img src="images/omikuji-zine-6.jpg" alt="" /></span></div>
-							<div class="col-4"><span class="image fit"><img src="images/omikuji-zine-4.jpg" alt="" /></span></div>
-							<div class="col-8"><span class="image fit"><img src="images/omikuji-zine-10.jpg" alt="" /></span></div>
-							<div class="col-4"><span class="image fit"><img src="images/omikuji-zine-7.jpg" alt="" /></span></div>
-							<div class="col-4"><span class="image fit"><img src="images/omikuji-zine-8.jpg" alt="" /></span></div>
-							<div class="col-4"><span class="image fit"><img src="images/omikuji-zine-9.jpg" alt="" /></span></div>
-							<div class="col-6"><span class="image fit"><img src="images/omikuji-zine-11.jpg" alt="" /></span></div>
-							<div class="col-6"><span class="image fit"><img src="images/omikuji-zine-12.jpg" alt="" /></span></div>
-							<div class="col-6"><span class="image fit"><img src="images/omikuji-zine-14.jpg" alt="" /></span></div>
-							<div class="col-6"><span class="image fit"><img src="images/omikuji-zine-13.jpg" alt="" /></span></div>
-						</div>
+							</div>
 					</div>
+					<ul class="actions">
+						<li><a href="#work" class="button">Back to Projects</a></li>
+					</ul>
+				</article>
+
+				<article id="project2">
+					<h2 class="major">Project Title 2</h2>
+					<span class="image main"><img src="images/placeholder.jpg" alt="" /></span>
+					<p>Description for your second project goes here.</p>
+					<ul class="actions">
+						<li><a href="#work" class="button">Back to Projects</a></li>
+					</ul>
 				</article>
 
 				<article id="contact">
 					<h2 class="major">Contact</h2>
 					<form action="https://formspree.io/f/xnjwzeqa" method="POST">
 						<div class="fields">
-							<div class="field half">
-								<label for="name">
-									<span class="lang-text en active">Name</span>
-									<span class="lang-text jp">お名前</span>
-									<span class="lang-text id">Nama</span>
-								</label>
-								<input type="text" name="name" id="name" required />
-							</div>
-							<div class="field half">
-								<label for="email">
-									<span class="lang-text en active">Email</span>
-									<span class="lang-text jp">メールアドレス</span>
-									<span class="lang-text id">Email</span>
-								</label>
-								<input type="email" name="_replyto" id="email" required />
-							</div>
-							<div class="field">
-								<label for="message">
-									<span class="lang-text en active">Message</span>
-									<span class="lang-text jp">メッセージ</span>
-									<span class="lang-text id">Pesan</span>
-								</label>
-								<textarea name="message" id="message" rows="4" required></textarea>
-							</div>
+							<div class="field half"><label for="name">Name</label><input type="text" name="name" id="name" required /></div>
+							<div class="field half"><label for="email">Email</label><input type="email" name="_replyto" id="email" required /></div>
+							<div class="field"><label for="message">Message</label><textarea name="message" id="message" rows="4" required></textarea></div>
 						</div>
 						<input type="text" name="_gotcha" style="display:none" />
 						<ul class="actions">
-							<li>
-								<button type="submit" class="primary">
-									<span class="lang-text en active">Send Message</span>
-									<span class="lang-text jp">メッセージを送信</span>
-									<span class="lang-text id">Kirim Pesan</span>
-								</button>
-							</li>
-							<li><input type="reset" value="Reset" /></li>
+							<li><button type="submit" class="primary">Send Message</button></li>
 						</ul>
 					</form>
-					<hr />
-					<p style="text-align: center;">
-						<span class="lang-text en active">Or email me directly at:</span>
-						<span class="lang-text jp">または、直接メールでお問い合わせください：</span>
-						<span class="lang-text id">Atau hubungi saya langsung di:</span>
-						<br />
-						<strong>yovela.delvin@gmail.com</strong>
-					</p>
-					<ul class="icons" style="justify-content: center; display: flex;">
-						<li><a href="mailto:yovela.delvin@gmail.com" class="icon solid fa-envelope"><span class="label">Email</span></a></li>
-						<li><a href="https://github.com/yourusername" class="icon brands fa-github"><span class="label">GitHub</span></a></li>
-					</ul>
 				</article>
 
 			</div>
