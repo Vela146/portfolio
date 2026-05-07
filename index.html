@@ -33,20 +33,19 @@
 			.lang-text.active { display: inline-block; }
 			div.lang-text.active { display: block; }
 			
-			/* --- THE BRIGHTNESS & COLOR BOOST --- */
+			/* --- THE MAXIMUM BRIGHTNESS BOOST --- */
 			.image.main img, .image.fit img {
 				opacity: 1 !important;
-				/* Boosts brightness by 10% and adds a tiny bit of contrast */
-				filter: brightness(1.1) contrast(1.05) !important;
+				/* Increased brightness to 1.25 and contrast to 1.1 */
+				filter: brightness(1.25) contrast(1.1) !important;
 				transition: none !important;
 			}
 
-			/* Completely removes the dark "curtain" overlay */
+			/* Removes the dark "curtain" overlay */
 			.image.main:before, .image.fit:before {
 				display: none !important;
 			}
 
-			/* Ensures the container doesn't darken the image edges */
 			.image.main, .image.fit {
 				background-color: transparent !important;
 				border: none !important;
@@ -98,10 +97,10 @@
 						<p>Hi, I'm a university student currently studying in Kyoto. My work sits at the intersection of the physical and digital, ranging from tactile independent publishing to real-time creative coding projects.</p>
 					</div>
 					<div class="lang-text jp">
-						<p>こんにちは、現在京都で学んでいる大学生です。私の活動は、アナログな独立出版（ZINE）からデジタルのクリエイティブ・コーディングまで、多岐にわたります。</p>
+						<p>こんにちは、現在京都で学んでいる大学生です。私の活動は、アナログな独立出版（ZINE）からデジタルのクリエイティブ・コーディングまで、フィジカルとデジタルの交差点に位置しています。</p>
 					</div>
 					<div class="lang-text id">
-						<p>Halo, saya seorang mahasiswa yang saat ini sedang menempuh pendidikan di Kyoto. Karya saya memadukan elemen fisik dan digital melalui desain taktil dan creative coding.</p>
+						<p>Halo, saya seorang mahasiswa yang saat ini sedang menempuh pendidikan di Kyoto. Karya saya berada di titik temu antara dunia fisik dan digital, mulai dari penerbitan independen yang taktil hingga proyek creative coding real-time.</p>
 					</div>
 				</article>
 
@@ -111,16 +110,16 @@
 					<span class="image main"><img src="images/omikuji-zine-1.jpg" alt="Omikuji Zine Cover" /></span>
 
 					<div class="lang-text en active">
-						<h3>Omikuji Zine Project</h3>
-						<p>An interactive accordion-fold (jyabara) ZINE inspired by Japanese "Omikuji." This piece features hand-drawn illustrations and hidden messages revealed through tactile rubbing techniques.</p>
+						<h3>"Omikuji" ZINE Project</h3>
+						<p>An interactive accordion-fold ZINE inspired by Japanese <i>omikuji</i>. This piece features hand-drawn illustrations and hidden messages revealed by coloring in the designated spaces. A hand-drawn debossing technique was used to write the text.</p>
 					</div>
 					<div class="lang-text jp">
 						<h3>おみくじ ZINE プロジェクト</h3>
-						<p>日本のおみくじにインスパイアされた、蛇腹折りのインタラクティブな作品です。手描きのイラストと、こすり出し技法によって現れるメッセージが特徴です。</p>
+						<p>日本のおみくじにインスパイアされた、蛇腹折りのインタラクティブなZINEです。手描きのイラストと、指定された場所を塗りつぶすことで現れる隠しメッセージが特徴です。文字の部分には、手書きのデボス（空押し）技法を用いています。</p>
 					</div>
 					<div class="lang-text id">
-						<h3>Proyek ZINE Omikuji</h3>
-						<p>ZINE interaktif dengan lipatan akordion (jyabara) yang terinspirasi oleh "Omikuji" Jepang. Karya ini menampilkan ilustrasi tangan dan pesan tersembunyi yang muncul melalui teknik gosok.</p>
+						<h3>Proyek ZINE "Omikuji"</h3>
+						<p>ZINE interaktif dengan lipatan akordion yang terinspirasi oleh <i>omikuji</i> Jepang. Karya ini menampilkan ilustrasi tangan dan pesan tersembunyi yang muncul dengan mewarnai ruang yang tersedia. Teknik <i>debossing</i> tangan digunakan untuk menuliskan teksnya.</p>
 					</div>
 
 					<div class="box alt gallery-row">
@@ -148,15 +147,16 @@
 						<p>Studying in Kyoto has deeply influenced my creative process, blending traditional craftsmanship with modern media experiments.</p>
 					</div>
 					<div class="lang-text jp">
-						<p>京都での留学生活は、伝統的な職人技と現代のメディアを融合させる私の制作プロセスに大きな影響を与えています。</p>
+						<p>京都での生活は、私のクリエイティブなプロセスに大きな影響を与えており、伝統的な職人技と現代のテクノロジーの融合に魅力を感じています。</p>
 					</div>
 					<div class="lang-text id">
-						<p>Belajar di Kyoto telah mempengaruhi cara saya menggabungkan kerajinan tradisional dengan eksperimen media modern.</p>
+						<p>Tinggal di Kyoto telah sangat mempengaruhi proses kreatif saya, terutama dalam cara saya memandang perpaduan antara kerajinan tradisional dan teknologi modern.</p>
 					</div>
 				</article>
 
 				<article id="contact">
 					<h2 class="major">Contact</h2>
+					<p>Feel free to reach out if you'd like to collaborate or just say hi!</p>
 					<ul class="icons">
 						<li><a href="#" class="icon brands fa-instagram"><span class="label">Instagram</span></a></li>
 						<li><a href="#" class="icon brands fa-github"><span class="label">GitHub</span></a></li>
