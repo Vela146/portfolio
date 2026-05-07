@@ -29,7 +29,19 @@
 			}
 			body.lang-jp header#header .inner h1:after { content: 'ヨベラ デルビン'; }
 
-			/* --- 3. NAVIGATION GRID --- */
+			/* --- 3. CUSTOM ICON LOGO --- */
+			#header .logo .icon:before {
+				display: none !important; /* Hides the default diamond icon */
+			}
+			#header .logo {
+				background-image: url("images/icon.png");
+				background-size: 65%; /* Adjust this percentage to resize your icon */
+				background-position: center;
+				background-repeat: no-repeat;
+				border: 1px solid #fff;
+			}
+
+			/* --- 4. NAVIGATION GRID --- */
 			nav:before, nav:after, nav ul:before, nav ul:after { display: none !important; }
 			header#header nav { width: 100% !important; max-width: 450px !important; margin: 2rem auto 0 auto !important; }
 			header#header nav ul {
@@ -46,7 +58,7 @@
 				letter-spacing: 0.1rem !important;
 			}
 
-			/* --- 4. PROJECT LIST CARDS --- */
+			/* --- 5. PROJECT LIST CARDS --- */
 			.project-item { margin-bottom: 2rem; text-align: center; cursor: pointer; }
 			.project-item img {
 				width: 100%; border-radius: 4px; border: 1px solid rgba(255, 255, 255, 0.2);
@@ -56,7 +68,7 @@
 			.project-item h3 { margin-top: 0.8rem; font-size: 0.75rem; letter-spacing: 2px; color: #fff; margin-bottom: 0.2rem; }
 			.project-year { font-size: 0.6rem; opacity: 0.6; letter-spacing: 1px; }
 
-			/* --- 5. IMAGE CALIBRATION --- */
+			/* --- 6. IMAGE CALIBRATION --- */
 			article .image img {
 				opacity: 1 !important; filter: brightness(1.15) contrast(0.95) !important;
 				-webkit-filter: brightness(1.15) contrast(0.95) !important;
@@ -75,7 +87,9 @@
 
 		<div id="wrapper">
 			<header id="header">
-				<div class="logo"><span class="icon fa-gem"></span></div>
+				<div class="logo">
+					<span class="icon"></span>
+				</div>
 				<div class="content">
 					<div class="inner">
 						<h1>YOVELA DELVIN</h1>
