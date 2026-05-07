@@ -11,45 +11,48 @@
 		<link rel="stylesheet" href="assets/css/main.css" />
 		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
 		<style>
-			/* Small language buttons in top right */
-			#lang-switch {
+			/* Small Language Switcher in Top Right */
+			#language-switcher {
 				position: fixed;
 				top: 20px;
 				right: 20px;
 				z-index: 10000;
+				display: flex;
+				gap: 8px;
 			}
-			.btn-l {
+			.lang-btn {
 				background: rgba(255, 255, 255, 0.1);
 				border: 1px solid rgba(255, 255, 255, 0.2);
 				color: #fff;
 				padding: 4px 10px;
 				border-radius: 4px;
 				cursor: pointer;
-				font-size: 0.6rem;
-				margin-left: 5px;
-				text-decoration: none;
+				font-size: 0.65rem;
 				letter-spacing: 1px;
+				transition: all 0.3s ease;
 			}
-			.btn-l:hover { background: rgba(255, 255, 255, 0.3); border-color: #fff; }
-			
-			/* This hides the JP and ID sections by default when the page loads */
-			.lang-section { display: none; }
-			.lang-section:target { display: block; }
+			.lang-btn.active {
+				background: #fff;
+				color: #1b1f22;
+			}
+			/* Hide non-active language spans */
+			.lang-text { display: none; }
+			.lang-text.active { display: inline-block; }
 		</style>
 	</head>
 	<body class="is-preload">
 
-		<!-- Language Switcher -->
-		<div id="lang-switch">
-			<a href="javascript:location.reload()" class="btn-l">EN</a>
-			<a href="#menu-jp" class="btn-l">JP</a>
-			<a href="#menu-id" class="btn-l">ID</a>
+		<!-- Top Right Language Switcher -->
+		<div id="language-switcher">
+			<div class="lang-btn active" onclick="changeLanguage('en')">EN</div>
+			<div class="lang-btn" onclick="changeLanguage('jp')">JP</div>
+			<div class="lang-btn" onclick="changeLanguage('id')">ID</div>
 		</div>
 
 		<!-- Wrapper -->
 			<div id="wrapper">
 
-				<!-- Header (English Default) -->
+				<!-- Header -->
 					<header id="header">
 						<div class="logo">
 							<span class="icon fa-gem"></span>
@@ -57,112 +60,111 @@
 						<div class="content">
 							<div class="inner">
 								<h1>Portfolio</h1>
-								<p>International Student & Creative Explorer based in Kyoto.</p>
+								<p>
+									<span class="lang-text en active">International Student & Creative Explorer based in Kyoto.</span>
+									<span class="lang-text jp">京都を拠点に活動する留学生・クリエイターです。</span>
+									<span class="lang-text id">Mahasiswa Internasional & Kreator berbasis di Kyoto.</span>
+								</p>
 							</div>
 						</div>
 						<nav>
 							<ul>
-								<li><a href="#intro-en">Intro</a></li>
-								<li><a href="#work-en">Works</a></li>
-								<li><a href="#about-en">About</a></li>
-								<li><a href="#contact">Contact</a></li>
+								<li><a href="#intro">
+									<span class="lang-text en active">Intro</span>
+									<span class="lang-text jp">自己紹介</span>
+									<span class="lang-text id">Intro</span>
+								</a></li>
+								<li><a href="#work">
+									<span class="lang-text en active">Works</span>
+									<span class="lang-text jp">作品集</span>
+									<span class="lang-text id">Karya</span>
+								</a></li>
+								<li><a href="#about">
+									<span class="lang-text en active">About</span>
+									<span class="lang-text jp">私について</span>
+									<span class="lang-text id">Tentang</span>
+								</a></li>
+								<li><a href="#contact">
+									<span class="lang-text en active">Contact</span>
+									<span class="lang-text jp">連絡先</span>
+									<span class="lang-text id">Kontak</span>
+								</a></li>
 							</ul>
 						</nav>
 					</header>
 
-				<!-- Main Content -->
+				<!-- Main -->
 					<div id="main">
 
-						<!-- LANGUAGE MENUS (The "Toggles") -->
-						<article id="menu-jp">
-							<h2 class="major">日本語メニュー</h2>
-							<nav>
-								<ul>
-									<li><a href="#intro-jp">自己紹介</a></li>
-									<li><a href="#work-jp">作品集</a></li>
-									<li><a href="#about-jp">私について</a></li>
-									<li><a href="#contact">連絡先</a></li>
+						<!-- Intro -->
+							<article id="intro">
+								<h2 class="major">
+									<span class="lang-text en active">Intro</span>
+									<span class="lang-text jp">自己紹介</span>
+									<span class="lang-text id">Intro</span>
+								</h2>
+								<span class="image main"><img src="images/pic01.jpg" alt="" /></span>
+								
+								<div class="lang-text en active">
+									<p>Hi, I'm a university student currently studying in Kyoto. My work sits at the intersection of the physical and digital.</p>
+								</div>
+								<div class="lang-text jp">
+									<p>こんにちは、現在京都で学んでいる大学生です。私の活動は、アナログとデジタルの交差点に位置しています。</p>
+								</div>
+								<div class="lang-text id">
+									<p>Halo, saya seorang mahasiswa yang saat ini sedang menempuh pendidikan di Kyoto. Karya saya berada di titik temu antara dunia fisik dan digital.</p>
+								</div>
+							</article>
+
+						<!-- Work -->
+							<article id="work">
+								<h2 class="major">
+									<span class="lang-text en active">Works</span>
+									<span class="lang-text jp">作品集</span>
+									<span class="lang-text id">Karya</span>
+								</h2>
+								<span class="image main"><img src="images/pic02.jpg" alt="" /></span>
+								
+								<div class="lang-text en active">
+									<h3>ZINE Project</h3>
+									<p>Exploring the structural design of ZINEs, specifically focusing on the <b>accordion (jyabara) fold</b>.</p>
+								</div>
+								<div class="lang-text jp">
+									<h3>ZINE プロジェクト</h3>
+									<p><b>蛇腹折り（accordion fold）</b>に注目し、ZINEの構造デザインを追求しています。</p>
+								</div>
+								<div class="lang-text id">
+									<h3>Proyek ZINE</h3>
+									<p>Mengeksplorasi desain struktural ZINE, khususnya berfokus pada <b>lipatan akordion (jyabara fold)</b>.</p>
+								</div>
+							</article>
+
+						<!-- About -->
+							<article id="about">
+								<h2 class="major">
+									<span class="lang-text en active">About</span>
+									<span class="lang-text jp">私について</span>
+									<span class="lang-text id">Tentang</span>
+								</h2>
+								<div class="lang-text en active">
+									<p>Living in Kyoto has deeply influenced my creative process and how I view traditional craftsmanship.</p>
+								</div>
+								<div class="lang-text jp">
+									<p>京都での生活は、私のクリエイティブなプロセスに大きな影響を与えており、伝統的な技術に魅力を感じています。</p>
+								</div>
+								<div class="lang-text id">
+									<p>Tinggal di Kyoto telah sangat mempengaruhi proses kreatif saya.</p>
+								</div>
+							</article>
+
+						<!-- Contact -->
+							<article id="contact">
+								<h2 class="major">Contact</h2>
+								<ul class="icons">
+									<li><a href="#" class="icon brands fa-instagram"><span class="label">Instagram</span></a></li>
+									<li><a href="#" class="icon brands fa-github"><span class="label">GitHub</span></a></li>
 								</ul>
-							</nav>
-						</article>
-
-						<article id="menu-id">
-							<h2 class="major">Menu Indonesia</h2>
-							<nav>
-								<ul>
-									<li><a href="#intro-id">Intro</a></li>
-									<li><a href="#work-id">Karya</a></li>
-									<li><a href="#about-id">Tentang</a></li>
-									<li><a href="#contact">Kontak</a></li>
-								</ul>
-							</nav>
-						</article>
-
-						<!-- ENGLISH CARDS -->
-						<article id="intro-en">
-							<h2 class="major">Intro</h2>
-							<span class="image main"><img src="images/pic01.jpg" alt="" /></span>
-							<p>Hi, I'm a university student currently studying in Kyoto. My work sits at the intersection of the physical and digital, ranging from tactile independent publishing to real-time creative coding projects.</p>
-						</article>
-
-						<article id="work-en">
-							<h2 class="major">Works</h2>
-							<span class="image main"><img src="images/pic02.jpg" alt="" /></span>
-							<h3>ZINE Project</h3>
-							<p>Exploring the structural design of ZINEs, specifically focusing on the <b>accordion (jyabara) fold</b>.</p>
-						</article>
-
-						<article id="about-en">
-							<h2 class="major">About</h2>
-							<p>Living in Kyoto has deeply influenced my creative process and how I view traditional craftsmanship.</p>
-						</article>
-
-						<!-- JAPANESE CARDS -->
-						<article id="intro-jp">
-							<h2 class="major">自己紹介</h2>
-							<span class="image main"><img src="images/pic01.jpg" alt="" /></span>
-							<p>こんにちは、現在京都で学んでいる大学生です。私の活動は、アナログな独立出版（ZINE）からリアルタイムのクリエイティブ・コーディングまで、フィジカルとデジタルの交差点に位置しています。</p>
-						</article>
-
-						<article id="work-jp">
-							<h2 class="major">作品集</h2>
-							<span class="image main"><img src="images/pic02.jpg" alt="" /></span>
-							<h3>ZINE プロジェクト</h3>
-							<p>蛇腹折り（accordion fold）に注目し、ZINEの構造デザインを追求しています。</p>
-						</article>
-
-						<article id="about-jp">
-							<h2 class="major">私について</h2>
-							<p>京都での生活は、私のクリエイティブなプロセスに大きな影響を与えており、特に伝統的な職人技と現代のテクノロジーの融合に魅力を感じています。</p>
-						</article>
-
-						<!-- INDONESIAN CARDS -->
-						<article id="intro-id">
-							<h2 class="major">Intro</h2>
-							<span class="image main"><img src="images/pic01.jpg" alt="" /></span>
-							<p>Halo, saya seorang mahasiswa yang saat ini sedang menempuh pendidikan di Kyoto. Karya saya berada di titik temu antara dunia fisik dan digital.</p>
-						</article>
-
-						<article id="work-id">
-							<h2 class="major">Karya</h2>
-							<span class="image main"><img src="images/pic02.jpg" alt="" /></span>
-							<h3>Proyek ZINE</h3>
-							<p>Proyek ini mengeksplorasi desain struktural ZINE, khususnya berfokus pada lipatan akordion (jyabara fold).</p>
-						</article>
-
-						<article id="about-id">
-							<h2 class="major">Tentang</h2>
-							<p>Tinggal di Kyoto telah sangat mempengaruhi proses kreatif saya, terutama dalam cara saya memandang perpaduan antara kerajinan tangan dan teknologi modern.</p>
-						</article>
-
-						<!-- Contact (Shared) -->
-						<article id="contact">
-							<h2 class="major">Contact</h2>
-							<ul class="icons">
-								<li><a href="#" class="icon brands fa-instagram"><span class="label">Instagram</span></a></li>
-								<li><a href="#" class="icon brands fa-github"><span class="label">GitHub</span></a></li>
-							</ul>
-						</article>
+							</article>
 
 					</div>
 
@@ -182,6 +184,24 @@
 			<script src="assets/js/breakpoints.min.js"></script>
 			<script src="assets/js/util.js"></script>
 			<script src="assets/js/main.js"></script>
+
+			<script>
+				function changeLanguage(lang) {
+					// 1. Update button styling
+					document.querySelectorAll('.lang-btn').forEach(btn => {
+						btn.classList.remove('active');
+						if(btn.innerText.toLowerCase() === lang) btn.classList.add('active');
+					});
+
+					// 2. Switch all text elements
+					document.querySelectorAll('.lang-text').forEach(el => {
+						el.classList.remove('active');
+						if (el.classList.contains(lang)) {
+							el.classList.add('active');
+						}
+					});
+				}
+			</script>
 
 	</body>
 </html>
