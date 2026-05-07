@@ -32,12 +32,11 @@
 			.lang-text.active { display: inline-block !important; }
 			div.lang-text.active { display: block !important; }
 
-			/* --- 2. THE NAME OVERRIDE (SHATTER-PROOF FIX) --- */
+			/* --- 2. THE NAME OVERRIDE (DESKTOP & MOBILE FIX) --- */
 			header#header .inner h1 {
 				visibility: hidden;
 				position: relative;
-				/* Margin ensures 'Portfolio' is pushed down */
-				margin-bottom: 3.5rem !important; 
+				margin-bottom: 2rem !important; 
 				white-space: nowrap !important;
 			}
 			header#header .inner h1:after {
@@ -52,12 +51,36 @@
 				letter-spacing: 0.5rem;
 				display: block;
 			}
-			/* Specific scale-down for Japanese to fit the line */
-			body.lang-jp header#header .inner h1:after {
-				content: 'ヨベラ デルビン' !important;
-				font-size: 2.8rem !important; 
-				letter-spacing: 0.4rem !important; 
-				line-height: 1 !important;
+
+			/* --- MOBILE SPECIFIC RULES --- */
+			@media screen and (max-width: 480px) {
+				header#header .inner h1:after {
+					font-size: 2rem !important; /* Shrinks English on small phones */
+					letter-spacing: 0.3rem !important;
+				}
+				body.lang-jp header#header .inner h1:after {
+					font-size: 1.8rem !important; /* Shrinks Japanese on small phones */
+					letter-spacing: 0.2rem !important;
+				}
+				header#header .inner p {
+					margin-top: -0.5rem !important; /* Adjust gap for mobile */
+				}
+			}
+
+			/* Specific Desktop Japanese tuning */
+			@media screen and (min-width: 481px) {
+				body.lang-jp header#header .inner h1:after {
+					content: 'ヨベラ デルビン' !important;
+					font-size: 2.8rem !important; 
+					letter-spacing: 0.4rem !important; 
+					line-height: 1 !important;
+				}
+			}
+
+			header#header .inner p {
+				margin-top: -1.5rem !important;
+				text-transform: uppercase;
+				letter-spacing: 0.2rem;
 			}
 
 			/* --- 3. THE IMAGE CALIBRATION --- */
@@ -198,48 +221,28 @@
 					<form action="https://formspree.io/f/xnjwzeqa" method="POST">
 						<div class="fields">
 							<div class="field half">
-								<label for="name">
-									<span class="lang-text en active">Name</span>
-									<span class="lang-text jp">お名前</span>
-									<span class="lang-text id">Nama</span>
-								</label>
+								<label for="name">Name</label>
 								<input type="text" name="name" id="name" required />
 							</div>
 							<div class="field half">
-								<label for="email">
-									<span class="lang-text en active">Email</span>
-									<span class="lang-text jp">メールアドレス</span>
-									<span class="lang-text id">Email</span>
-								</label>
+								<label for="email">Email</label>
 								<input type="email" name="_replyto" id="email" required />
 							</div>
 							<div class="field">
-								<label for="message">
-									<span class="lang-text en active">Message</span>
-									<span class="lang-text jp">メッセージ</span>
-									<span class="lang-text id">Pesan</span>
-								</label>
+								<label for="message">Message</label>
 								<textarea name="message" id="message" rows="4" required></textarea>
 							</div>
 						</div>
 						<input type="text" name="_gotcha" style="display:none" />
 						<ul class="actions">
 							<li>
-								<button type="submit" class="primary">
-									<span class="lang-text en active">Send Message</span>
-									<span class="lang-text jp">メッセージを送信</span>
-									<span class="lang-text id">Kirim Pesan</span>
-								</button>
+								<button type="submit" class="primary">Send Message</button>
 							</li>
 							<li><input type="reset" value="Reset" /></li>
 						</ul>
 					</form>
 					<hr />
 					<p style="text-align: center;">
-						<span class="lang-text en active">Or email me directly at:</span>
-						<span class="lang-text jp">または、直接メールでお問い合わせください：</span>
-						<span class="lang-text id">Atau hubungi saya langsung di:</span>
-						<br />
 						<strong>yovela.delvin@gmail.com</strong>
 					</p>
 					<ul class="icons" style="justify-content: center; display: flex;">
