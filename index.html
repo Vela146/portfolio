@@ -29,7 +29,7 @@
 			}
 			body.lang-jp header#header .inner h1:after { content: 'ヨベラ デルビン'; }
 
-			/* --- 3. THE NAVIGATION GRID (BORDER ALIGNMENT) --- */
+			/* --- 3. NAVIGATION GRID (The Borders Fix) --- */
 			nav:before, nav:after, nav ul:before, nav ul:after { display: none !important; }
 			header#header nav { width: 100% !important; max-width: 450px !important; margin: 2rem auto 0 auto !important; }
 			header#header nav ul {
@@ -46,22 +46,22 @@
 				letter-spacing: 0.1rem !important;
 			}
 
-			/* --- 4. PROJECT LIST THUMBNAILS --- */
-			.project-item {
-				margin-bottom: 2rem; text-align: center; cursor: pointer;
-			}
+			/* --- 4. PROJECT LIST CARDS --- */
+			.project-item { margin-bottom: 2rem; text-align: center; cursor: pointer; }
 			.project-item img {
 				width: 100%; border-radius: 4px; border: 1px solid rgba(255, 255, 255, 0.2);
-				transition: transform 0.3s ease;
+				transition: transform 0.3s ease, border-color 0.3s ease;
 			}
 			.project-item:hover img { transform: scale(1.02); border-color: #fff; }
-			.project-item h3 { margin-top: 0.5rem; font-size: 0.7rem; letter-spacing: 2px; }
+			.project-item h3 { margin-top: 0.8rem; font-size: 0.75rem; letter-spacing: 2px; color: #fff; }
 
-			/* --- 5. IMAGE CALIBRATION --- */
+			/* --- 5. IMAGE CALIBRATION (ZINE CLARITY) --- */
 			article .image img {
 				opacity: 1 !important; filter: brightness(1.15) contrast(0.95) !important;
+				-webkit-filter: brightness(1.15) contrast(0.95) !important;
 			}
 			.image.main:before, .image.fit:before { display: none !important; }
+			.image.main, .image.fit { background: transparent !important; }
 		</style>
 	</head>
 	<body class="is-preload">
@@ -97,22 +97,30 @@
 			<div id="main">
 
 				<article id="about">
-					<h2 class="major">About</h2>
-					<p>I am a university student currently studying in Kyoto. My work explores the intersection of the physical and digital.</p>
+					<h2 class="major"><span class="lang-text en active">About</span><span class="lang-text jp">私について</span><span class="lang-text id">Tentang</span></h2>
+					<div class="lang-text en active">
+						<p>I am a university student currently studying in Kyoto. My work explores the intersection of the physical and digital, blending traditional craftsmanship with modern media experiments.</p>
+					</div>
+					<div class="lang-text jp">
+						<p>現在京都で学んでいる大学生です。アナログな手法とデジタル表現の交点を探求し、伝統的な職人技と現代のメディア実験を融合させた制作を行っています。</p>
+					</div>
+					<div class="lang-text id">
+						<p>Saya adalah seorang mahasiswa yang saat ini sedang menempuh pendidikan di Kyoto. Karya saya mengeksplorasi titik temu antara dunia fisik dan digital, memadukan kerajinan tradisional dengan eksperimen media modern.</p>
+					</div>
 				</article>
 
 				<article id="work">
-					<h2 class="major">Project List</h2>
+					<h2 class="major"><span class="lang-text en active">Project List</span><span class="lang-text jp">プロジェクト一覧</span><span class="lang-text id">Daftar Proyek</span></h2>
 					<div class="row">
 						<div class="col-6 col-12-small">
 							<div class="project-item" onclick="location.href='#omikuji'">
-								<img src="images/omikuji-zine-1.jpg" alt="" />
+								<img src="images/omikuji-zine-1.jpg" alt="Omikuji Zine" />
 								<h3>"OMIKUJI" ZINE</h3>
 							</div>
 						</div>
 						<div class="col-6 col-12-small">
 							<div class="project-item" onclick="location.href='#project2'">
-								<img src="images/placeholder.jpg" alt="" />
+								<img src="images/placeholder.jpg" alt="Project 2" />
 								<h3>PROJECT 2</h3>
 							</div>
 						</div>
@@ -120,10 +128,22 @@
 				</article>
 
 				<article id="omikuji">
-					<h2 class="major">"Omikuji" ZINE</h2>
-					<span class="image main"><img src="images/omikuji-zine-1.jpg" alt="" /></span>
-					<p>Interactive accordion-fold ZINE inspired by Japanese <i>omikuji</i>.</p>
+					<h2 class="major"><span class="lang-text en active">"Omikuji" ZINE</span><span class="lang-text jp">おみくじ ZINE</span><span class="lang-text id">ZINE "Omikuji"</span></h2>
+					<span class="image main"><img src="images/omikuji-zine-1.jpg" alt="Cover" /></span>
 					
+					<div class="lang-text en active">
+						<h3>Project Overview</h3>
+						<p>An interactive accordion-fold ZINE inspired by Japanese <i>omikuji</i>. This piece features hand-drawn illustrations and hidden messages revealed by coloring in the designated spaces.</p>
+					</div>
+					<div class="lang-text jp">
+						<h3>プロジェクト概要</h3>
+						<p>日本のおみくじにインスパイアされた、蛇腹折りのインタラクティブなZINEです。手描きのイラストと、指定された場所を塗りつぶすことで現れる隠しメッセージが特徴です。</p>
+					</div>
+					<div class="lang-text id">
+						<h3>Ringkasan Proyek</h3>
+						<p>ZINE interaktif dengan lipatan akordion yang terinspirasi oleh <i>omikuji</i> Jepang. Karya ini menampilkan ilustrasi tangan dan pesan tersembunyi yang muncul dengan mewarnai ruang yang tersedia.</p>
+					</div>
+
 					<div class="box alt">
 						<div class="row gtr-uniform">
 							<div class="col-6"><span class="image fit"><img src="images/omikuji-zine-2.jpg" alt="" /></span></div>
@@ -141,16 +161,17 @@
 							<div class="col-6"><span class="image fit"><img src="images/omikuji-zine-13.jpg" alt="" /></span></div>
 						</div>
 					</div>
+
 					<ul class="actions">
-						<li><a href="#work" class="button">Back to List</a></li>
+						<li><a href="#work" class="button">← Back to Project List</a></li>
 					</ul>
 				</article>
 
 				<article id="project2">
 					<h2 class="major">Project 2</h2>
-					<p>New project details coming soon.</p>
+					<p>Content for your second project will be added here once you have the images ready.</p>
 					<ul class="actions">
-						<li><a href="#work" class="button">Back to List</a></li>
+						<li><a href="#work" class="button">← Back to Project List</a></li>
 					</ul>
 				</article>
 
@@ -158,14 +179,29 @@
 					<h2 class="major">Contact</h2>
 					<form action="https://formspree.io/f/xnjwzeqa" method="POST">
 						<div class="fields">
-							<div class="field half"><label>Name</label><input type="text" name="name" required /></div>
-							<div class="field half"><label>Email</label><input type="email" name="email" required /></div>
-							<div class="field"><label>Message</label><textarea name="message" rows="4" required></textarea></div>
+							<div class="field half">
+								<label><span class="lang-text en active">Name</span><span class="lang-text jp">お名前</span><span class="lang-text id">Nama</span></label>
+								<input type="text" name="name" required />
+							</div>
+							<div class="field half">
+								<label><span class="lang-text en active">Email</span><span class="lang-text jp">メールアドレス</span><span class="lang-text id">Email</span></label>
+								<input type="email" name="email" required />
+							</div>
+							<div class="field">
+								<label><span class="lang-text en active">Message</span><span class="lang-text jp">メッセージ</span><span class="lang-text id">Pesan</span></label>
+								<textarea name="message" rows="4" required></textarea>
+							</div>
 						</div>
 						<ul class="actions">
 							<li><button type="submit" class="primary">Send</button></li>
 						</ul>
 					</form>
+					<hr />
+					<p style="text-align: center;"><strong>yovela.delvin@gmail.com</strong></p>
+					<ul class="icons" style="justify-content: center; display: flex;">
+						<li><a href="mailto:yovela.delvin@gmail.com" class="icon solid fa-envelope"></a></li>
+						<li><a href="https://github.com/yourusername" class="icon brands fa-github"></a></li>
+					</ul>
 				</article>
 
 			</div>
