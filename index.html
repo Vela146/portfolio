@@ -11,8 +11,56 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
 		<link rel="stylesheet" href="assets/css/main.css" />
 		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
+		<style>
+			/* Custom Language Switcher Styling */
+			#language-nav {
+				position: fixed;
+				top: 20px;
+				right: 20px;
+				z-index: 10000;
+			}
+			#language-nav ul {
+				list-style: none;
+				display: flex;
+				gap: 10px;
+				background: rgba(255, 255, 255, 0.1);
+				padding: 10px 20px;
+				border-radius: 30px;
+				backdrop-filter: blur(5px);
+				border: 1px solid rgba(255, 255, 255, 0.2);
+			}
+			#language-nav a {
+				text-decoration: none;
+				font-size: 0.8rem;
+				letter-spacing: 0.1rem;
+				text-transform: uppercase;
+				color: #fff;
+				border-bottom: none;
+			}
+			#language-nav a:hover {
+				color: #ffffff;
+				opacity: 0.7;
+			}
+			@media screen and (max-width: 736px) {
+				#language-nav {
+					top: auto;
+					bottom: 20px;
+					right: 50%;
+					transform: translateX(50%);
+				}
+			}
+		</style>
 	</head>
 	<body class="is-preload">
+
+		<!-- Floating Language Switcher -->
+		<nav id="language-nav">
+			<ul>
+				<li><a href="#en">EN</a></li>
+				<li><a href="#jp">JP</a></li>
+				<li><a href="#id">ID</a></li>
+			</ul>
+		</nav>
 
 		<!-- Wrapper -->
 			<div id="wrapper">
@@ -25,16 +73,16 @@
 						<div class="content">
 							<div class="inner">
 								<h1>Portfolio</h1>
-								<p>English | 日本語 | Indonesia</p>
+								<p>International Student & Creative Explorer based in Kyoto.</p>
 							</div>
 						</div>
-						
-						<!-- Language Selection Menu -->
+						<!-- Main Menu (Stays static, but links change based on language choice below) -->
 						<nav>
-							<ul style="margin-bottom: 2em; border-bottom: solid 1px rgba(255, 255, 255, 0.25); padding-bottom: 1em;">
-								<li><a href="#en">English</a></li>
-								<li><a href="#jp">日本語</a></li>
-								<li><a href="#id">Indonesian</a></li>
+							<ul>
+								<li><a href="#intro-en">Intro</a></li>
+								<li><a href="#work-en">Works</a></li>
+								<li><a href="#about-en">About</a></li>
+								<li><a href="#contact">Contact</a></li>
 							</ul>
 						</nav>
 					</header>
@@ -42,9 +90,9 @@
 				<!-- Main -->
 					<div id="main">
 
-						<!-- LANGUAGE MENUS -->
+						<!-- LANGUAGE MENUS (These act as landing cards for each language) -->
 						<article id="en">
-							<h2 class="major">English</h2>
+							<h2 class="major">English Menu</h2>
 							<nav>
 								<ul>
 									<li><a href="#intro-en">Intro</a></li>
@@ -56,7 +104,7 @@
 						</article>
 
 						<article id="jp">
-							<h2 class="major">日本語</h2>
+							<h2 class="major">日本語メニュー</h2>
 							<nav>
 								<ul>
 									<li><a href="#intro-jp">自己紹介</a></li>
@@ -68,7 +116,7 @@
 						</article>
 
 						<article id="id">
-							<h2 class="major">Indonesia</h2>
+							<h2 class="major">Menu Indonesia</h2>
 							<nav>
 								<ul>
 									<li><a href="#intro-id">Intro</a></li>
@@ -92,13 +140,11 @@
 							<span class="image main"><img src="images/pic02.jpg" alt="" /></span>
 							<h3>Independent Publishing: ZINE Project</h3>
 							<p>This project explores the structural design of ZINEs, specifically focusing on the <b>accordion (jyabara) fold</b>. By using unique physical formats, I aim to create a more interactive and tactile reading experience.</p>
-							<p>Beyond publishing, my portfolio includes interactive games built with <b>p5.js</b>, 3D modeling in <b>Blender</b>, and experiments in computer vision using <b>Python</b>.</p>
 						</article>
 
 						<article id="about-en">
 							<h2 class="major">About</h2>
 							<p>I am an international student currently pursuing my studies in Japan. Living in Kyoto has deeply influenced my creative process, specifically in how I view traditional craftsmanship alongside modern technology.</p>
-							<p>When I'm not coding or folding paper, I'm usually playing guitar or exploring the city.</p>
 						</article>
 
 						<!-- JAPANESE SECTIONS -->
@@ -106,49 +152,42 @@
 							<h2 class="major">自己紹介</h2>
 							<span class="image main"><img src="images/pic01.jpg" alt="" /></span>
 							<p>こんにちは、現在京都で学んでいる大学生です。私の活動は、アナログな独立出版（ZINE）からリアルタイムのクリエイティブ・コーディングまで、フィジカルとデジタルの交差点に位置しています。</p>
-							<p>紙の折り方やデジタルインターフェースを通じて、私たちがどのように情報と関わり合うのかを探求することに興味があります。</p>
 						</article>
 
 						<article id="work-jp">
-							<h2 class="major">作品</h2>
+							<h2 class="major">作品集</h2>
 							<span class="image main"><img src="images/pic02.jpg" alt="" /></span>
 							<h3>独立出版：ZINE プロジェクト</h3>
-							<p>このプロジェクトでは、特に<b>蛇腹折り（accordion fold）</b>に注目し、ZINEの構造デザインを追求しています。独自の物理的フォーマットを用いることで、よりインタラクティブで触覚的な読書体験の創出を目指しています。</p>
-							<p>出版以外にも、<b>p5.js</b>を用いたゲーム開発、<b>Blender</b>による3Dモデリング、<b>Python</b>を活用したコンピュータビジョンの実験などを行っています。</p>
+							<p>このプロジェクトでは、特に<b>蛇腹折り（accordion fold）</b>に注目し、ZINEの構造デザインを追求しています。</p>
 						</article>
 
 						<article id="about-jp">
 							<h2 class="major">私について</h2>
 							<p>現在、日本で学んでいる留学生です。京都での生活は、私のクリエイティブなプロセスに大きな影響を与えており、特に伝統的な職人技と現代のテクノロジーの融合に魅力を感じています。</p>
-							<p>制作活動以外では、ギターを弾いたり、市内の隠れた場所を散策したりするのが好きです。</p>
 						</article>
 
 						<!-- INDONESIAN SECTIONS -->
 						<article id="intro-id">
 							<h2 class="major">Intro</h2>
 							<span class="image main"><img src="images/pic01.jpg" alt="" /></span>
-							<p>Halo, saya seorang mahasiswa yang saat ini sedang menempuh pendidikan di Kyoto. Karya saya berada di titik temu antara dunia fisik dan digital, mulai dari penerbitan independen yang taktil hingga proyek creative coding real-time.</p>
-							<p>Saya senang bereksperimen dengan cara kita berinteraksi dengan informasi, baik melalui lipatan kertas maupun antarmuka digital.</p>
+							<p>Halo, saya seorang mahasiswa yang saat ini sedang menempuh pendidikan di Kyoto. Karya saya berada di titik temu antara dunia fisik dan digital.</p>
 						</article>
 
 						<article id="work-id">
 							<h2 class="major">Karya</h2>
 							<span class="image main"><img src="images/pic02.jpg" alt="" /></span>
-							<h3>Penerbitan Independen: Proyek ZINE</h3>
-							<p>Proyek ini mengeksplorasi desain struktural ZINE, khususnya berfokus pada <b>lipatan akordion (jyabara fold)</b>. Dengan menggunakan format fisik yang unik, saya bertujuan untuk menciptakan pengalaman membaca yang lebih interaktif dan taktil.</p>
-							<p>Selain penerbitan, portofolio saya mencakup game interaktif yang dibangun dengan <b>p5.js</b>, pemodelan 3D di <b>Blender</b>, serta eksperimen computer vision menggunakan <b>Python</b>.</p>
+							<h3>Proyek ZINE</h3>
+							<p>Proyek ini mengeksplorasi desain struktural ZINE, khususnya berfokus pada <b>lipatan akordion (jyabara fold)</b>.</p>
 						</article>
 
 						<article id="about-id">
 							<h2 class="major">Tentang</h2>
-							<p>Saya adalah seorang mahasiswa internasional yang saat ini sedang belajar di Jepang. Tinggal di Kyoto telah sangat mempengaruhi proses kreatif saya, terutama dalam cara saya memandang kerajinan tradisional di samping teknologi modern.</p>
-							<p>Saat sedang tidak memprogram atau melipat kertas, saya biasanya bermain gitar atau menjelajahi sudut-sudut kota.</p>
+							<p>Saya adalah seorang mahasiswa internasional yang saat ini sedang belajar di Jepang. Tinggal di Kyoto telah sangat mempengaruhi proses kreatif saya.</p>
 						</article>
 
 						<!-- Contact (Shared) -->
 						<article id="contact">
 							<h2 class="major">Contact</h2>
-							<p>Feel free to reach out if you'd like to collaborate or just say hi!</p>
 							<ul class="icons">
 								<li><a href="#" class="icon brands fa-instagram"><span class="label">Instagram</span></a></li>
 								<li><a href="#" class="icon brands fa-github"><span class="label">GitHub</span></a></li>
