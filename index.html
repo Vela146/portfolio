@@ -9,23 +9,12 @@
 		<style>
 			/* --- 1. LANGUAGE SWITCHER --- */
 			#language-switcher {
-				position: fixed;
-				top: 20px;
-				right: 20px;
-				z-index: 10000;
-				display: flex;
-				gap: 8px;
+				position: fixed; top: 20px; right: 20px; z-index: 10000; display: flex; gap: 8px;
 			}
 			.lang-btn {
-				background: rgba(255, 255, 255, 0.1);
-				border: 1px solid rgba(255, 255, 255, 0.2);
-				color: #fff;
-				padding: 4px 10px;
-				border-radius: 4px;
-				cursor: pointer;
-				font-size: 0.65rem;
-				letter-spacing: 1px;
-				transition: all 0.3s ease;
+				background: rgba(255, 255, 255, 0.1); border: 1px solid rgba(255, 255, 255, 0.2);
+				color: #fff; padding: 4px 10px; border-radius: 4px; cursor: pointer; font-size: 0.65rem;
+				letter-spacing: 1px; transition: all 0.3s ease;
 			}
 			.lang-btn.active { background: #fff; color: #1b1f22; }
 			.lang-text { display: none !important; }
@@ -33,92 +22,46 @@
 			div.lang-text.active { display: block !important; }
 
 			/* --- 2. THE NAME FORCE-FIX --- */
-			header#header .inner h1 {
-				visibility: hidden;
-				position: relative;
-			}
+			header#header .inner h1 { visibility: hidden; position: relative; }
 			header#header .inner h1:after {
-				visibility: visible;
-				position: absolute;
-				left: 0;
-				top: 0;
-				width: 100%;
-				content: 'YOVELA DELVIN';
-				text-transform: uppercase;
+				visibility: visible; position: absolute; left: 0; top: 0; width: 100%;
+				content: 'YOVELA DELVIN'; text-transform: uppercase;
 			}
-			body.lang-jp header#header .inner h1:after {
-				content: 'ヨベラ デルビン';
-			}
+			body.lang-jp header#header .inner h1:after { content: 'ヨベラ デルビン'; }
 
-			/* --- 3. IMAGE & GALLERY CALIBRATION --- */
-			article .image img {
-				opacity: 1 !important;
-				filter: brightness(1.15) contrast(0.95) !important;
-				-webkit-filter: brightness(1.15) contrast(0.95) !important;
-			}
-			.image.main:before, .image.fit:before { display: none !important; }
-			.image.main, .image.fit { background: transparent !important; }
-
-			/* --- 4. NAVIGATION GRID --- */
+			/* --- 3. THE NAVIGATION GRID (BORDER ALIGNMENT) --- */
 			nav:before, nav:after, nav ul:before, nav ul:after { display: none !important; }
-			header#header nav {
-				width: 100% !important;
-				max-width: 450px !important;
-				margin: 2rem auto 0 auto !important;
-			}
+			header#header nav { width: 100% !important; max-width: 450px !important; margin: 2rem auto 0 auto !important; }
 			header#header nav ul {
-				display: grid !important;
-				grid-template-columns: 1fr 1fr 1fr !important;
-				border: 1px solid #ffffff !important;
-				border-radius: 4px !important;
-				padding: 0 !important;
-				margin: 0 !important;
-				list-style: none !important;
-				overflow: hidden !important;
-				padding-left: 0 !important;
+				display: grid !important; grid-template-columns: 1fr 1fr 1fr !important;
+				border: 1px solid #ffffff !important; border-radius: 4px !important;
+				padding: 0 !important; margin: 0 !important; list-style: none !important;
+				overflow: hidden !important; padding-left: 0 !important;
 			}
 			header#header nav ul li { border: none !important; padding: 0 !important; margin: 0 !important; }
 			header#header nav ul li + li { border-left: 1px solid #ffffff !important; }
 			header#header nav ul li a {
-				display: block !important;
-				width: 100% !important;
-				height: 3rem !important;
-				line-height: 3rem !important;
-				border: 0 !important;
-				text-align: center !important;
+				display: block !important; width: 100% !important; height: 3rem !important;
+				line-height: 3rem !important; border: 0 !important; text-align: center !important;
 				letter-spacing: 0.1rem !important;
 			}
 
-			/* --- 5. PROJECT LIST STYLING --- */
-			.project-card {
-				cursor: pointer;
-				border: 1px solid rgba(255, 255, 255, 0.2);
-				border-radius: 4px;
-				padding: 1rem;
-				transition: all 0.3s ease;
-				margin-bottom: 2rem;
-				text-align: center;
-				display: block;
-				text-decoration: none !important;
+			/* --- 4. PROJECT LIST THUMBNAILS --- */
+			.project-item {
+				margin-bottom: 2rem; text-align: center; cursor: pointer;
 			}
-			.project-card:hover {
-				background: rgba(255, 255, 255, 0.05);
-				border-color: #ffffff;
+			.project-item img {
+				width: 100%; border-radius: 4px; border: 1px solid rgba(255, 255, 255, 0.2);
+				transition: transform 0.3s ease;
 			}
-			.project-card img {
-				width: 100%;
-				border-radius: 2px;
-				margin-bottom: 1rem;
-			}
-			.project-card h3 {
-				margin: 0;
-				letter-spacing: 2px;
-				font-size: 0.8rem;
-				color: #ffffff;
-			}
+			.project-item:hover img { transform: scale(1.02); border-color: #fff; }
+			.project-item h3 { margin-top: 0.5rem; font-size: 0.7rem; letter-spacing: 2px; }
 
-			.gallery-row { margin-top: 2rem; }
-			.back-link { margin-top: 2rem; display: inline-block; }
+			/* --- 5. IMAGE CALIBRATION --- */
+			article .image img {
+				opacity: 1 !important; filter: brightness(1.15) contrast(0.95) !important;
+			}
+			.image.main:before, .image.fit:before { display: none !important; }
 		</style>
 	</head>
 	<body class="is-preload">
@@ -130,7 +73,6 @@
 		</div>
 
 		<div id="wrapper">
-
 			<header id="header">
 				<div class="logo"><span class="icon fa-gem"></span></div>
 				<div class="content">
@@ -155,54 +97,34 @@
 			<div id="main">
 
 				<article id="about">
-					<h2 class="major"><span class="lang-text en active">About</span><span class="lang-text jp">私について</span><span class="lang-text id">Tentang</span></h2>
-					<div class="lang-text en active">
-						<p>I am a university student currently studying in Kyoto. My work explores the intersection of the physical and digital, blending traditional craftsmanship with modern media experiments.</p>
-					</div>
-					<div class="lang-text jp">
-						<p>現在京都で学んでいる大学生です。アナログな手法とデジタル表現の交点を探求し、伝統的な職人技と現代のメディア実験を融合させた制作を行っています。</p>
-					</div>
-					<div class="lang-text id">
-						<p>Saya adalah seorang mahasiswa yang saat ini sedang menempuh pendidikan di Kyoto. Karya saya mengeksplorasi titik temu antara dunia fisik dan digital, memadukan kerajinan tradisional dengan eksperimen media modern.</p>
-					</div>
+					<h2 class="major">About</h2>
+					<p>I am a university student currently studying in Kyoto. My work explores the intersection of the physical and digital.</p>
 				</article>
 
 				<article id="work">
-					<h2 class="major"><span class="lang-text en active">Project List</span><span class="lang-text jp">プロジェクト一覧</span><span class="lang-text id">Daftar Proyek</span></h2>
+					<h2 class="major">Project List</h2>
 					<div class="row">
 						<div class="col-6 col-12-small">
-							<a href="#omikuji" class="project-card">
-								<img src="images/omikuji-zine-1.jpg" alt="Omikuji Zine" />
+							<div class="project-item" onclick="location.href='#omikuji'">
+								<img src="images/omikuji-zine-1.jpg" alt="" />
 								<h3>"OMIKUJI" ZINE</h3>
-							</a>
+							</div>
 						</div>
 						<div class="col-6 col-12-small">
-							<a href="#project2" class="project-card">
-								<img src="images/placeholder.jpg" alt="Project 2" />
+							<div class="project-item" onclick="location.href='#project2'">
+								<img src="images/placeholder.jpg" alt="" />
 								<h3>PROJECT 2</h3>
-							</a>
+							</div>
 						</div>
 					</div>
 				</article>
 
 				<article id="omikuji">
-					<h2 class="major"><span class="lang-text en active">"Omikuji" ZINE</span><span class="lang-text jp">おみくじ ZINE</span><span class="lang-text id">ZINE "Omikuji"</span></h2>
-					<span class="image main"><img src="images/omikuji-zine-1.jpg" alt="Cover" /></span>
+					<h2 class="major">"Omikuji" ZINE</h2>
+					<span class="image main"><img src="images/omikuji-zine-1.jpg" alt="" /></span>
+					<p>Interactive accordion-fold ZINE inspired by Japanese <i>omikuji</i>.</p>
 					
-					<div class="lang-text en active">
-						<h3>Project Overview</h3>
-						<p>An interactive accordion-fold ZINE inspired by Japanese <i>omikuji</i>. This piece features hand-drawn illustrations and hidden messages revealed by coloring in the designated spaces.</p>
-					</div>
-					<div class="lang-text jp">
-						<h3>プロジェクト概要</h3>
-						<p>日本のおみくじにインスパイアされた、蛇腹折りのインタラクティブなZINEです。手描きのイラストと、指定された場所を塗りつぶすことで現れる隠しメッセージが特徴です。</p>
-					</div>
-					<div class="lang-text id">
-						<h3>Ringkasan Proyek</h3>
-						<p>ZINE interaktif dengan lipatan akordion yang terinspirasi oleh <i>omikuji</i> Jepang. Karya ini menampilkan ilustrasi tangan dan pesan tersembunyi yang muncul dengan mewarnai ruang yang tersedia.</p>
-					</div>
-
-					<div class="box alt gallery-row">
+					<div class="box alt">
 						<div class="row gtr-uniform">
 							<div class="col-6"><span class="image fit"><img src="images/omikuji-zine-2.jpg" alt="" /></span></div>
 							<div class="col-6"><span class="image fit"><img src="images/omikuji-zine-3.jpg" alt="" /></span></div>
@@ -219,17 +141,16 @@
 							<div class="col-6"><span class="image fit"><img src="images/omikuji-zine-13.jpg" alt="" /></span></div>
 						</div>
 					</div>
-
-					<ul class="actions back-link">
-						<li><a href="#work" class="button">← Back to List</a></li>
+					<ul class="actions">
+						<li><a href="#work" class="button">Back to List</a></li>
 					</ul>
 				</article>
 
 				<article id="project2">
 					<h2 class="major">Project 2</h2>
-					<p>Content for your second project will go here.</p>
-					<ul class="actions back-link">
-						<li><a href="#work" class="button">← Back to List</a></li>
+					<p>New project details coming soon.</p>
+					<ul class="actions">
+						<li><a href="#work" class="button">Back to List</a></li>
 					</ul>
 				</article>
 
@@ -237,21 +158,14 @@
 					<h2 class="major">Contact</h2>
 					<form action="https://formspree.io/f/xnjwzeqa" method="POST">
 						<div class="fields">
-							<div class="field half"><label for="name">Name</label><input type="text" name="name" id="name" required /></div>
-							<div class="field half"><label for="email">Email</label><input type="email" name="_replyto" id="email" required /></div>
-							<div class="field"><label for="message">Message</label><textarea name="message" id="message" rows="4" required></textarea></div>
+							<div class="field half"><label>Name</label><input type="text" name="name" required /></div>
+							<div class="field half"><label>Email</label><input type="email" name="email" required /></div>
+							<div class="field"><label>Message</label><textarea name="message" rows="4" required></textarea></div>
 						</div>
-						<input type="text" name="_gotcha" style="display:none" />
 						<ul class="actions">
-							<li><button type="submit" class="primary">Send Message</button></li>
+							<li><button type="submit" class="primary">Send</button></li>
 						</ul>
 					</form>
-					<hr />
-					<p style="text-align: center;"><strong>yovela.delvin@gmail.com</strong></p>
-					<ul class="icons" style="justify-content: center; display: flex;">
-						<li><a href="mailto:yovela.delvin@gmail.com" class="icon solid fa-envelope"></a></li>
-						<li><a href="https://github.com/yourusername" class="icon brands fa-github"></a></li>
-					</ul>
 				</article>
 
 			</div>
@@ -259,7 +173,6 @@
 			<footer id="footer">
 				<p class="copyright">Template: <a href="https://html5up.net">HTML5 UP</a>.</p>
 			</footer>
-
 		</div>
 
 		<div id="bg"></div>
@@ -277,7 +190,6 @@
 				});
 				if(lang === 'jp') document.body.classList.add('lang-jp');
 				else document.body.classList.remove('lang-jp');
-
 				document.querySelectorAll('.lang-text').forEach(el => {
 					el.classList.remove('active');
 					if (el.classList.contains(lang)) el.classList.add('active');
