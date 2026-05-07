@@ -25,16 +25,79 @@
 				cursor: pointer;
 				font-size: 0.65rem;
 				letter-spacing: 1px;
+				transition: all 0.3s ease;
 			}
 			.lang-btn.active { background: #fff; color: #1b1f22; }
 			.lang-text { display: none !important; }
 			.lang-text.active { display: inline-block !important; }
+			div.lang-text.active { display: block !important; }
 
-			/* --- 2. IMAGE BRIGHTNESS CALIBRATION --- */
+			/* --- 2. THE NAME FORCE-FIX --- */
+			header#header .inner h1 {
+				visibility: hidden;
+				position: relative;
+			}
+			header#header .inner h1:after {
+				visibility: visible;
+				position: absolute;
+				left: 0;
+				top: 0;
+				width: 100%;
+				content: 'YOVELA DELVIN';
+				text-transform: uppercase;
+			}
+			body.lang-jp header#header .inner h1:after {
+				content: 'ヨベラ　デルビン';
+			}
+
+			/* --- 3. THE IMAGE CALIBRATION (ZINE CLARITY) --- */
 			article#work .image img {
 				opacity: 1 !important;
-				filter: brightness(1.1) contrast(0.9) !important;
+				filter: brightness(1.15) contrast(0.95) !important;
+				-webkit-filter: brightness(1.15) contrast(0.95) !important;
 			}
+			.image.main:before, .image.fit:before { display: none !important; }
+			.image.main, .image.fit { background: transparent !important; }
+
+			/* --- 4. NAVIGATION GRID OVERRIDE --- */
+			nav:before, nav:after, nav ul:before, nav ul:after {
+				display: none !important;
+			}
+			header#header nav {
+				width: 100% !important;
+				max-width: 450px !important;
+				margin: 2rem auto 0 auto !important;
+			}
+			header#header nav ul {
+				display: grid !important;
+				grid-template-columns: 1fr 1fr 1fr !important;
+				border: 1px solid #ffffff !important;
+				border-radius: 4px !important;
+				padding: 0 !important;
+				margin: 0 !important;
+				list-style: none !important;
+				overflow: hidden !important;
+				padding-left: 0 !important;
+			}
+			header#header nav ul li {
+				border: none !important;
+				padding: 0 !important;
+				margin: 0 !important;
+			}
+			header#header nav ul li + li {
+				border-left: 1px solid #ffffff !important;
+			}
+			header#header nav ul li a {
+				display: block !important;
+				width: 100% !important;
+				height: 3rem !important;
+				line-height: 3rem !important;
+				border: 0 !important;
+				text-align: center !important;
+				letter-spacing: 0.1rem !important;
+			}
+
+			.gallery-row { margin-top: 2rem; }
 		</style>
 	</head>
 	<body class="is-preload">
@@ -101,7 +164,7 @@
 						<p>ZINE interaktif dengan lipatan akordion yang terinspirasi oleh <i>omikuji</i> Jepang. Karya ini menampilkan ilustrasi tangan dan pesan tersembunyi yang muncul dengan mewarnai ruang yang tersedia.</p>
 					</div>
 
-					<div class="box alt">
+					<div class="box alt gallery-row">
 						<div class="row gtr-uniform">
 							<div class="col-6"><span class="image fit"><img src="images/omikuji-zine-2.jpg" alt="" /></span></div>
 							<div class="col-6"><span class="image fit"><img src="images/omikuji-zine-3.jpg" alt="" /></span></div>
@@ -125,24 +188,50 @@
 					<form action="https://formspree.io/f/xnjwzeqa" method="POST">
 						<div class="fields">
 							<div class="field half">
-								<label for="name">Name</label>
+								<label for="name">
+									<span class="lang-text en active">Name</span>
+									<span class="lang-text jp">お名前</span>
+									<span class="lang-text id">Nama</span>
+								</label>
 								<input type="text" name="name" id="name" required />
 							</div>
 							<div class="field half">
-								<label for="email">Email</label>
+								<label for="email">
+									<span class="lang-text en active">Email</span>
+									<span class="lang-text jp">メールアドレス</span>
+									<span class="lang-text id">Email</span>
+								</label>
 								<input type="email" name="_replyto" id="email" required />
 							</div>
 							<div class="field">
-								<label for="message">Message</label>
+								<label for="message">
+									<span class="lang-text en active">Message</span>
+									<span class="lang-text jp">メッセージ</span>
+									<span class="lang-text id">Pesan</span>
+								</label>
 								<textarea name="message" id="message" rows="4" required></textarea>
 							</div>
 						</div>
+						<input type="text" name="_gotcha" style="display:none" />
 						<ul class="actions">
-							<li><button type="submit" class="primary">Send Message</button></li>
+							<li>
+								<button type="submit" class="primary">
+									<span class="lang-text en active">Send Message</span>
+									<span class="lang-text jp">メッセージを送信</span>
+									<span class="lang-text id">Kirim Pesan</span>
+								</button>
+							</li>
+							<li><input type="reset" value="Reset" /></li>
 						</ul>
 					</form>
 					<hr />
-					<p style="text-align: center;"><strong>yovela.delvin@gmail.com</strong></p>
+					<p style="text-align: center;">
+						<span class="lang-text en active">Or email me directly at:</span>
+						<span class="lang-text jp">または、直接メールでお問い合わせください：</span>
+						<span class="lang-text id">Atau hubungi saya langsung di:</span>
+						<br />
+						<strong>yovela.delvin@gmail.com</strong>
+					</p>
 					<ul class="icons" style="justify-content: center; display: flex;">
 						<li><a href="mailto:yovela.delvin@gmail.com" class="icon solid fa-envelope"><span class="label">Email</span></a></li>
 						<li><a href="https://github.com/yourusername" class="icon brands fa-github"><span class="label">GitHub</span></a></li>
@@ -170,6 +259,9 @@
 					btn.classList.remove('active');
 					if(btn.innerText.toLowerCase() === lang) btn.classList.add('active');
 				});
+				if(lang === 'jp') document.body.classList.add('lang-jp');
+				else document.body.classList.remove('lang-jp');
+
 				document.querySelectorAll('.lang-text').forEach(el => {
 					el.classList.remove('active');
 					if (el.classList.contains(lang)) el.classList.add('active');
