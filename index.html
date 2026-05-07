@@ -2,7 +2,6 @@
 <!--
 	Dimension by HTML5 UP
 	html5up.net | @ajlkn
-	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
 -->
 <html>
 	<head>
@@ -12,55 +11,45 @@
 		<link rel="stylesheet" href="assets/css/main.css" />
 		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
 		<style>
-			/* Custom Language Switcher Styling */
-			#language-nav {
+			/* Small Language Switcher in Top Right */
+			#language-switcher {
 				position: fixed;
 				top: 20px;
 				right: 20px;
 				z-index: 10000;
-			}
-			#language-nav ul {
-				list-style: none;
 				display: flex;
 				gap: 10px;
+			}
+			.lang-btn {
 				background: rgba(255, 255, 255, 0.1);
-				padding: 10px 20px;
-				border-radius: 30px;
-				backdrop-filter: blur(5px);
 				border: 1px solid rgba(255, 255, 255, 0.2);
-			}
-			#language-nav a {
-				text-decoration: none;
-				font-size: 0.8rem;
-				letter-spacing: 0.1rem;
-				text-transform: uppercase;
 				color: #fff;
-				border-bottom: none;
+				padding: 5px 12px;
+				border-radius: 4px;
+				cursor: pointer;
+				font-size: 0.7rem;
+				letter-spacing: 1px;
+				transition: all 0.3s ease;
 			}
-			#language-nav a:hover {
-				color: #ffffff;
-				opacity: 0.7;
+			.lang-btn:hover, .lang-btn.active {
+				background: #fff;
+				color: #1b1f22;
 			}
-			@media screen and (max-width: 736px) {
-				#language-nav {
-					top: auto;
-					bottom: 20px;
-					right: 50%;
-					transform: translateX(50%);
-				}
-			}
+			/* Hide non-active languages */
+			[data-lang] { display: none; }
+			[data-lang].active-lang { display: inline; }
+			article[data-lang] { display: none; }
+			article[data-lang].active-lang { display: block; }
 		</style>
 	</head>
 	<body class="is-preload">
 
-		<!-- Floating Language Switcher -->
-		<nav id="language-nav">
-			<ul>
-				<li><a href="#en">EN</a></li>
-				<li><a href="#jp">JP</a></li>
-				<li><a href="#id">ID</a></li>
-			</ul>
-		</nav>
+		<!-- Top Right Language Buttons -->
+		<div id="language-switcher">
+			<button class="lang-btn active" onclick="setLang('en')">EN</button>
+			<button class="lang-btn" onclick="setLang('jp')">JP</button>
+			<button class="lang-btn" onclick="setLang('id')">ID</button>
+		</div>
 
 		<!-- Wrapper -->
 			<div id="wrapper">
@@ -73,119 +62,104 @@
 						<div class="content">
 							<div class="inner">
 								<h1>Portfolio</h1>
-								<p>International Student & Creative Explorer based in Kyoto.</p>
+								<p>
+									<span data-lang="en" class="active-lang">International Student & Creative Explorer based in Kyoto.</span>
+									<span data-lang="jp">京都を拠点に活動する留学生・クリエイターです。</span>
+									<span data-lang="id">Mahasiswa Internasional & Kreator berbasis di Kyoto.</span>
+								</p>
 							</div>
 						</div>
-						<!-- Main Menu (Stays static, but links change based on language choice below) -->
 						<nav>
 							<ul>
-								<li><a href="#intro-en">Intro</a></li>
-								<li><a href="#work-en">Works</a></li>
-								<li><a href="#about-en">About</a></li>
-								<li><a href="#contact">Contact</a></li>
+								<li><a href="#intro">
+									<span data-lang="en" class="active-lang">Intro</span>
+									<span data-lang="jp">自己紹介</span>
+									<span data-lang="id">Intro</span>
+								</a></li>
+								<li><a href="#work">
+									<span data-lang="en" class="active-lang">Works</span>
+									<span data-lang="jp">作品集</span>
+									<span data-lang="id">Karya</span>
+								</a></li>
+								<li><a href="#about">
+									<span data-lang="en" class="active-lang">About</span>
+									<span data-lang="jp">私について</span>
+									<span data-lang="id">Tentang</span>
+								</a></li>
+								<li><a href="#contact">
+									<span data-lang="en" class="active-lang">Contact</span>
+									<span data-lang="jp">連絡先</span>
+									<span data-lang="id">Kontak</span>
+								</a></li>
 							</ul>
 						</nav>
 					</header>
 
-				<!-- Main -->
+				<!-- Main Content -->
 					<div id="main">
 
-						<!-- LANGUAGE MENUS (These act as landing cards for each language) -->
-						<article id="en">
-							<h2 class="major">English Menu</h2>
-							<nav>
-								<ul>
-									<li><a href="#intro-en">Intro</a></li>
-									<li><a href="#work-en">Works</a></li>
-									<li><a href="#about-en">About</a></li>
-									<li><a href="#contact">Contact</a></li>
-								</ul>
-							</nav>
-						</article>
-
-						<article id="jp">
-							<h2 class="major">日本語メニュー</h2>
-							<nav>
-								<ul>
-									<li><a href="#intro-jp">自己紹介</a></li>
-									<li><a href="#work-jp">作品</a></li>
-									<li><a href="#about-jp">私について</a></li>
-									<li><a href="#contact">連絡先</a></li>
-								</ul>
-							</nav>
-						</article>
-
-						<article id="id">
-							<h2 class="major">Menu Indonesia</h2>
-							<nav>
-								<ul>
-									<li><a href="#intro-id">Intro</a></li>
-									<li><a href="#work-id">Karya</a></li>
-									<li><a href="#about-id">Tentang</a></li>
-									<li><a href="#contact">Kontak</a></li>
-								</ul>
-							</nav>
-						</article>
-
-						<!-- ENGLISH SECTIONS -->
-						<article id="intro-en">
-							<h2 class="major">Intro</h2>
+						<!-- Intro Section -->
+						<article id="intro">
+							<h2 class="major">
+								<span data-lang="en" class="active-lang">Intro</span>
+								<span data-lang="jp">自己紹介</span>
+								<span data-lang="id">Intro</span>
+							</h2>
 							<span class="image main"><img src="images/pic01.jpg" alt="" /></span>
-							<p>Hi, I'm a university student currently studying in Kyoto. My work sits at the intersection of the physical and digital, ranging from tactile independent publishing to real-time creative coding projects.</p>
-							<p>I enjoy experimenting with how we interact with information, whether it's through the fold of a page or a digital interface.</p>
+							
+							<div data-lang="en" class="active-lang">
+								<p>Hi, I'm a university student currently studying in Kyoto. My work sits at the intersection of the physical and digital.</p>
+							</div>
+							<div data-lang="jp">
+								<p>こんにちは、現在京都で学んでいる大学生です。私の活動は、アナログとデジタルの交差点に位置しています。</p>
+							</div>
+							<div data-lang="id">
+								<p>Halo, saya seorang mahasiswa yang saat ini sedang menempuh pendidikan di Kyoto. Karya saya berada di titik temu antara dunia fisik dan digital.</p>
+							</div>
 						</article>
 
-						<article id="work-en">
-							<h2 class="major">Works</h2>
+						<!-- Works Section -->
+						<article id="work">
+							<h2 class="major">
+								<span data-lang="en" class="active-lang">Works</span>
+								<span data-lang="jp">作品集</span>
+								<span data-lang="id">Karya</span>
+							</h2>
 							<span class="image main"><img src="images/pic02.jpg" alt="" /></span>
-							<h3>Independent Publishing: ZINE Project</h3>
-							<p>This project explores the structural design of ZINEs, specifically focusing on the <b>accordion (jyabara) fold</b>. By using unique physical formats, I aim to create a more interactive and tactile reading experience.</p>
+							
+							<div data-lang="en" class="active-lang">
+								<h3>ZINE Project</h3>
+								<p>Exploring the structural design of ZINEs, specifically focusing on the accordion (jyabara) fold.</p>
+							</div>
+							<div data-lang="jp">
+								<h3>ZINE プロジェクト</h3>
+								<p>蛇腹折り（accordion fold）に注目し、ZINEの構造デザインを追求しています。</p>
+							</div>
+							<div data-lang="id">
+								<h3>Proyek ZINE</h3>
+								<p>Mengeksplorasi desain struktural ZINE, khususnya berfokus pada lipatan akordion (jyabara fold).</p>
+							</div>
 						</article>
 
-						<article id="about-en">
-							<h2 class="major">About</h2>
-							<p>I am an international student currently pursuing my studies in Japan. Living in Kyoto has deeply influenced my creative process, specifically in how I view traditional craftsmanship alongside modern technology.</p>
+						<!-- About Section -->
+						<article id="about">
+							<h2 class="major">
+								<span data-lang="en" class="active-lang">About</span>
+								<span data-lang="jp">私について</span>
+								<span data-lang="id">Tentang</span>
+							</h2>
+							<div data-lang="en" class="active-lang">
+								<p>Living in Kyoto has deeply influenced my creative process and how I view traditional craftsmanship.</p>
+							</div>
+							<div data-lang="jp">
+								<p>京都での生活は、私のクリエイティブなプロセスに大きな影響を与えています。</p>
+							</div>
+							<div data-lang="id">
+								<p>Tinggal di Kyoto telah sangat mempengaruhi proses kreatif saya.</p>
+							</div>
 						</article>
 
-						<!-- JAPANESE SECTIONS -->
-						<article id="intro-jp">
-							<h2 class="major">自己紹介</h2>
-							<span class="image main"><img src="images/pic01.jpg" alt="" /></span>
-							<p>こんにちは、現在京都で学んでいる大学生です。私の活動は、アナログな独立出版（ZINE）からリアルタイムのクリエイティブ・コーディングまで、フィジカルとデジタルの交差点に位置しています。</p>
-						</article>
-
-						<article id="work-jp">
-							<h2 class="major">作品集</h2>
-							<span class="image main"><img src="images/pic02.jpg" alt="" /></span>
-							<h3>独立出版：ZINE プロジェクト</h3>
-							<p>このプロジェクトでは、特に<b>蛇腹折り（accordion fold）</b>に注目し、ZINEの構造デザインを追求しています。</p>
-						</article>
-
-						<article id="about-jp">
-							<h2 class="major">私について</h2>
-							<p>現在、日本で学んでいる留学生です。京都での生活は、私のクリエイティブなプロセスに大きな影響を与えており、特に伝統的な職人技と現代のテクノロジーの融合に魅力を感じています。</p>
-						</article>
-
-						<!-- INDONESIAN SECTIONS -->
-						<article id="intro-id">
-							<h2 class="major">Intro</h2>
-							<span class="image main"><img src="images/pic01.jpg" alt="" /></span>
-							<p>Halo, saya seorang mahasiswa yang saat ini sedang menempuh pendidikan di Kyoto. Karya saya berada di titik temu antara dunia fisik dan digital.</p>
-						</article>
-
-						<article id="work-id">
-							<h2 class="major">Karya</h2>
-							<span class="image main"><img src="images/pic02.jpg" alt="" /></span>
-							<h3>Proyek ZINE</h3>
-							<p>Proyek ini mengeksplorasi desain struktural ZINE, khususnya berfokus pada <b>lipatan akordion (jyabara fold)</b>.</p>
-						</article>
-
-						<article id="about-id">
-							<h2 class="major">Tentang</h2>
-							<p>Saya adalah seorang mahasiswa internasional yang saat ini sedang belajar di Jepang. Tinggal di Kyoto telah sangat mempengaruhi proses kreatif saya.</p>
-						</article>
-
-						<!-- Contact (Shared) -->
+						<!-- Contact Section -->
 						<article id="contact">
 							<h2 class="major">Contact</h2>
 							<ul class="icons">
@@ -198,7 +172,7 @@
 
 				<!-- Footer -->
 					<footer id="footer">
-						<p class="copyright">&copy; Portfolio. Design: <a href="https://html5up.net">HTML5 UP</a>.</p>
+						<p class="copyright">&copy; 2026 Your Name. Design: <a href="https://html5up.net">HTML5 UP</a>.</p>
 					</footer>
 
 			</div>
@@ -212,6 +186,23 @@
 			<script src="assets/js/breakpoints.min.js"></script>
 			<script src="assets/js/util.js"></script>
 			<script src="assets/js/main.js"></script>
+			
+			<script>
+				function setLang(lang) {
+					// Toggle Button Active State
+					document.querySelectorAll('.lang-btn').forEach(btn => btn.classList.remove('active'));
+					event.target.classList.add('active');
+
+					// Toggle Content
+					document.querySelectorAll('[data-lang]').forEach(el => {
+						if (el.getAttribute('data-lang') === lang) {
+							el.classList.add('active-lang');
+						} else {
+							el.classList.remove('active-lang');
+						}
+					});
+				}
+			</script>
 
 	</body>
 </html>
