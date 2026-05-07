@@ -1,13 +1,13 @@
 <!DOCTYPE HTML>
 <html>
 	<head>
-		<title>YOVELA DELVIN</title>
+		<title>YOVELA DELVIN | Portfolio</title>
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
 		<link rel="stylesheet" href="assets/css/main.css" />
 		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
 		<style>
-			/* --- LANGUAGE SWITCHER --- */
+			/* --- 1. LANGUAGE SWITCHER --- */
 			#language-switcher {
 				position: fixed;
 				top: 20px;
@@ -32,7 +32,7 @@
 			.lang-text.active { display: inline-block !important; }
 			div.lang-text.active { display: block !important; }
 
-			/* --- THE NAME FORCE-FIX --- */
+			/* --- 2. THE NAME FORCE-FIX --- */
 			header#header .inner h1 {
 				visibility: hidden;
 				position: relative;
@@ -50,7 +50,7 @@
 				content: 'ヨベラ　デルビン';
 			}
 
-			/* --- THE IMAGE CALIBRATION --- */
+			/* --- 3. THE IMAGE CALIBRATION (ZINE CLARITY) --- */
 			article#work .image img {
 				opacity: 1 !important;
 				filter: brightness(1.15) contrast(0.95) !important;
@@ -59,18 +59,15 @@
 			.image.main:before, .image.fit:before { display: none !important; }
 			.image.main, .image.fit { background: transparent !important; }
 
-			/* --- THE NAVIGATION GRID FIX (THE "NUCLEAR" VERSION) --- */
+			/* --- 4. NAVIGATION GRID OVERRIDE --- */
 			nav:before, nav:after, nav ul:before, nav ul:after {
 				display: none !important;
 			}
-
 			header#header nav {
-				display: block !important;
 				width: 100% !important;
 				max-width: 450px !important;
 				margin: 2rem auto 0 auto !important;
 			}
-
 			header#header nav ul {
 				display: grid !important;
 				grid-template-columns: 1fr 1fr 1fr !important;
@@ -78,24 +75,18 @@
 				border-radius: 4px !important;
 				padding: 0 !important;
 				margin: 0 !important;
-				list-style-type: none !important;
+				list-style: none !important;
 				overflow: hidden !important;
-				/* Neutralize template-based left padding */
-				padding-left: 0 !important; 
+				padding-left: 0 !important;
 			}
-
 			header#header nav ul li {
 				border: none !important;
 				padding: 0 !important;
 				margin: 0 !important;
-				width: 100% !important;
 			}
-
-			/* Vertical dividers between the 3 sections */
 			header#header nav ul li + li {
 				border-left: 1px solid #ffffff !important;
 			}
-
 			header#header nav ul li a {
 				display: block !important;
 				width: 100% !important;
@@ -104,8 +95,6 @@
 				border: 0 !important;
 				text-align: center !important;
 				letter-spacing: 0.1rem !important;
-				padding: 0 !important;
-				text-decoration: none !important;
 			}
 
 			.gallery-row { margin-top: 2rem; }
@@ -129,9 +118,9 @@
 					<div class="inner">
 						<h1>YOVELA DELVIN</h1>
 						<p>
-							<span class="lang-text en active">Creative Explorer & Student based in Kyoto.</span>
-							<span class="lang-text jp">京都を拠点に活動する留学生・クリエイターです。</span>
-							<span class="lang-text id">Mahasiswa Internasional & Kreator berbasis di Kyoto.</span>
+							<span class="lang-text en active">Portfolio</span>
+							<span class="lang-text jp">ポートフォリオ</span>
+							<span class="lang-text id">Portofolio</span>
 						</p>
 					</div>
 				</div>
@@ -196,9 +185,56 @@
 
 				<article id="contact">
 					<h2 class="major">Contact</h2>
-					<ul class="icons">
-						<li><a href="#" class="icon brands fa-instagram"><span class="label">Instagram</span></a></li>
-						<li><a href="#" class="icon brands fa-github"><span class="label">GitHub</span></a></li>
+					<form action="https://formspree.io/f/xnjwzeqa" method="POST">
+						<div class="fields">
+							<div class="field half">
+								<label for="name">
+									<span class="lang-text en active">Name</span>
+									<span class="lang-text jp">お名前</span>
+									<span class="lang-text id">Nama</span>
+								</label>
+								<input type="text" name="name" id="name" required />
+							</div>
+							<div class="field half">
+								<label for="email">
+									<span class="lang-text en active">Email</span>
+									<span class="lang-text jp">メールアドレス</span>
+									<span class="lang-text id">Email</span>
+								</label>
+								<input type="email" name="_replyto" id="email" required />
+							</div>
+							<div class="field">
+								<label for="message">
+									<span class="lang-text en active">Message</span>
+									<span class="lang-text jp">メッセージ</span>
+									<span class="lang-text id">Pesan</span>
+								</label>
+								<textarea name="message" id="message" rows="4" required></textarea>
+							</div>
+						</div>
+						<input type="text" name="_gotcha" style="display:none" />
+						<ul class="actions">
+							<li>
+								<button type="submit" class="primary">
+									<span class="lang-text en active">Send Message</span>
+									<span class="lang-text jp">メッセージを送信</span>
+									<span class="lang-text id">Kirim Pesan</span>
+								</button>
+							</li>
+							<li><input type="reset" value="Reset" /></li>
+						</ul>
+					</form>
+					<hr />
+					<p style="text-align: center;">
+						<span class="lang-text en active">Or email me directly at:</span>
+						<span class="lang-text jp">または、直接メールでお問い合わせください：</span>
+						<span class="lang-text id">Atau hubungi saya langsung di:</span>
+						<br />
+						<strong>yovela.delvin@gmail.com</strong>
+					</p>
+					<ul class="icons" style="justify-content: center; display: flex;">
+						<li><a href="mailto:yovela.delvin@gmail.com" class="icon solid fa-envelope"><span class="label">Email</span></a></li>
+						<li><a href="https://github.com/yourusername" class="icon brands fa-github"><span class="label">GitHub</span></a></li>
 					</ul>
 				</article>
 
@@ -223,7 +259,6 @@
 					btn.classList.remove('active');
 					if(btn.innerText.toLowerCase() === lang) btn.classList.add('active');
 				});
-				
 				if(lang === 'jp') document.body.classList.add('lang-jp');
 				else document.body.classList.remove('lang-jp');
 
