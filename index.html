@@ -32,10 +32,12 @@
 			.lang-text.active { display: inline-block !important; }
 			div.lang-text.active { display: block !important; }
 
-			/* --- 2. THE NAME FORCE-FIX --- */
+			/* --- 2. THE NAME OVERRIDE (SHATTER-PROOF FIX) --- */
 			header#header .inner h1 {
 				visibility: hidden;
 				position: relative;
+				/* Margin ensures 'Portfolio' is pushed down */
+				margin-bottom: 3.5rem !important; 
 				white-space: nowrap !important;
 			}
 			header#header .inner h1:after {
@@ -48,12 +50,14 @@
 				content: 'YOVELA DELVIN';
 				text-transform: uppercase;
 				letter-spacing: 0.5rem;
+				display: block;
 			}
-			/* Shrinking and tightening specifically for Japanese to prevent the "wrap" bug */
+			/* Specific scale-down for Japanese to fit the line */
 			body.lang-jp header#header .inner h1:after {
 				content: 'ヨベラ デルビン' !important;
-				font-size: 3.5rem !important;
-				letter-spacing: 0.2rem !important;
+				font-size: 2.8rem !important; 
+				letter-spacing: 0.4rem !important; 
+				line-height: 1 !important;
 			}
 
 			/* --- 3. THE IMAGE CALIBRATION --- */
@@ -140,6 +144,7 @@
 			</header>
 
 			<div id="main">
+
 				<article id="about">
 					<h2 class="major"><span class="lang-text en active">About</span><span class="lang-text jp">私について</span><span class="lang-text id">Tentang</span></h2>
 					<div class="lang-text en active">
@@ -242,6 +247,7 @@
 						<li><a href="https://github.com/yourusername" class="icon brands fa-github"><span class="label">GitHub</span></a></li>
 					</ul>
 				</article>
+
 			</div>
 
 			<footer id="footer">
