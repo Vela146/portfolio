@@ -59,18 +59,11 @@
 			.image.main:before, .image.fit:before { display: none !important; }
 			.image.main, .image.fit { background: transparent !important; }
 
-			/* --- THE 3-BUTTON BOX FIX --- */
-			/* 1. Remove all vertical guide lines from the template */
+			/* --- NAVIGATION LAYOUT --- */
 			nav:before, nav:after, nav ul:before, nav ul:after {
 				display: none !important;
 			}
 
-			/* 2. Hide Intro completely */
-			nav ul li:first-child {
-				display: none !important;
-			}
-
-			/* 3. Rebuild a clean, centered box for the 3 buttons */
 			nav {
 				margin: 2rem auto 0 auto !important;
 				max-width: 450px !important;
@@ -92,12 +85,10 @@
 				margin: 0 !important;
 			}
 
-			/* 4. Add clear internal dividers */
 			nav ul li + li {
 				border-left: 1px solid #ffffff !important;
 			}
 
-			/* 5. Style the links to fill the boxes */
 			nav ul li a {
 				display: block !important;
 				width: 100% !important;
@@ -137,15 +128,27 @@
 				</div>
 				<nav>
 					<ul>
-						<li><a href="#intro">Intro</a></li>
-						<li><a href="#work"><span class="lang-text en active">Works</span><span class="lang-text jp">作品集</span><span class="lang-text id">Karya</span></a></li>
 						<li><a href="#about"><span class="lang-text en active">About</span><span class="lang-text jp">私について</span><span class="lang-text id">Tentang</span></a></li>
+						<li><a href="#work"><span class="lang-text en active">Works</span><span class="lang-text jp">作品集</span><span class="lang-text id">Karya</span></a></li>
 						<li><a href="#contact"><span class="lang-text en active">Contact</span><span class="lang-text jp">連絡先</span><span class="lang-text id">Kontak</span></a></li>
 					</ul>
 				</nav>
 			</header>
 
 			<div id="main">
+
+				<article id="about">
+					<h2 class="major"><span class="lang-text en active">About</span><span class="lang-text jp">私について</span><span class="lang-text id">Tentang</span></h2>
+					<div class="lang-text en active">
+						<p>I am a university student currently studying in Kyoto. My work explores the intersection of the physical and digital, blending traditional craftsmanship with modern media experiments.</p>
+					</div>
+					<div class="lang-text jp">
+						<p>現在京都で学んでいる大学生です。アナログな手法とデジタル表現の交点を探求し、伝統的な職人技と現代のメディア実験を融合させた制作を行っています。</p>
+					</div>
+					<div class="lang-text id">
+						<p>Saya adalah seorang mahasiswa yang saat ini sedang menempuh pendidikan di Kyoto. Karya saya mengeksplorasi titik temu antara dunia fisik dan digital, memadukan kerajinan tradisional dengan eksperimen media modern.</p>
+					</div>
+				</article>
 
 				<article id="work">
 					<h2 class="major"><span class="lang-text en active">Works</span><span class="lang-text jp">作品集</span><span class="lang-text id">Karya</span></h2>
@@ -179,19 +182,6 @@
 							<div class="col-6"><span class="image fit"><img src="images/omikuji-zine-14.jpg" alt="" /></span></div>
 							<div class="col-6"><span class="image fit"><img src="images/omikuji-zine-13.jpg" alt="" /></span></div>
 						</div>
-					</div>
-				</article>
-
-				<article id="about">
-					<h2 class="major"><span class="lang-text en active">About</span><span class="lang-text jp">私について</span><span class="lang-text id">Tentang</span></h2>
-					<div class="lang-text en active">
-						<p>I am a university student currently studying in Kyoto. My work explores the intersection of the physical and digital, blending traditional craftsmanship with modern media experiments.</p>
-					</div>
-					<div class="lang-text jp">
-						<p>現在京都で学んでいる大学生です。アナログな手法とデジタル表現の交点を探求し、伝統的な職人技と現代のメディア実験を融合させた制作を行っています。</p>
-					</div>
-					<div class="lang-text id">
-						<p>Saya adalah seorang mahasiswa yang saat ini sedang menempuh pendidikan di Kyoto. Karya saya mengeksplorasi titik temu antara dunia fisik dan digital, memadukan kerajinan tradisional dengan eksperimen media modern.</p>
 					</div>
 				</article>
 
